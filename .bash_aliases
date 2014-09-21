@@ -6,3 +6,5 @@ alias a-u="sudo apt update"
 alias inst="a-i"
 
 alias prog="cd /data/programming"
+
+alias git="hub"
