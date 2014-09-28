@@ -22,3 +22,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
