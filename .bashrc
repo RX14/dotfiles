@@ -115,11 +115,16 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+export PATH="$PATH:$HOME/bin"
+
+export _JAVA_OPTIONS="$_JAVA_OPTIONS -Dswing.aatext=true -Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+export EDITOR="nano"
+
 export CDPATH=".:/data/programming"
 
 eval `keychain --eval id_rsa`
 
-export PATH=$PATH:/data/programming/ghar/bin
-
 . /data/programming/ghar/ghar-bash-completion.sh
+
 true #Reset last exit code to 0
