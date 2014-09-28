@@ -33,3 +33,5 @@ if [ ! -f /tmp/rx14startupstuff ]; then
 fi
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+true #Reset last exit code to 0

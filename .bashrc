@@ -122,3 +122,4 @@ eval `keychain --eval id_rsa`
 export PATH=$PATH:/data/programming/ghar/bin
 
 . /data/programming/ghar/ghar-bash-completion.sh
+true #Reset last exit code to 0
