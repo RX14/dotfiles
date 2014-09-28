@@ -22,4 +22,14 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if [ ! -f /tmp/rx14startupstuff ]; then
+    touch /tmp/rx14startupstuff
+
+    yaourt -Syu --aur
+    sudo pkgcacheclean -v 2
+
+    sleep 2
+fi
+
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
