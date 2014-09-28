@@ -1,3 +1,10 @@
+alias shutdown="sudo shutdown"
+alias reboot="sudo reboot"
+alias halt="sudo halt"
+alias poweroff="sudo poweroff"
+
+alias b="background"
+
 alias s="sudo"
 
 alias a="sudo apt"
