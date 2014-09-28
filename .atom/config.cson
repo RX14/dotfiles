@@ -1,0 +1,10 @@
+'exception-reporting':
+  'userId': '502cd715-684f-aae7-ef9c-3dc27751bde9'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '6d491934-48d4-477f-95d3-c77d242a8ce7'
+'core': {}
+'editor':
+  'invisibles': {}
+  'fontFamily': 'inconsolata-dz'
