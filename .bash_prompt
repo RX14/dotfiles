@@ -21,18 +21,19 @@ function prompt_exit_code {
 
 function prompt_pointer {
     PS1+=$PROMPT_EXIT_COLOUR
-    PS1+=' ► '
+#    PS1+=' ► ' #UNICODE POINTER
+    PS1+=' $ ' #NORMAL POINTER
 }
 
 function parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+    [[ $(\git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
 
 function parse_git_stash {
-    [[ $(git stash list 2> /dev/null | tail -n1) != "" ]] && echo "^"
+    [[ $(\git stash list 2> /dev/null | tail -n1) != "" ]] && echo "^"
 }
 function parse_git_branch {
-        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)$(parse_git_stash)/"
+        \git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)$(parse_git_stash)/"
 }
 
 function prompt_before {
@@ -41,7 +42,7 @@ function prompt_before {
 }
 
 function prompt_after {
-    git rev-parse --is-inside-work-tree > /dev/null 2>&1
+    \git rev-parse --is-inside-work-tree > /dev/null 2>&1
     if [ ! $? -ne 0 ]; then
         PS1+=" [\[\e[0;36m\]$(parse_git_branch)\[\e[m\]]"
     fi
