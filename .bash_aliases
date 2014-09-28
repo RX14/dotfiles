@@ -8,3 +8,9 @@ alias inst="a-i"
 alias prog="cd /data/programming"
 
 alias git="hub"
+
+alias sc="systemctl"
+alias ssc="sudo systemctl"
+
+alias n="nano"
+alias sn="sudo nano"
