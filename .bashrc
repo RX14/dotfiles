@@ -127,4 +127,6 @@ eval `keychain --eval id_rsa`
 
 . /data/programming/ghar/ghar-bash-completion.sh
 
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
 true #Reset last exit code to 0
