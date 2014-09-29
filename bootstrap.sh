@@ -25,7 +25,7 @@ shopt -u dotglob
 bin/ghar install
 
 mkdir -p ~/bin
-ln -s bin/* ~/bin/
+ln -sf $(pwd)/bin/* ~/bin/
 
 echo "Installing Yaourt!"
 sudo bash -c 'echo "
@@ -59,8 +59,9 @@ else
     done
 fi
 
-yaourt -S --noconfirm playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg livestreamer vlc spotify jdk ruby gradle atom maven ant intellij-idea-community-edition
+yaourt -S --noconfirm playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg livestreamer vlc spotify jdk gradle atom maven apache-ant intellij-idea-community-edition
 
+yaourt -R --noconfirm ruby
 echo "Installing RVM"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=rake,bundler
 
