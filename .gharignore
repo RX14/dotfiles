@@ -1,4 +1,9 @@
 nohup.out
 README.md
 .gitignore
-bootstrappkg.sh
+
+bootstrap.sh
+bootstrapvagrant.sh
+
+Vagrantfile
+.vagrant
