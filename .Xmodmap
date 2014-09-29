@@ -1,0 +1,11 @@
+clear Lock
+keycode 66 = Hyper_L
+add mod4 = Hyper_L
+
+clear Mod5
+keycode 108 = Hyper_R
+add mod4 = Hyper_R
+
+remove Mod1 = Alt_L
+keycode 64 = Alt_L
+add control = Alt_L
