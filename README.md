@@ -2,8 +2,8 @@ RX14's dotfiles
 ===============
 Programs list
 -------------
-- Bash
 - i3
+- i3blocks
 - Terminator
 - Google Chrome/Chromium
 - Steam
@@ -16,4 +16,6 @@ Programs list
 - Dropbox
 - Blue Devil
 - Skype
-- yaourt
+- Yaourt
+- Livestreamer
+- VLC
