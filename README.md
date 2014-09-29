@@ -1,21 +1,44 @@
-RX14's dotfiles
+RX14's Dotfiles
 ===============
-Programs list
--------------
-- i3
-- i3blocks
-- Terminator
-- Google Chrome/Chromium
-- Steam
-- Wine
-- Play on Linux
-- Spotify
-- Thunderbird
-- Hexchat
-- Lightscreen
-- Dropbox
-- Blue Devil
-- Skype
-- Yaourt
-- Livestreamer
-- VLC
+```yaml
+programs:
+    core:
+        - base
+        - base-devel
+        - Yaourt
+        - openssh
+        - Keychain
+        - Graphics Card driver
+        - xorg Server
+        - Terminator
+        - i3
+        - arandr
+        - i3blocks
+        - Google Chrome/Chromium
+        - Wine
+        - Play on Linux
+        - bluez
+    other:
+        - Thunderbird
+        - Steam
+        - Hexchat
+        - Lightscreen
+        - Dropbox
+        - Skype
+    media:
+        - ffmpeg
+        - Spotify
+        - Livestreamer
+        - VLC
+    dev:
+        - JDK
+        - RVM
+        - Ruby
+
+        - Gradle
+        - Atom
+        - Maven
+        - ANT
+        - IDEA
+        -
+```
