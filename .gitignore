@@ -1,2 +1,5 @@
 nohup.out
 .vagrant
+/.atom/**
+!/.atom/config.cson
+/bin/*ghar*
