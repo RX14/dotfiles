@@ -46,7 +46,7 @@ if [ -z "$VAGRANT" ]; then
     bash
 fi
 
-yaourt -S --noconfirm xorg-server xorg-xinit terminator i3 arandr i3blocks chromium
+yaourt -S --noconfirm xorg-server xorg-xinit terminator i3 arandr i3blocks chromium chromium-pepper-flash
 
 echo "TEST XORG: \$mod-shift-e to exit"
 if [ -z "$VAGRANT" ]; then
@@ -59,7 +59,7 @@ else
     done
 fi
 
-yaourt -S --noconfirm playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg livestreamer vlc spotify jdk gradle atom maven apache-ant intellij-idea-community-edition
+yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk jdk7 gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl
 
 yaourt -R --noconfirm ruby
 echo "Installing RVM"
