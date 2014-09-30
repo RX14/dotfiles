@@ -146,17 +146,16 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
-#    strip_workspace_numbers yes
 }
 
 
 
 assign [class="Steam"] "3: other"
 
-workspace "1: web1" output DFP6
-workspace "2: web2" output CRT1
-workspace "3: other" output CRT1
-workspace "4: dev2" output CRT1
-workspace "5: dev1" output DFP6
+workspace "1: web1" output DVI-0
+workspace "2: web2" output DVI-1
+workspace "3: other" output DVI-1
+workspace "4: dev2" output DVI-0
+workspace "5: dev1" output DVI-1
 
-exec --no-startup-id ~/.i3/setupWorkspace.sh
+exec ~/.i3/setupWorkspace.sh
