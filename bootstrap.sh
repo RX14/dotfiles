@@ -46,7 +46,7 @@ if [ -z "$VAGRANT" ]; then
     bash
 fi
 
-yaourt -S --noconfirm xorg-server xorg-xinit terminator i3 arandr i3blocks chromium chromium-pepper-flash
+yaourt -S --noconfirm xorg-server xorg-xinit terminator i3 arandr i3blocks-git chromium chromium-pepper-flash
 
 echo "TEST XORG: \$mod-shift-e to exit"
 if [ -z "$VAGRANT" ]; then
