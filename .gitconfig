@@ -10,5 +10,4 @@
 	helper = cache --timeout=3600
 [push]
 	default = simple
-[gh]
-	protocol = https
+
