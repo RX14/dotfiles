@@ -10,7 +10,8 @@ alias s="sudo"
 alias a="sudo apt"
 alias a-i="sudo apt install"
 alias a-u="sudo apt update"
-alias inst="a-i"
+
+alias inst="yaourt -S"
 
 alias prog="cd /data/programming"
 
@@ -42,3 +43,5 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+eval "$(gh alias -s)"
