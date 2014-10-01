@@ -1,20 +1,21 @@
-xmodmap ~/.Xmodmap
+background start-pulseaudio-x11
 
 sleep 1
 
+xmodmap /home/rx14/.Xmodmap
+
 i3-msg 'workspace "4: dev2"; layout tabbed'
+sleep 1
 background i3-sensible-terminal
-sleep 0.5
+wait-for-window "/bin/bash"
 
 i3-msg 'workspace "5: dev1"; layout tabbed'
 background i3-sensible-terminal
-sleep 0.5
+sleep 1
 
 i3-msg 'workspace "1: web1"'
 background chromium
 wait-for-window Chromium
-#wait-for-window "Tabs Outliner"
-#i3-msg '[class="Chromium-browser" instance="crx_eggkanocgddhmamlbiijnphhppkpkmkl"] focus; move left; resize shrink width 1000 px or 36 ppt'
 
 i3-msg 'workspace "2: web2"'
 background chromium
@@ -22,11 +23,16 @@ sleep 2
 
 i3-msg 'workspace "3: other"; layout tabbed'
 background steam
-background exo-open /home/rx14/.local/share/applications/spotify.desktop
+background spotify
 background thunderbird
 background hexchat
 background lightscreen
-background dropbox start
+background dropboxd start
 background bluedevil-monolithic
 background skype
 background pasystray
+
+for a  in 1 2 3 4 5 6; do
+    xmodmap /home/rx14/.Xmodmap
+    sleep 10
+done
