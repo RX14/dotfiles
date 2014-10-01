@@ -2,8 +2,29 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm --needed base base-devel git python3
+PACREPOS=$(sudo pacman -Sy)
+
+if [[ ! $PACREPOS = *multilib* ]]; then
+    echo "Installing multilib"
+    sudo bash -c 'echo "
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+" >> /etc/pacman.conf'
+fi
+
+if [[ ! $PACREPOS = *archlinuxfr* ]]; then
+    echo "Installing archlinuxfr"
+    sudo bash -c 'echo "
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/\$arch
+" >> /etc/pacman.conf'
+fi
+
+sudo pacman -Sy --noconfirm yaourt
+
+yaourt -Syua --noconfirm
+yaourt -S --noconfirm --needed base base-devel git python3
 
 mkdir ~/.ghar
 cd ~/.ghar
@@ -26,17 +47,6 @@ bin/ghar install
 
 mkdir -p ~/bin
 ln -sf $(pwd)/bin/* ~/bin/
-
-echo "Installing Yaourt!"
-sudo bash -c 'echo "
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-" >> /etc/pacman.conf'
-sudo pacman -Sy --noconfirm yaourt
 
 yaourt -S --noconfirm openssh keychain bash-completion gh
 
