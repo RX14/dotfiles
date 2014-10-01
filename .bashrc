@@ -104,7 +104,7 @@ export CDPATH=".:/data/programming"
 
 eval `keychain --eval id_rsa`
 
-. /data/programming/ghar/ghar-bash-completion.sh
+. ~/.ghar/ghar-bash-completion.sh
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
