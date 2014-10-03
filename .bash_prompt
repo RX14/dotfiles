@@ -1,14 +1,14 @@
 function prompt_setup {
     PROMPT_EXIT="$?"
     if [ $PROMPT_EXIT -ne 0 ]; then
-        PROMPT_EXIT_COLOUR='\e[1;31m'
+        PROMPT_EXIT_COLOUR="\[\e[1;31m\]"
     else
-        PROMPT_EXIT_COLOUR='\[\033[01;32m\]'
+        PROMPT_EXIT_COLOUR="\[\033[01;32m\]"
     fi
 }
 
 function prompt_reset {
-    PS1+='\e[0m'
+    PS1+="\[\e[0m\]"
 }
 
 function prompt_exit_code {
@@ -37,8 +37,8 @@ function parse_git_branch {
 }
 
 function prompt_before {
-    PS1+='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]'
-    PS1+=':\[\033[01;34m\]\w\[\033[00m\]'; prompt_reset
+    PS1+="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]"
+    PS1+=":\[\033[01;34m\]\w\[\033[00m\]"; prompt_reset
 }
 
 function prompt_after {
