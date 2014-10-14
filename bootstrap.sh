@@ -24,7 +24,7 @@ fi
 sudo pacman -Sy --noconfirm yaourt
 
 yaourt -Syua --noconfirm
-yaourt -S --noconfirm --needed base base-devel git python3
+yaourt -S --noconfirm --needed base base-devel git python3 jdk
 
 mkdir ~/.ghar
 cd ~/.ghar
