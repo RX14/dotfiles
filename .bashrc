@@ -102,6 +102,8 @@ export EDITOR="nano"
 
 export CDPATH=".:/data/programming"
 
+export TERMINAL="roxterm"
+
 eval `keychain --eval id_rsa`
 
 . ~/.ghar/ghar-bash-completion.sh
