@@ -23,7 +23,7 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-if [ ! -f /tmp/rx14startupstuff ]; then
+if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
 
     yaourt -Syu --aur
