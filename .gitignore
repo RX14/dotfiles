@@ -1,5 +1,10 @@
 nohup.out
 .vagrant
+
 /.atom/**
 !/.atom/config.cson
+
+/.gradle/**
+!/.gradle/gradle.properties
+
 /bin/*ghar*
