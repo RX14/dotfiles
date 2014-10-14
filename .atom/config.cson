@@ -1,22 +1,15 @@
 'welcome':
   'showOnStartup': false
 'core':
-  'themes': [
-    'atom-dark-ui'
-    'atom-dark-syntax'
-  ]
   'projectHome': '/data/programming/'
 'editor':
-  'invisibles': {}
   'fontFamily': 'inconsolata-dz'
-  'fontSize': 16
   'scrollSensitivity': 30
   'tabLength': 4
   'showIndentGuide': true
-'tree-view': {}
+  'invisibles': {}
 'linter-ruby':
   'rubyExecutablePath': '/usr/bin/ruby'
-'tabs-to-spaces': {}
 'exception-reporting':
   'userId': '03d05b47-47f7-df0a-5cda-e2ca0e6df189'
 'metrics':
