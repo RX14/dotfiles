@@ -23,6 +23,10 @@ alias ssc="sudo systemctl"
 alias n="nano"
 alias sn="sudo nano"
 
+alias idea="idea.sh"
+
+alias .X="xmodmap ~/.Xmodmap"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
