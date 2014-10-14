@@ -69,7 +69,7 @@ else
     done
 fi
 
-yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk jdk7 gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl
+yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk jdk7 gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl ttf-inconsolata-dz ttf-symbola ttf-ubuntu-font-family
 
 yaourt -R --noconfirm ruby
 echo "Installing RVM"
