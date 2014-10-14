@@ -16,6 +16,19 @@ set $mod2 Control
 
 set $mon1 DVI-0
 set $mon2 DVI-1
+
+
+set $ws1 "1: web1"
+set $ws2 "2: web2"
+set $ws3 "3: other"
+set $ws4 "4: dev2"
+set $ws5 "5: dev1"
+set $ws6 "6: mail"
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 0
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -25,6 +38,11 @@ font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+hide_edge_borders both
+
+bindsym $mod+Shift+f focus_follows_mouse no
+bindsym --release $mod++Shift+f focus_follows_mouse yes
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -89,28 +107,28 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace "1: web1"
-bindsym $mod+2 workspace "2: web2"
-bindsym $mod+3 workspace "3: other"
-bindsym $mod+4 workspace "4: dev2"
-bindsym $mod+5 workspace "5: dev1"
-bindsym $mod+6 workspace "6: mail"
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1: web1"; workspace "1: web1"
-bindsym $mod+Shift+2 move container to workspace "2: web2"; workspace "2: web2"
-bindsym $mod+Shift+3 move container to workspace "3: other"; workspace "3: other"
-bindsym $mod+Shift+4 move container to workspace "4: dev2"; workspace "4: dev2"
-bindsym $mod+Shift+5 move container to workspace "5: dev1"; workspace "5: dev1"
-bindsym $mod+Shift+6 move container to workspace "6: mail"; workspace "6: mail"
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -153,13 +171,18 @@ bar {
 
 
 
-assign [class="Steam"] "3: other"
+assign [class="Steam"] $ws3
+assign [class="Spotify"] $ws3
+assign [class="Hexchat"] $ws3
+assign [class="Lightscreen"] $ws3
+assign [class="Skype"] $ws3
+assign [class="Thunderbird"] $ws6
 
-workspace "1: web1" output $mon1
-workspace "2: web2" output $mon2
-workspace "3: other" output $mon2
-workspace "4: dev2" output $mon1
-workspace "5: dev1" output $mon2
-workspace "6: mail" output $mon1
+workspace $ws1 output $mon1
+workspace $ws2 output $mon2
+workspace $ws3 output $mon2
+workspace $ws4 output $mon1
+workspace $ws5 output $mon2
+workspace $ws6 output $mon1
 
 exec ~/.i3/setupWorkspace.sh
