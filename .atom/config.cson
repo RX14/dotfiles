@@ -1,16 +1,27 @@
-'welcome':
-  'showOnStartup': false
-'core':
-  'projectHome': '/data/programming/'
-'editor':
-  'fontFamily': 'inconsolata-dz'
-  'scrollSensitivity': 30
-  'tabLength': 4
-  'showIndentGuide': true
-  'invisibles': {}
-'linter-ruby':
-  'rubyExecutablePath': '/usr/bin/ruby'
-'exception-reporting':
-  'userId': '03d05b47-47f7-df0a-5cda-e2ca0e6df189'
-'metrics':
-  'userId': '5afe01d925f56ca54ea8945b2cce677f8755be3a'
+'global':
+  'welcome':
+    'showOnStartup': false
+  'core':
+    'projectHome': '/data/programming/'
+    'disabledPackages': [
+      'gradle-ci'
+    ]
+  'editor':
+    'fontFamily': 'inconsolata-dz'
+    'scrollSensitivity': 30
+    'showIndentGuide': true
+    'tabLength': 4
+    'invisibles': {}
+  'linter-ruby':
+    'rubyExecutablePath': '/usr/bin/ruby'
+  'exception-reporting':
+    'userId': '03d05b47-47f7-df0a-5cda-e2ca0e6df189'
+  'metrics':
+    'userId': '5afe01d925f56ca54ea8945b2cce677f8755be3a'
+  'gradle-ci': {}
+'.c.source ++ *':
+  'editor': {}
+'.slim.text':
+  'editor': {}
+'.c.source':
+  'editor': {}
