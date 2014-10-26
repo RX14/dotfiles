@@ -30,6 +30,7 @@ background dropboxd start
 background bluedevil-monolithic
 background pasystray
 background thunderbird
+background whatpulse
 
 COUNTER=0
 while [  $COUNTER -lt 240 ]; do
