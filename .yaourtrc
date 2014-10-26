@@ -1,0 +1,3 @@
+UP_NOCONFIRM=1
+DEVELSRCDIR="/data/yaourt/build/"
+#TMPDIR="/data/yaourt/tmp/"
