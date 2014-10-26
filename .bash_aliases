@@ -1,3 +1,4 @@
+#!/bin/bash
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias halt="sudo halt"
@@ -23,7 +24,8 @@ alias ssc="sudo systemctl"
 alias n="nano"
 alias sn="sudo nano"
 
-alias idea="idea.sh"
+alias idea="background idea.sh"
+alias idea.="background idea.sh \`pwd\`"
 
 alias .X="xmodmap ~/.Xmodmap"
 
