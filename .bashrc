@@ -108,6 +108,11 @@ eval `keychain --eval id_rsa`
 
 . ~/.ghar/ghar-bash-completion.sh
 
+. `which resty`
+
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 true #Reset last exit code to 0
+
+# added by travis gem
+[ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
