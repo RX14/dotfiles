@@ -1,7 +1,8 @@
 #!/bin/bash
 i3-msg 'workspace 9; split v'
-background livestreamer --player "/usr/bin/vlc --qt-minimal-view" twitch.tv/$1 source
+#background livestreamer --player "/usr/bin/vlc --qt-minimal-view" twitch.tv/$1 source
+background chromium --app=https://twitch.tv/$1/popout
 background chromium --app=https://twitch.tv/$1/chat
-wait-for-window "VLC"
+wait-for-window "www.twitch.tv"
 wait-for-window " - Twitch"
-i3-msg '[class="Vlc" instance="vlc"] focus; move up; resize grow height 0 px or 20 ppt'
+i3-msg '[title=".*www\.twitch\.tv.*"] focus; move up; resize grow height 0 px or 20 ppt'
