@@ -60,7 +60,7 @@ if [ -z "${VAGRANT:-}" ]; then
 fi
 
 yaourt -S --noconfirm --needed xorg-server xorg-xinit roxterm i3 arandr chromium
-yaourt -S --noconfirm i3blocks-git  chromium-pepper-flash
+yaourt -S --noconfirm i3blocks-git chromium-pepper-flash
 echo "TEST XORG: \$mod-shift-e to exit [enter]"
 if [ -z "${VAGRANT:-}" ]; then
     read
@@ -72,7 +72,9 @@ else
     done
 fi
 
-yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl ttf-inconsolata-dz ttf-symbola ttf-ubuntu-font-family screen xorg-xmodmap resty
+yaourt -S --noconfirm --needed alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol ponymix pulseaudio-alsa playonlinux bluez bluez-utils thunderbird steam hexchat skype ffmpeg ffmpeg-compat livestreamer vlc maven apache-ant intellij-idea-community-edition wmctrl ttf-symbola ttf-ubuntu-font-family screen xorg-xmodmap
+yaourt -S --noconfirm pasystray-git blueman lightscreen-git dropbox spotify gradle atom-editor ttf-inconsolata-dz resty
+
 if [ -z "${VAGRANT:-}" ]; then
     echo "EDIT THIS PKG [enter]"
     read
