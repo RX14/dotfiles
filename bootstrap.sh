@@ -2,6 +2,26 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+THISFILE=`realpath "$0"`
+FILENAME=`basename "$0"`
+
+if [ "$USERNAME" == "root" ]; then
+    groupadd -f sudo
+    useradd -m -G sudo -s /bin/bash -U rx14
+
+    cp "$THISFILE" /home/rx14/bootstrap.sh
+    chown rx14:rx14 /home/rx14/bootstrap.sh
+    chmod +x /home/rx14/bootstrap.sh
+
+    echo "%sudo    ALL=(ALL) ALL" >> /etc/sudoers
+
+    passwd rx14
+
+    echo "Log into RX14 now and execute \"./bootstrap.sh\" [enter]"
+    read
+    exit 0
+fi
+
 PACREPOS=$(sudo pacman -Sy)
 
 if [[ ! $PACREPOS = *multilib* ]]; then
