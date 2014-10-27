@@ -21,12 +21,14 @@ Server = http://repo.archlinux.fr/\$arch
 " >> /etc/pacman.conf'
 fi
 
-sudo pacman -Sy --noconfirm yaourt
+sudo pacman -Sy --needed --noconfirm yaourt
 
 yaourt -Syua --noconfirm
-yaourt -S --noconfirm --needed base base-devel git python3 jdk
+yaourt -S --noconfirm --needed base base-devel git python3 # pkg
+yaourt -S --noconfirm --needed jdk # aur
 
-mkdir ~/.ghar
+rm -Rf ~/.ghar
+mkdir -p ~/.ghar
 cd ~/.ghar
 git clone https://github.com/philips/ghar.git .
 git clone https://github.com/RX14/dotfiles.git RX14
@@ -48,18 +50,19 @@ bin/ghar install
 mkdir -p ~/bin
 ln -sf $(pwd)/bin/* ~/bin/
 
-yaourt -S --noconfirm openssh keychain bash-completion gh
+yaourt -S --noconfirm --needed openssh keychain bash-completion
+yaourt -S --noconfirm --needed gh
 
-if [ -z "$VAGRANT" ]; then
+if [ -z "${VAGRANT:-}" ]; then
     echo "INSTALL GRAPHICS DRIVERS!"
     echo "Dropping into bash!"
     bash
 fi
 
-yaourt -S --noconfirm xorg-server xorg-xinit roxterm i3 arandr i3blocks-git chromium chromium-pepper-flash
-
-echo "TEST XORG: \$mod-shift-e to exit"
-if [ -z "$VAGRANT" ]; then
+yaourt -S --noconfirm --needed xorg-server xorg-xinit roxterm i3 arandr chromium
+yaourt -S --noconfirm i3blocks-git  chromium-pepper-flash
+echo "TEST XORG: \$mod-shift-e to exit [enter]"
+if [ -z "${VAGRANT:-}" ]; then
     read
     startx
 else
@@ -69,9 +72,13 @@ else
     done
 fi
 
-yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk jdk7 gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl ttf-inconsolata-dz ttf-symbola ttf-ubuntu-font-family
+yaourt -S --noconfirm alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol pasystray-git ponymix pulseaudio-alsa playonlinux bluez bluez-utils blueman thunderbird steam hexchat lightscreen-git dropbox skype ffmpeg ffmpeg-compat livestreamer vlc spotify jdk gradle atom-editor maven apache-ant intellij-idea-community-edition wmctrl ttf-inconsolata-dz ttf-symbola ttf-ubuntu-font-family screen xorg-xmodmap resty
+if [ -z "${VAGRANT:-}" ]; then
+    echo "EDIT THIS PKG [enter]"
+    read
+    yaourt -S lightscreen-git
+fi
 
-yaourt -R --noconfirm ruby
 echo "Installing RVM"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=rake,bundler
 
