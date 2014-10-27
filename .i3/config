@@ -14,16 +14,16 @@ workspace_layout tabbed
 set $mod Mod4
 set $mod2 Control
 
-set $mon1 DVI-0
-set $mon2 DVI-1
+set $mon1 LVDS1
+set $mon2 LDVS1
 
 
 set $ws1 "1: web1"
-set $ws2 "2: web2"
-set $ws3 "3: other"
-set $ws4 "4: dev2"
+set $ws2 "2: dev2"
+set $ws3 "3: mail"
+set $ws4 "4: web2"
 set $ws5 "5: dev1"
-set $ws6 "6: mail"
+set $ws6 "6: other"
 set $ws7 7
 set $ws8 8
 set $ws9 9
@@ -171,18 +171,18 @@ bar {
 
 
 
-assign [class="Steam"] $ws3
-assign [class="Spotify"] $ws3
-assign [class="Hexchat"] $ws3
-assign [class="Lightscreen"] $ws3
-assign [class="Skype"] $ws3
-assign [class="Thunderbird"] $ws6
+assign [class="Steam"] $ws6
+assign [class="Spotify"] $ws6
+assign [class="Hexchat"] $ws6
+assign [class="Lightscreen"] $ws6
+assign [class="Skype"] $ws6
+assign [class="Thunderbird"] $ws3
 
 workspace $ws1 output $mon1
-workspace $ws2 output $mon2
-workspace $ws3 output $mon2
-workspace $ws4 output $mon1
+workspace $ws2 output $mon1
+workspace $ws3 output $mon1
+workspace $ws4 output $mon2
 workspace $ws5 output $mon2
-workspace $ws6 output $mon1
+workspace $ws6 output $mon2
 
 exec ~/.i3/setupWorkspace.sh
