@@ -10,6 +10,7 @@
     'fontFamily': 'inconsolata-dz'
     'scrollSensitivity': 30
     'showIndentGuide': true
+    'preferredLineLength': 100
     'tabLength': 4
     'invisibles': {}
   'linter-ruby':
@@ -18,7 +19,6 @@
     'userId': '03d05b47-47f7-df0a-5cda-e2ca0e6df189'
   'metrics':
     'userId': '5afe01d925f56ca54ea8945b2cce677f8755be3a'
-  'travis-ci-status': {}
   'linter':
     'lintOnChange': false
     'showErrorInline': true
@@ -26,7 +26,6 @@
     'lintOnChangeInterval': 60000
     'lintOnEditorFocus': false
     'lintOnSave': false
-  'gradle-ci': {}
 '.c.source ++ *':
   'editor': {}
 '.slim.text':
