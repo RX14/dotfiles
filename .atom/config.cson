@@ -11,6 +11,7 @@
     'scrollSensitivity': 30
     'showIndentGuide': true
     'tabLength': 4
+    'preferredLineLength': 100
     'invisibles': {}
   'linter-ruby':
     'rubyExecutablePath': '/usr/bin/ruby'
@@ -33,3 +34,13 @@
   'editor': {}
 '.c.source':
   'editor': {}
+'editor':
+  'invisibles': {}
+  'fontFamily': 'Inconsolata-dz'
+'core': {}
+'metrics':
+  'userId': 'a262ef23-339b-4675-8132-da64baba3c7c'
+'welcome':
+  'showOnStartup': false
+'exception-reporting':
+  'userId': '4b26161e-c852-ab3c-bd96-9f94b7f06e6e'
