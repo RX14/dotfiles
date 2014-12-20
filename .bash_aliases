@@ -24,6 +24,8 @@ alias ssc="sudo systemctl"
 alias n="nano"
 alias sn="sudo nano"
 
+alias gg="background git gui"
+
 alias idea="background idea.sh"
 alias idea.="background idea.sh \`pwd\`"
 
