@@ -26,8 +26,8 @@ alias sn="sudo nano"
 
 alias gg="background git gui"
 
-alias idea="background idea.sh"
-alias idea.="background idea.sh \`pwd\`"
+alias idea="background intellij-idea-ultimate-edition"
+alias idea.="idea \`pwd\`"
 
 alias .X="xmodmap ~/.Xmodmap"
 
