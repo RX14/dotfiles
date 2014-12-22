@@ -22,7 +22,7 @@ background roxterm
 sleep 5
 
 background steam
-background spotify
+#background spotify
 background hexchat
 background lightscreen
 background skype
