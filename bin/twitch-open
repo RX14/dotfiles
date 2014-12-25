@@ -5,4 +5,4 @@ background chromium --app=https://twitch.tv/$1/popout
 background chromium --app=https://twitch.tv/$1/chat
 wait-for-window "www.twitch.tv"
 wait-for-window " - Twitch"
-i3-msg '[title=".*www\.twitch\.tv.*"] focus; move up; resize grow height 0 px or 20 ppt'
+i3-msg '[title=".*www\.twitch\.tv.*"] focus; move up'

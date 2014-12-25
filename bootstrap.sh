@@ -92,8 +92,8 @@ else
     done
 fi
 
-yaourt -S --noconfirm --needed alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol ponymix pulseaudio-alsa playonlinux bluez bluez-utils thunderbird steam hexchat skype ffmpeg ffmpeg-compat livestreamer vlc maven apache-ant intellij-idea-community-edition wmctrl ttf-symbola ttf-ubuntu-font-family screen xorg-xmodmap
-yaourt -S --noconfirm pasystray-git blueman lightscreen-git dropbox spotify gradle atom-editor ttf-inconsolata-dz resty whatpulse pkgcacheclean
+yaourt -S --noconfirm --needed alsa-utils alsa-plugins alsa-oss pulseaudio pavucontrol ponymix pulseaudio-alsa playonlinux bluez bluez-utils thunderbird steam hexchat skype ffmpeg ffmpeg-compat livestreamer vlc maven apache-ant wmctrl ttf-symbola ttf-ubuntu-font-family screen xorg-xmodmap aspell aspell-en
+yaourt -S --noconfirm pasystray-git blueman lightscreen-git dropbox spotify gradle atom-editor ttf-inconsolata-dz resty whatpulse pkgcacheclean intellij-idea-ultimate-edition rubymine
 
 if [ -z "${VAGRANT:-}" ]; then
     echo "EDIT THIS PKG [enter]"

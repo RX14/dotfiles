@@ -24,8 +24,10 @@ alias ssc="sudo systemctl"
 alias n="nano"
 alias sn="sudo nano"
 
-alias idea="background idea.sh"
-alias idea.="background idea.sh \`pwd\`"
+alias gg="background git gui"
+
+alias idea="background intellij-idea-ultimate-edition"
+alias idea.="idea \`pwd\`"
 
 alias .X="xmodmap ~/.Xmodmap"
 
