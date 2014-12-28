@@ -6,5 +6,6 @@ nohup.out
 
 /.gradle/**
 !/.gradle/gradle.properties
+!/.gradle/init.gradle
 
 /bin/*ghar*
