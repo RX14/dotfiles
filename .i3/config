@@ -170,6 +170,7 @@ bar {
 }
 
 
+for_window [class="Lightscreen"] kill
 
 assign [class="Steam"] $ws6
 assign [class="Spotify"] $ws6
