@@ -14,8 +14,8 @@ workspace_layout tabbed
 set $mod Mod4
 set $mod2 Control
 
-set $mon1 DVI-1
-set $mon2 DVI-0
+set $mon1 DVI-0
+set $mon2 DVI-1
 
 
 set $ws1 "1: web1"
