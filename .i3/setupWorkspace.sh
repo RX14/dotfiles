@@ -21,16 +21,16 @@ i3-msg 'workspace "2: dev2"; for_window [class="Roxterm"] move container to work
 background roxterm
 sleep 5
 
+background lightscreen
 background steam
 #background spotify
 background hexchat
-background lightscreen
 background skype
 background dropboxd start
 background bluedevil-monolithic
 background pasystray
 background thunderbird
-background whatpulse
+#background whatpulse
 
 COUNTER=0
 while [  $COUNTER -lt 240 ]; do

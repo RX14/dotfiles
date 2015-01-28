@@ -167,11 +167,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
+    tray_output $mon1
+    modifier $mod
 }
 
-for_window [class=".*"] border none
+new_window none
+new_float normal
 
-for_window [class="Lightscreen"] kill
+for_window [class="plexhometheater"] floating enable
+for_window [class="jetbrains-idea" title="Documentation"] floating disable
 
 assign [class="Steam"] $ws6
 assign [class="Spotify"] $ws6
@@ -179,6 +183,8 @@ assign [class="Hexchat"] $ws6
 assign [class="Lightscreen"] $ws6
 assign [class="Skype"] $ws6
 assign [class="Thunderbird"] $ws7
+
+assign [class="jetbrains-idea" title="Documentation"] $ws5
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
