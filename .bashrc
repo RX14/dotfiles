@@ -116,3 +116,4 @@ true #Reset last exit code to 0
 
 # added by travis gem
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
+export USE_CCACHE=1
