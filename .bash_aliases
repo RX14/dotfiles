@@ -25,6 +25,7 @@ alias n="nano"
 alias sn="sudo nano"
 
 alias gg="background git gui"
+alias gr='cd `git root`'
 
 alias idea="background intellij-idea-ultimate-edition"
 alias idea.="idea \`pwd\`"

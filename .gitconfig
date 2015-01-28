@@ -11,3 +11,7 @@
 [push]
 	default = simple
 
+[color]
+	ui = auto
+[alias]
+	root = !pwd
