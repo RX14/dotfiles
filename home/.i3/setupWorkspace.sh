@@ -13,12 +13,13 @@ background chromium
 sleep 5
 
 i3-msg 'workspace "5: dev1"'
-background roxterm
-wait-for-window ROXTerm
+background terminology
+wait-for-window Terminology
+sleep 2
 i3-msg '[class="Roxterm"] move container to workspace "5: dev1"'
 
 i3-msg 'workspace "2: dev2"; for_window [class="Roxterm"] move container to workspace "2: dev2"'
-background roxterm
+background terminology
 sleep 5
 
 background lightscreen

@@ -6,8 +6,9 @@ THISFILE=`realpath "$0"`
 FILENAME=`basename "$0"`
 
 if [ "$USERNAME" == "root" ]; then
+    pacman -S zsh
     groupadd -f sudo
-    useradd -m -G sudo -s /bin/bash -U rx14
+    useradd -m -G sudo -s /bin/zsh -U rx14
 
     cp "$THISFILE" /home/rx14/bootstrap.sh
     chown rx14:rx14 /home/rx14/bootstrap.sh

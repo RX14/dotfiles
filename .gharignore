@@ -1,9 +1,0 @@
-nohup.out
-README.md
-.gitignore
-
-bootstrap.sh
-bootstrapvagrant.sh
-
-Vagrantfile
-.vagrant
