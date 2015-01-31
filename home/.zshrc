@@ -52,24 +52,26 @@ scala
 sudo
 systemd
 vagrant
+
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 antigen apply
 
-
-### OTHER ###
+### ALIASES ###
 source ~/.aliases
 
+### OTHER ###
 eval `keychain --eval id_rsa`
 
 . `which resty`
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-true #Reset last exit code to 0
-
-# added by travis gem
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
+
 export USE_CCACHE=1
 
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
