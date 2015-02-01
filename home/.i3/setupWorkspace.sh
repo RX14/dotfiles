@@ -16,9 +16,9 @@ i3-msg 'workspace "5: dev1"'
 background terminology
 wait-for-window Terminology
 sleep 2
-i3-msg '[class="Roxterm"] move container to workspace "5: dev1"'
+i3-msg '[class="terminology"] move container to workspace "5: dev1"'
 
-i3-msg 'workspace "2: dev2"; for_window [class="Roxterm"] move container to workspace "2: dev2"'
+i3-msg 'workspace "2: dev2"; for_window [class="terminology"] move container to workspace "2: dev2"'
 background terminology
 sleep 5
 
