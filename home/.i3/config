@@ -214,4 +214,4 @@ workspace $ws5 output $mon2
 workspace $ws6 output $mon2
 workspace $ws7 output $mon2
 
-exec ~/.i3/setupWorkspace.sh
+exec zsh -c "~/.i3/setupWorkspace.sh"
