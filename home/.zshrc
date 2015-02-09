@@ -42,6 +42,7 @@ antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 antigen bundles <<EOBUNDLES
 autojump
+colored-man
 docker
 gem
 gradle
@@ -59,6 +60,8 @@ vagrant
 zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
+
+djui/alias-tips
 EOBUNDLES
 
 antigen apply
@@ -67,11 +70,13 @@ antigen apply
 source ~/.aliases
 
 ### OTHER ###
-eval `keychain --eval id_rsa`
+autoload -U zcalc
+
+eval `keychain --eval --agents ssh id_rsa`
 
 . `which resty`
 
-function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+eval "$(gh alias -s)"
 
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
 
@@ -88,3 +93,5 @@ if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]];
 fi
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
