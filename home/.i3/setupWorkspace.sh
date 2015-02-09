@@ -23,7 +23,7 @@ background terminology
 sleep 5
 
 background lightscreen
-background steam
+STEAM_RUNTIME=0 background steam
 #background spotify
 background hexchat
 background skype
