@@ -23,55 +23,43 @@ if [ "$USERNAME" == "root" ]; then
     exit 0
 fi
 
+function install_pacman_repo() {
+    if [[ ! $PACREPOS = "*$1*" ]]; then
+        echo "Installing $1"
+        sudo bash -c "echo \"$2\" >> /etc/pacman.conf"
+    fi
+}
+
 PACREPOS=$(sudo pacman -Sy)
 
-if [[ ! $PACREPOS = *multilib* ]]; then
-    echo "Installing multilib"
-    sudo bash -c 'echo "
+install_pacman_repo multilib "
 [multilib]
 Include = /etc/pacman.d/mirrorlist
-" >> /etc/pacman.conf'
-fi
+"
 
-if [[ ! $PACREPOS = *archlinuxfr* ]]; then
-    echo "Installing archlinuxfr"
-    sudo bash -c 'echo "
+install_pacman_repo archlinuxfr "
 [archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch
-" >> /etc/pacman.conf'
-fi
+"
 
 sudo pacman -Sy --needed --noconfirm yaourt
 
 yaourt -Syua --noconfirm
-yaourt -S --noconfirm --needed base base-devel git python3 # pkg
+yaourt -S --noconfirm --needed base base-devel git # pkg
 yaourt -S --noconfirm --needed jdk # aur
 
-rm -Rf ~/.ghar
-mkdir -p ~/.ghar
-cd ~/.ghar
-git clone https://github.com/philips/ghar.git .
-git clone https://github.com/RX14/dotfiles.git RX14
+echo "Installing RVM"
+\curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+\curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=rake,bundler,homesick
 
-export BASE_X
-export HOME_X
+source ~/.rvm/scripts/rvm
 
-shopt -s dotglob
-for X in ~/.ghar/RX14/*; do
-    BASE_X=$( basename $X )
-    HOME_X="/home/rx14/$BASE_X"
-    echo "$HOME_X"
-    rm -Rf "$HOME_X"
-done
-shopt -u dotglob
+homesick clone RX14/dotfiles
+mv ~/.homesick/repos/dotfiles/ ~/.homesick/repos/rx14
+homesick link rx14 --force
 
-bin/ghar install
-
-mkdir -p ~/bin
-ln -sf $(pwd)/bin/* ~/bin/
-
-yaourt -S --noconfirm --needed openssh keychain bash-completion
+yaourt -S --noconfirm --needed openssh keychain
 yaourt -S --noconfirm --needed gh
 
 if [ -z "${VAGRANT:-}" ]; then
@@ -101,8 +89,5 @@ if [ -z "${VAGRANT:-}" ]; then
     read
     yaourt -S lightscreen-git
 fi
-
-echo "Installing RVM"
-\curl -sSL https://get.rvm.io | bash -s stable --ruby --gems=rake,bundler
 
 echo "All done!"
