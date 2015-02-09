@@ -22,7 +22,10 @@ compinit
 bashcompinit
 
 ### ANTIGEN ###
-source ~/.antigen/antigen.zsh
+[[ ! -d ~/.antigen/source/ ]] &&
+	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
+
+. ~/.antigen/source/antigen.zsh
 
 antigen use oh-my-zsh
 
