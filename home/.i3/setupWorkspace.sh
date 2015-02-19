@@ -1,4 +1,5 @@
 background start-pulseaudio-x11
+imwheel
 
 sleep 1
 

@@ -69,10 +69,18 @@ antigen apply
 ### ALIASES ###
 source ~/.aliases
 
-### OTHER ###
-autoload -U zcalc
+### AGENTS ###
+gnupginf="${HOME}/.gpg-agent-info"
 
-eval `keychain --eval --agents ssh id_rsa`
+if pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+else
+    gpg-agent -s --enable-ssh-support --daemon --log-file ~/.gnupg/gpg-agent.log > $gnupginf
+fi
+
+eval `cat $gnupginf`
+eval `cut -d= -f1 $gnupginf | xargs echo export`
+
+### OTHER ###
 
 . `which resty`
 
@@ -82,16 +90,14 @@ eval "$(gh alias -s)"
 
 export USE_CCACHE=1
 
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+source /home/rx14/.rvm/scripts/rvm
+
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
 
     yaourt -Su --devel --noconfirm
     yaourt -Syu --aur
     sudo pkgcacheclean -v 2
-
-    sleep 2
 fi
-
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
-function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
