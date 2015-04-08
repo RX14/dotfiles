@@ -22,6 +22,7 @@ compinit
 bashcompinit
 
 . <(gr completion)
+
 ### ANTIGEN ###
 [[ ! -d ~/.antigen/source/ ]] &&
 	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
@@ -83,7 +84,7 @@ eval `cut -d= -f1 $gnupginf | xargs echo export`
 
 ### OTHER ###
 
-. `which resty`
+. resty
 
 eval "$(gh alias -s)"
 
