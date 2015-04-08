@@ -21,6 +21,7 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
+. <(gr completion)
 ### ANTIGEN ###
 [[ ! -d ~/.antigen/source/ ]] &&
 	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
