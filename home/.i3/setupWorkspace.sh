@@ -24,7 +24,7 @@ background terminology
 sleep 5
 
 background lightscreen
-STEAM_RUNTIME=0 background steam
+background env LD_LIBRARY_PATH="" STEAM_RUNTIME=0 steam
 #background spotify
 background hexchat
 background skype
