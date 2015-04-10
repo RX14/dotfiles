@@ -1,3 +1,6 @@
+#!/bin/sh
+PATH=$HOME/bin:$PATH
+
 background start-pulseaudio-x11
 imwheel
 
@@ -13,13 +16,21 @@ i3-msg 'workspace "4: web2"'
 background chromium
 sleep 5
 
-i3-msg 'workspace "5: dev1"'
+i3-msg 'workspace "9: web3"'
+background chromium
+sleep 5
+
+i3-msg 'workspace "0: dev3"'
 background terminology
 wait-for-window Terminology
 sleep 2
-i3-msg '[class="terminology"] move container to workspace "5: dev1"'
+i3-msg '[class="terminology"] move container to workspace "0: dev3"'
 
-i3-msg 'workspace "2: dev2"; for_window [class="terminology"] move container to workspace "2: dev2"'
+i3-msg 'workspace "2: dev2"'
+background terminology
+sleep 5
+
+i3-msg 'workspace "5: dev1"'
 background terminology
 sleep 5
 
