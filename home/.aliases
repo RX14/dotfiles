@@ -24,6 +24,8 @@ alias ssc="sudo systemctl"
 alias n="nano"
 alias sn="sudo nano"
 
+alias st='subl3'
+
 alias gg="background git gui"
 alias gu="echo '/bin/sh -c \"git stash; git pull; git stash pop\"'"
 
