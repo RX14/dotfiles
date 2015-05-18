@@ -209,7 +209,7 @@ bar {
 
 }
 
-new_window none
+new_window pixel 1
 new_float normal
 
 for_window [class="plexhometheater"] floating enable
