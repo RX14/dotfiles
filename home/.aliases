@@ -16,8 +16,6 @@ alias inst="yaourt -S"
 
 alias prog="cd /data/programming"
 
-alias git="hub"
-
 alias sc="systemctl"
 alias ssc="sudo systemctl"
 
@@ -25,6 +23,10 @@ alias n="nano"
 alias sn="sudo nano"
 
 alias st='subl3'
+alias st.='st .'
+
+eval "$(hub alias -s)"
+alias g='git'
 
 alias gg="background git gui"
 alias gu="echo '/bin/sh -c \"git stash; git pull; git stash pop\"'"
@@ -54,5 +56,3 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-eval "$(gh alias -s)"
