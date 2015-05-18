@@ -1,3 +1,5 @@
+killall gpg-agent
+
 [[ -s ~/.xrandrrc ]] && source ~/.xrandrrc
 
 [[ -s ~/.Xresources ]] && xrdb -merger ~/.Xresources
