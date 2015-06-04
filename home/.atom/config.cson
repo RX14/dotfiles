@@ -6,9 +6,12 @@
       "gradle-ci"
     ]
     projectHome: "/data/programming/"
+    themes: [
+      "one-dark-ui"
+      "base-16-bright"
+    ]
   editor:
     fontFamily: "Inconsolata-dz"
-    showIndentGuide: true
     preferredLineLength: 100
     tabLength: 4
     scrollSensitivity: 30
@@ -26,6 +29,7 @@
     lintOnChangeInterval: 60000
     lintOnEditorFocus: false
     lintOnSave: false
+  "atom-lint": {}
 "exception-reporting":
   userId: "4b26161e-c852-ab3c-bd96-9f94b7f06e6e"
 welcome:

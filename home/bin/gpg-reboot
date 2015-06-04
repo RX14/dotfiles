@@ -1,0 +1,3 @@
+killall gpg-agent
+gpg-agent -s --enable-ssh-support --daemon --log-file ~/.gnupg/gpg-agent.log > ${HOME}/.gpg-agent-info
+

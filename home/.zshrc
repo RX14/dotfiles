@@ -21,6 +21,8 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
+. <(gr completion)
+
 ### ANTIGEN ###
 [[ ! -d ~/.antigen/source/ ]] &&
 	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
@@ -69,20 +71,9 @@ antigen apply
 ### ALIASES ###
 source ~/.aliases
 
-### AGENTS ###
-gnupginf="${HOME}/.gpg-agent-info"
-
-if pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-else
-    gpg-agent -s --enable-ssh-support --daemon --log-file ~/.gnupg/gpg-agent.log > $gnupginf
-fi
-
-eval `cat $gnupginf`
-eval `cut -d= -f1 $gnupginf | xargs echo export`
-
 ### OTHER ###
 
-. `which resty`
+. resty
 
 eval "$(gh alias -s)"
 
@@ -92,7 +83,7 @@ export USE_CCACHE=1
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-source /home/rx14/.rvm/scripts/rvm
+export PATH="$HOME/bin:$PATH" #Add local bin
 
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
@@ -101,3 +92,18 @@ if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]];
     yaourt -Syu --aur
     sudo pkgcacheclean -v 2
 fi
+
+export CDPATH=".:/data/programming"
+
+export EDITOR="nano"
+
+export TERMINAL="terminology"
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source /home/rx14/.rvm/scripts/rvm

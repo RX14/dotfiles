@@ -1,0 +1,17 @@
+allprojects {
+    afterEvaluate { project ->
+        try {
+            project.publishing {
+                repositories {
+                    maven {
+                        name "RX14"
+                        url "http://mvn.rx14.co.uk/local/"
+                        credentials {
+                            username = "rx14"
+                        }
+                    }
+                }
+            }
+        } catch (Throwable t) { println "Did not add maven-publish repo."}
+    }
+}

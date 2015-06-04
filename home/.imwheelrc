@@ -1,4 +1,12 @@
-"hexchat|Chromium"
-    None, Thumb1, Control_L|Page_Up, enter, 200000
-    None, Thumb2, Control_L|Page_Down, enter, 200000
+"plexhometheater"
+None, Thumb1, Hyper_L|1
+None, Thumb2, space
 
+"terminology"
+None, Thumb1, Hyper_L|Left, enter, 200000
+None, Thumb2, Hyper_L|Right, enter, 200000
+
+".*"
+@Priority=-10
+None, Thumb1, Control_L|Page_Up, enter, 200000
+None, Thumb2, Control_L|Page_Down, enter, 200000

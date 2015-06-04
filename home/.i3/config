@@ -16,6 +16,7 @@ set $mod2 Control
 
 set $mon1 DVI-0
 set $mon2 DVI-1
+set $mon3 VGA1
 
 
 set $ws1 "1: web1"
@@ -26,8 +27,8 @@ set $ws5 "5: dev1"
 set $ws6 "6: other"
 set $ws7 "7: mail"
 set $ws8 8
-set $ws9 9
-set $ws0 0
+set $ws9 "9: web3"
+set $ws0 "0: dev3"
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
@@ -191,13 +192,29 @@ bar {
 #
 #}
 
-new_window none
+bar {
+    id bar-3
+    output $mon3
+
+    status_command i3blocks -c ~/.i3/i3blocks-small.conf
+    tray_output none
+    modifier $mod
+
+    colors {
+        focused_workspace  #5E94BD #346F9C #ffffff
+        active_workspace   #555555 #808B8F #ffffff
+        inactive_workspace #555555 #444444 #AAAAAA
+        urgent_workspace   #2f343a #900000 #ffffff
+   }
+
+}
+
+new_window pixel 1
 new_float normal
 
 for_window [class="plexhometheater"] floating enable
 for_window [class="Lightscreen" title="Lightscreen Window Picker"] floating enable
 for_window [class="jetbrains-idea" title="Documentation"] floating disable
-for_window [class="com-lyndir-masterpassword.*"] floating enable
 
 assign [class="Steam"] $ws6
 assign [class="Spotify"] $ws6
@@ -214,5 +231,7 @@ workspace $ws4 output $mon2
 workspace $ws5 output $mon2
 workspace $ws6 output $mon2
 workspace $ws7 output $mon2
+workspace $ws9 output $mon3
+workspace $ws0 output $mon3
 
-exec zsh -c "~/.i3/setupWorkspace.sh"
+exec ~/.i3/setupWorkspace.sh
