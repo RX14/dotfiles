@@ -26,19 +26,11 @@
     lintOnChangeInterval: 60000
     lintOnEditorFocus: false
     lintOnSave: false
-".c.source ++ *":
-  editor: {}
-".slim.text":
-  editor: {}
-".c.source":
-  editor: {}
-editor:
-  invisibles: {}
-  fontFamily: "Inconsolata-dz"
-core: {}
-metrics:
-  userId: "a262ef23-339b-4675-8132-da64baba3c7c"
-welcome:
-  showOnStartup: false
 "exception-reporting":
   userId: "4b26161e-c852-ab3c-bd96-9f94b7f06e6e"
+welcome:
+  showOnStartup: false
+metrics:
+  userId: "a262ef23-339b-4675-8132-da64baba3c7c"
+editor:
+  fontFamily: "Inconsolata-dz"
