@@ -14,21 +14,18 @@ workspace_layout tabbed
 set $mod Mod4
 set $mod2 Control
 
-set $mon1 DVI-0
-set $mon2 DVI-1
-set $mon3 VGA1
+set $mon1 VGA1
 
-
-set $ws1 "1: web1"
-set $ws2 "2: dev2"
-set $ws3 3
-set $ws4 "4: web2"
-set $ws5 "5: dev1"
-set $ws6 "6: other"
-set $ws7 "7: mail"
+set $ws1 "1: web"
+set $ws2 "2: dev"
+set $ws3 "3: other"
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
 set $ws8 8
-set $ws9 "9: web3"
-set $ws0 "0: dev3"
+set $ws9 9
+set $ws0 0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
@@ -192,22 +189,22 @@ bar {
 #
 #}
 
-bar {
-    id bar-3
-    output $mon3
-
-    status_command i3blocks -c ~/.i3/i3blocks-small.conf
-    tray_output none
-    modifier $mod
-
-    colors {
-        focused_workspace  #5E94BD #346F9C #ffffff
-        active_workspace   #555555 #808B8F #ffffff
-        inactive_workspace #555555 #444444 #AAAAAA
-        urgent_workspace   #2f343a #900000 #ffffff
-   }
-
-}
+#bar {
+#    id bar-3
+#    output $mon3
+#
+#    status_command i3blocks -c ~/.i3/i3blocks-small.conf
+#    tray_output none
+#    modifier $mod
+#
+#    colors {
+#        focused_workspace  #5E94BD #346F9C #ffffff
+#        active_workspace   #555555 #808B8F #ffffff
+#        inactive_workspace #555555 #444444 #AAAAAA
+#        urgent_workspace   #2f343a #900000 #ffffff
+#   }
+#
+#}
 
 new_window pixel 1
 new_float normal
@@ -216,22 +213,13 @@ for_window [class="plexhometheater"] floating enable
 for_window [class="Lightscreen" title="Lightscreen Window Picker"] floating enable
 for_window [class="jetbrains-idea" title="Documentation"] floating disable
 
-assign [class="Steam"] $ws6
-assign [class="Spotify"] $ws6
-assign [class="Hexchat"] $ws6
-assign [class="Lightscreen" title="Lightscreen"] $ws6
-assign [class="Skype"] $ws6
-assign [class="Thunderbird"] $ws7
+assign [class="Steam"] $ws3
+assign [class="Spotify"] $ws3
+assign [class="Hexchat"] $ws3
+assign [class="Lightscreen" title="Lightscreen"] $ws3
+assign [class="Skype"] $ws3
+assign [class="Thunderbird"] $ws3
 
-assign [class="jetbrains-idea" title="Documentation"] $ws5
-
-workspace $ws1 output $mon1
-workspace $ws2 output $mon1
-workspace $ws4 output $mon2
-workspace $ws5 output $mon2
-workspace $ws6 output $mon2
-workspace $ws7 output $mon2
-workspace $ws9 output $mon3
-workspace $ws0 output $mon3
+assign [class="jetbrains-idea" title="Documentation"] $ws2
 
 exec ~/.i3/setupWorkspace.sh

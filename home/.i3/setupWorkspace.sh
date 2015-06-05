@@ -8,11 +8,11 @@ sleep 1
 
 xmodmap /home/rx14/.Xmodmap
 
-i3-msg 'workspace "1: web1"'
+i3-msg 'workspace "1: web"'
 background chromium
 wait-for-window Chromium
 
-i3-msg 'workspace "5: dev1"'
+i3-msg 'workspace "2: dev"'
 background terminology
 wait-for-window Terminology
 
