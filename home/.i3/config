@@ -39,9 +39,6 @@ floating_modifier $mod
 
 hide_edge_borders both
 
-bindsym $mod+Shift+f focus_follows_mouse no
-bindsym --release $mod++Shift+f focus_follows_mouse yes
-
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
