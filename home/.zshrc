@@ -75,8 +75,6 @@ source ~/.aliases
 
 . resty
 
-eval "$(gh alias -s)"
-
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
 
 export USE_CCACHE=1
