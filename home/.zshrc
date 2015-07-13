@@ -96,7 +96,7 @@ fi
 
 export CDPATH=".:/data/programming"
 
-export EDITOR="nano"
+export EDITOR="vim"
 
 export TERMINAL="terminology"
 
