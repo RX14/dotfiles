@@ -85,6 +85,9 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 export PATH="$HOME/bin:$PATH" #Add local bin
 
+export GOPATH="$HOME/gocode"
+export PATH="$GOPATH/bin:$PATH"
+
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
 
