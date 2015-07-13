@@ -19,8 +19,8 @@ alias prog="cd /data/programming"
 alias sc="systemctl"
 alias ssc="sudo systemctl"
 
-alias n="nano"
-alias sn="sudo nano"
+alias n='vim'
+alias sn="sudo vim"
 
 alias st='subl3'
 alias st.='st .'
