@@ -1,3 +1,4 @@
 .gradle
 .gradle/init.d
 .atom
+.ssh
