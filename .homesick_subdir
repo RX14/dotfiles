@@ -2,3 +2,4 @@
 .gradle/init.d
 .atom
 .ssh
+.config/gtk-3.0
