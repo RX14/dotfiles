@@ -15,3 +15,7 @@
 	ui = auto
 [alias]
 	root = !pwd
+[merge]
+	tool = kdiff3
+[mergetool]
+	keepBackup = false

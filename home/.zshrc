@@ -39,6 +39,7 @@ BULLETTRAIN_STATUS_EXIT_SHOW=true
 
 BULLETTRAIN_CONTEXT_SHOW=true
 BULLETTRAIN_CONTEXT_FG=green
+BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
 
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
@@ -75,8 +76,6 @@ source ~/.aliases
 
 . resty
 
-eval "$(gh alias -s)"
-
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
 
 export USE_CCACHE=1
@@ -84,6 +83,9 @@ export USE_CCACHE=1
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 export PATH="$HOME/bin:$PATH" #Add local bin
+
+export GOPATH="$HOME/gocode"
+export PATH="$GOPATH/bin:$PATH"
 
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
@@ -95,7 +97,7 @@ fi
 
 export CDPATH=".:/data/programming"
 
-export EDITOR="nano"
+export EDITOR="vim"
 
 export TERMINAL="terminology"
 

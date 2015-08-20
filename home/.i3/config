@@ -178,11 +178,12 @@ for_window [class="jetbrains-idea" title="Documentation"] floating disable
 
 assign [class="Steam"] $ws3
 assign [class="Spotify"] $ws3
-assign [class="Hexchat"] $ws3
+assign [class="Hexchat"] $ws6
 assign [class="Lightscreen" title="Lightscreen"] $ws3
 assign [class="Skype"] $ws3
 assign [class="Thunderbird"] $ws3
 
 assign [class="jetbrains-idea" title="Documentation"] $ws2
+assign [title="WhatsApp Web"] $ws6
 
 exec ~/.i3/setupWorkspace.sh

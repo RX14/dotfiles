@@ -1,0 +1,7 @@
+allprojects {
+    pluginManager.withPlugin("com.jfrog.bintray") {
+        bintray {
+            user = "rx14"
+        }
+    }
+}
