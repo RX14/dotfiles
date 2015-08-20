@@ -9,8 +9,8 @@ sleep 1
 xmodmap /home/rx14/.Xmodmap
 
 i3-msg 'workspace "1: web"'
-background chromium
-wait-for-window Chromium
+background firefox
+wait-for-window "Mozilla Firefox"
 
 i3-msg 'workspace "2: dev"'
 background terminology
