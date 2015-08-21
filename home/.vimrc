@@ -12,16 +12,13 @@ Plugin 'rhysd/vim-crystal'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'chriskempson/base16-vim'
 Plugin 'tfnico/vim-gradle'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 call vundle#end()
 
 filetype plugin indent on
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -46,8 +43,24 @@ set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 set shell=/bin/zsh
 
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 
 set background=dark
 colorscheme base16-3024
+
+set number
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
