@@ -72,20 +72,26 @@ antigen apply
 ### ALIASES ###
 source ~/.aliases
 
+### AGENTS ###
+function start-gpg-agent() {
+  if pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  else
+      gpg-agent -s --enable-ssh-support --daemon --log-file ~/.gnupg/gpg-agent.log > $gnupginf
+  fi
+  source $gnupginf
+}
+function gpg-reboot() { killall -u "$USER" gpg-agent; start-gpg-agent }
+
+start-gpg-agent
 ### OTHER ###
 
-. resty
+. `which resty`
 
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
 
 export USE_CCACHE=1
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-export PATH="$HOME/bin:$PATH" #Add local bin
-
-export GOPATH="$HOME/gocode"
-export PATH="$GOPATH/bin:$PATH"
 
 if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
     touch /tmp/rx14startupstuff
@@ -95,17 +101,4 @@ if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]];
     sudo pkgcacheclean -v 2
 fi
 
-export CDPATH=".:/data/programming"
-
-export EDITOR="vim"
-
-export TERMINAL="terminology"
-
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /home/rx14/.rvm/scripts/rvm
