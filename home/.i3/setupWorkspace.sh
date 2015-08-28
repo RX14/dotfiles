@@ -26,7 +26,7 @@ background bluedevil-monolithic
 background pasystray
 #background thunderbird
 #background whatpulse
-background chromium --app=https://web.whatsapp.com/
+#background chromium --app=https://web.whatsapp.com/
 
 COUNTER=0
 while [  $COUNTER -lt 240 ]; do
