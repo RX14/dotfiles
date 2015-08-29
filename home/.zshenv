@@ -13,5 +13,7 @@ export TERMINAL="terminology"
 
 export USE_CCACHE=1
 
+export QT_STYLE_OVERRIDE="GTK+"
+
 gnupginf="${HOME}/.gpg-agent-info"
 [ -f $gnupginf ] && source $gnupginf
