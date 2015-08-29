@@ -102,4 +102,6 @@ if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]];
     sudo pkgcacheclean -v 2
 fi
 
+[[ -s "/home/rx14/.gvm/bin/gvm-init.sh" ]] && source "/home/rx14/.gvm/bin/gvm-init.sh"
+
 source /home/rx14/.rvm/scripts/rvm
