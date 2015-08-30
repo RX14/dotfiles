@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'rhysd/vim-crystal'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -32,8 +32,9 @@ let g:syntastic_check_on_wq = 0
 set shortmess+=c
 
 " NERDTree
-let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_autofind = 1
+let g:NERDTreeMapOpenInTabSilent = '<2-LeftMouse>'
 
 " map control-backspace to delete the previous word
 inoremap <C-w> <C-\><C-o>dB
@@ -50,13 +51,16 @@ syntax on
 
 set encoding=utf-8
 
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 9
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 
 set shell=/bin/zsh
 
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2
+autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2
 
 set background=dark
 colorscheme base16-3024
