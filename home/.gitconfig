@@ -19,3 +19,6 @@
 	tool = kdiff3
 [mergetool]
 	keepBackup = false
+[gui]
+	fontui = -family \"Noto Sans\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Inconsolata-dz for Powerline\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
