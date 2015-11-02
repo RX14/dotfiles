@@ -19,6 +19,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 
@@ -37,8 +38,9 @@ let g:nerdtree_tabs_autofind = 1
 let g:NERDTreeMapOpenInTabSilent = '<2-LeftMouse>'
 
 " map control-backspace to delete the previous word
-inoremap <C-w> <C-\><C-o>dB
-inoremap <C-BS> <C-\><C-o>db
+" execute is hack to stop this being executed in intellij IDEA
+execute 'inoremap <C-w> <C-\><C-o>dB'
+execute 'inoremap <C-BS> <C-\><C-o>db'
 
 " Always show powerline
 set laststatus=2
@@ -46,6 +48,8 @@ set laststatus=2
 " jk to exit insert mode
 inoremap jk <ESC>
 inoremap <ESC> <nop>
+let g:multi_cursor_quit_key = 'jk'
+let g:multi_cursor_insert_maps = {'j': 1}
 
 syntax on
 
@@ -76,6 +80,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set guioptions-=m
+set guioptions-=T
 
 augroup myvimrc
     au!
