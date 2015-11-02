@@ -22,3 +22,7 @@
 [gui]
 	fontui = -family \"Noto Sans\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"Inconsolata-dz for Powerline\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+
+[url "git@github.com:"]
+    pushInsteadOf = git://github.com/
+    pushInsteadOf = https://github.com/
