@@ -3,6 +3,7 @@ PATH=$HOME/bin:$PATH
 
 background start-pulseaudio-x11
 background chromium --no-startup-window --disable-new-avatar-menu
+background dunst
 imwheel
 
 sleep 2
