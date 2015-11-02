@@ -31,7 +31,6 @@ i3-msg 'workspace "5: dev1"'
 terminology
 
 i3-msg 'workspace "6: other"'
-background lightscreen
 background env LD_LIBRARY_PATH="" STEAM_RUNTIME=0 steam
 #background spotify
 background hexchat
