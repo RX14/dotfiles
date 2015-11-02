@@ -39,6 +39,7 @@ background dropboxd start
 background bluedevil-monolithic
 background pasystray
 background thunderbird
+background synergy
 #background whatpulse
 background chromium --app='https://web.whatsapp.com/'
 background chromium --app='https://tweetdeck.twitter.com/'
