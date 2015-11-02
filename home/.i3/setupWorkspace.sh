@@ -31,7 +31,7 @@ i3-msg 'workspace "5: dev1"'
 terminology
 
 i3-msg 'workspace "6: other"'
-background env LD_LIBRARY_PATH="" STEAM_RUNTIME=0 steam
+background env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
 #background spotify
 background hexchat
 background skype
