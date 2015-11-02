@@ -232,7 +232,9 @@ assign [class="Skype"] $ws6
 assign [class="Thunderbird"] $ws7
 
 assign [class="jetbrains-idea" title="Documentation"] $ws5
-assign [title="WhatsApp Web"] $ws6
+assign [instance="web\.whatsapp\.com"] $ws6
+assign [instance=".*slack\.com.*"] $ws0
+assign [instance="tweetdeck\.twitter\.com"] $ws0
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
