@@ -102,8 +102,6 @@ export USE_CCACHE=1
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 if [[ ! -z $DISPLAY && $XDG_VTNR -eq 1 ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
-    touch /tmp/rx14startupstuff
-
     yaourt -Syua
     yaourt -Su --devel --noconfirm
     sudo pkgcacheclean -v 2
