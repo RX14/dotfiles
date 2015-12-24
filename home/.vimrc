@@ -20,6 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
