@@ -2,7 +2,7 @@
 PATH=$HOME/bin:$PATH
 
 background start-pulseaudio-x11
-background chromium --no-startup-window --disable-new-avatar-menu
+background -- bash -c "chromium --no-startup-window --disable-new-avatar-menu >> ~/startupChromium.log 2>&1"
 background dunst
 imwheel
 
