@@ -234,6 +234,7 @@ new_float normal
 for_window [class="plexhometheater"] floating enable
 for_window [class="Lightscreen" title="Lightscreen Window Picker"] floating enable
 for_window [class="jetbrains-idea" title="Documentation"] floating disable
+#for_window [class="temporal-reality-launcher-v2"] floating enable
 
 assign [class="Steam"] $ws6
 assign [class="Spotify"] $ws6
