@@ -20,16 +20,14 @@ i3-msg 'workspace "9: web3"'
 chromium
 sleep 0.5
 
-i3-msg 'workspace "0: dev3"'
+i3-msg 'workspace "2: dev2"'
 background terminology
 wait-for-window Terminology
-i3-msg '[class="terminology"] move container to workspace "0: dev3"'
-
-i3-msg 'workspace "2: dev2"'
-terminology
+i3-msg '[class="terminology"] move container to workspace "2: dev2"'
 
 i3-msg 'workspace "5: dev1"'
 terminology
+sleep 0.5
 
 i3-msg 'workspace "6: other"'
 background env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
