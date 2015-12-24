@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEST_URL='https://u.xpw.us/upload.php' # could be http://pomf.se/upload.php
-OUTPUT_URL='https://u.xpw.us' # could be http://a.pomf.se
+DEST_URL='https://aww.moe/upload.php' # could be http://pomf.se/upload.php
+OUTPUT_URL='https://aww.moe' # could be http://a.pomf.se
 
 trim() {
     local orig="$1"
