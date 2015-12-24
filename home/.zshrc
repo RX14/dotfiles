@@ -24,6 +24,8 @@ bashcompinit
 
 . <(gr completion)
 
+source /etc/bash_completion.d/tugboat
+
 ### ANTIGEN ###
 [[ ! -d ~/.antigen/source/ ]] &&
 	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
