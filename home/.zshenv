@@ -7,11 +7,13 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export CDPATH=".:/data/programming"
 
-export EDITOR="vim"
+export EDITOR="gvim -f --servername GVIM --remote-tab"
 
 export TERMINAL="terminology"
 
 export USE_CCACHE=1
+
+export QT_STYLE_OVERRIDE="GTK+"
 
 gnupginf="${HOME}/.gpg-agent-info"
 [ -f $gnupginf ] && source $gnupginf

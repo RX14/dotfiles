@@ -1,0 +1,1 @@
+GTK2_RC_FILES=/usr/share/themes/Default/gtk-2.0-key/gtkrc mono /data/downloads/ckan.exe

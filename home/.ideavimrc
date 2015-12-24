@@ -1,0 +1,5 @@
+source ~/.vimrc
+
+" ideavim pls
+iunmap <C-w>
+iunmap <C-BS>

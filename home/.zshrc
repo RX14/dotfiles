@@ -24,6 +24,8 @@ bashcompinit
 
 . <(gr completion)
 
+source /etc/bash_completion.d/tugboat
+
 ### ANTIGEN ###
 [[ ! -d ~/.antigen/source/ ]] &&
 	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
@@ -35,18 +37,21 @@ antigen use oh-my-zsh
 BULLETTRAIN_PROMPT_CHAR="\$"
 
 BULLETTRAIN_TIME_SHOW=true
+BULLETTRAIN_TIME_12HR=true
 
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 
 BULLETTRAIN_CONTEXT_SHOW=true
-BULLETTRAIN_CONTEXT_FG=green
+BULLETTRAIN_CONTEXT_FG=red
 BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
+
+BULLETTRAIN_DIR_EXTENDED=2
 
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 antigen bundles <<EOBUNDLES
 autojump
-colored-man
+colored-man-pages
 docker
 gem
 gradle
@@ -70,6 +75,10 @@ EOBUNDLES
 
 antigen apply
 
+bindkey '^H' backward-kill-word
+bindkey "^Q" push-input
+setopt interactivecomments
+
 ### ALIASES ###
 source ~/.aliases
 
@@ -81,7 +90,7 @@ function start-gpg-agent() {
   fi
   source $gnupginf
 }
-function gpg-reboot() { killall -u "$USER" gpg-agent; start-gpg-agent }
+function gpg-reboot() { killall -9 -u "$USER" gpg-agent; start-gpg-agent }
 
 start-gpg-agent
 ### OTHER ###
@@ -94,12 +103,17 @@ export USE_CCACHE=1
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-if [[ ( ! -f /tmp/rx14startupstuff ) && ( ! -z $DISPLAY && $XDG_VTNR -eq 1 ) ]]; then
-    touch /tmp/rx14startupstuff
-
+if [[ ! -z $DISPLAY && $XDG_VTNR -eq 1 ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
+    yaourt -Syua
     yaourt -Su --devel --noconfirm
-    yaourt -Syu --aur
     sudo pkgcacheclean -v 2
+
+    antigen update
 fi
+
+[[ -s "/home/rx14/.gvm/bin/gvm-init.sh" ]] && source "/home/rx14/.gvm/bin/gvm-init.sh"
+
+export NVM_DIR="/home/rx14/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source /home/rx14/.rvm/scripts/rvm

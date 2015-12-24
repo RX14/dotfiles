@@ -24,6 +24,8 @@ alias gvim='gvim --servername GVIM --remote-tab'
 alias n='gvim'
 alias sn="sudo vim"
 
+alias gk='background gitkraken -p `pwd`'
+
 alias st='subl3'
 alias st.='st .'
 

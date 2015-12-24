@@ -1,8 +1,11 @@
-"plexhometheater"
+"^(plexhometheater|mpv)$"
 None, Thumb1, Hyper_L|1
 None, Thumb2, space
 
-"(terminology|Git-gui)"
+"^Hyperdimension Neptunia Re;Birth1$"
+None, Thumb1, Hyper_L|1
+
+"^(terminology|Git-gui)$"
 None, Thumb1, Hyper_L|Left, enter, 200000
 None, Thumb2, Hyper_L|Right, enter, 200000
 

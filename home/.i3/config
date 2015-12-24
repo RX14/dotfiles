@@ -132,6 +132,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym Print exec ~/bin/poomf -d
+bindsym Shift+Print exec ~/bin/poomf -a
+bindsym Ctrl+Print exec ~/bin/poomf -w
+bindsym Mod1+Print exec ~/bin/poomf -c
+bindsym Ctrl+Shift+Print exec ~/bin/poomf -f
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -151,6 +157,11 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+        bindsym Control+Left resize shrink width 1px or 1 ppt
+        bindsym Control+Down resize grow height 1px or 1 ppt
+        bindsym Control+Up resize shrink height 1px or 1 ppt
+        bindsym Control+Right resize grow width 1px or 1 ppt
+
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -161,12 +172,21 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    id bar-1
+  id bar-1
     output $mon1
 
     status_command i3blocks -c ~/.i3/i3blocks.conf
     tray_output $mon1
     modifier $mod
+  colors {
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
 }
 
 new_window pixel 1
@@ -175,6 +195,7 @@ new_float normal
 for_window [class="plexhometheater"] floating enable
 for_window [class="Lightscreen" title="Lightscreen Window Picker"] floating enable
 for_window [class="jetbrains-idea" title="Documentation"] floating disable
+#for_window [class="temporal-reality-launcher-v2"] floating enable
 
 assign [class="Steam"] $ws3
 assign [class="Spotify"] $ws3
@@ -184,6 +205,14 @@ assign [class="Skype"] $ws3
 assign [class="Thunderbird"] $ws3
 
 assign [class="jetbrains-idea" title="Documentation"] $ws2
-assign [title="WhatsApp Web"] $ws6
+assign [instance="web\.whatsapp\.com"] $ws3
+assign [instance=".*slack\.com.*"] $ws3
+assign [instance="tweetdeck\.twitter\.com"] $ws3
+assign [instance="discordapp\.com__channels_@me"] $ws3
 
 exec ~/.i3/setupWorkspace.sh
+
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
