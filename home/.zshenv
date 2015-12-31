@@ -5,6 +5,11 @@ export PATH="$HOME/bin:$PATH" #Add local bin
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+NPM_PACKAGES="${HOME}/.npm-packages"
+[[ ! -d "$NPM_PACKAGES" ]] && mkdir -p "$NPM_PACKAGES"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
+
 export CDPATH=".:/data/programming"
 
 export EDITOR="gvim -f --servername GVIM --remote-tab"
