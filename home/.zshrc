@@ -116,4 +116,7 @@ fi
 export NVM_DIR="/home/rx14/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+[[ ! -d ~/.crenv/ ]] && curl -L https://raw.github.com/pine613/crenv/master/install.sh | CRENV_ROOT="$HOME/.crenv" bash
+eval "$(crenv init -)"
+
 source /home/rx14/.rvm/scripts/rvm
