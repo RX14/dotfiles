@@ -22,6 +22,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sleuth'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'chaimleib/vim-renpy'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/neco-ghc'
 
