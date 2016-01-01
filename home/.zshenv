@@ -12,6 +12,7 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+export PATH="$HOME/.cabal/bin:$PATH"
 
 export CDPATH=".:/data/programming"
 
