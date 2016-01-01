@@ -84,6 +84,19 @@ set noswapfile
 set guioptions-=m
 set guioptions-=T
 
+" Folding
+set foldcolumn=1
+au BufWinEnter * normal zR
+let g:sh_fold_enabled = 3
+let g:clojure_fold = 1
+let perl_fold = 1
+let php_folding = 1
+let ruby_fold = 1
+let g:tex_fold_enabled=1
+let g:vimsyn_folding = 'aflmpPrt'
+let g:xml_syntax_folding = 1
+set foldmethod=syntax
+
 augroup myvimrc
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc nested so $MYVIMRC | if has('gui_running') && filereadable($MYGVIMRC) | so $MYGVIMRC | endif
