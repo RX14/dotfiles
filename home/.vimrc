@@ -22,6 +22,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-sleuth'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'dag/vim2hs'
+Plugin 'eagletmt/neco-ghc'
 
 call vundle#end()
 
@@ -38,6 +40,11 @@ set shortmess+=c
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_autofind = 1
 let g:NERDTreeMapOpenInTabSilent = '<2-LeftMouse>'
+
+" Haskell completion
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " map control-backspace to delete the previous word
 " execute is hack to stop this being executed in intellij IDEA
