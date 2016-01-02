@@ -141,6 +141,8 @@ bindsym Ctrl+Print exec ~/bin/poomf -w
 bindsym Mod1+Print exec ~/bin/poomf -c
 bindsym Ctrl+Shift+Print exec ~/bin/poomf -f
 
+bindsym $mod+l exec ~/bin/lock
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
