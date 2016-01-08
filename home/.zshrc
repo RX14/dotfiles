@@ -117,4 +117,6 @@ export NVM_DIR="/home/rx14/.nvm"
 [[ ! -d ~/.crenv/ ]] && curl -L https://raw.github.com/pine613/crenv/master/install.sh | CRENV_ROOT="$HOME/.crenv" bash
 eval "$(crenv init -)"
 
+[[ ! -d ~/.vim/bundle/Vundle.vim/ ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 source /home/rx14/.rvm/scripts/rvm
