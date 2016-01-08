@@ -95,8 +95,6 @@ function gpg-reboot() { killall -9 -u "$USER" gpg-agent; start-gpg-agent }
 start-gpg-agent
 ### OTHER ###
 
-. `which resty`
-
 [ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
 
 export USE_CCACHE=1
