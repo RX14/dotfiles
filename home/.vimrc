@@ -25,6 +25,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'chaimleib/vim-renpy'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
