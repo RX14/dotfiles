@@ -45,9 +45,3 @@ background chromium --app='https://tweetdeck.twitter.com/'
 background chromium --app='https://trcommunity.slack.com/messages/?no_ls=1'
 background chromium --app='https://discordapp.com/channels/@me'
 
-COUNTER=0
-while [  $COUNTER -lt 240 ]; do
-    xmodmap /home/rx14/.Xmodmap
-    sleep 0.5
-    let COUNTER=COUNTER+1
-done
