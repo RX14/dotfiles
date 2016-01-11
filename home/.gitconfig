@@ -4,13 +4,8 @@
 [core]
 	autocrlf = false
 	filemode = false
-[branch]
-	autosetuprebase = always
-[credential]
-	helper = cache --timeout=3600
 [push]
 	default = simple
-
 [color]
 	ui = auto
 [alias]
@@ -24,5 +19,7 @@
 	fontdiff = -family \"Inconsolata-dz for Powerline\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 
 [url "git@github.com:"]
-    pushInsteadOf = git://github.com/
-    pushInsteadOf = https://github.com/
+	pushInsteadOf = git://github.com/
+	pushInsteadOf = https://github.com/
+[pull]
+	rebase = true
