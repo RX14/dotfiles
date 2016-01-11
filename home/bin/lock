@@ -1,2 +1,4 @@
 #!/bin/sh
-i3lock -dfc 000000
+sleep 0.2 # wait for keyup before running screensaver, otherwise dpms doesn't work
+i3lock -ndfc 000000
+xset -dpms
