@@ -109,6 +109,10 @@ if [[ ! -z $DISPLAY && $XDG_VTNR -eq 1 ]] && mkdir /tmp/rx14startupstuff 2>/dev/
     antigen update
 fi
 
+if [[ "$TERM" == "xterm" ]]; then
+    xmodmap ~/.Xmodmap
+fi
+
 [[ -s "/home/rx14/.gvm/bin/gvm-init.sh" ]] && source "/home/rx14/.gvm/bin/gvm-init.sh"
 
 export NVM_DIR="/home/rx14/.nvm"

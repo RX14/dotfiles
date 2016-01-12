@@ -4,8 +4,6 @@ killall gpg-agent
 
 [[ -s ~/.Xresources ]] && xrdb -merger ~/.Xresources
 
-[[ -s ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-
 xset -dpms
 xset s off
 
