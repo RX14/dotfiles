@@ -26,8 +26,8 @@ wait-for-window Terminology
 i3-msg '[class="terminology"] move container to workspace "2: dev2"'
 
 i3-msg 'workspace "5: dev1"'
-terminology
-sleep 0.5
+background terminology
+sleep 2
 
 i3-msg 'workspace "6: other"'
 background env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1' steam
@@ -48,3 +48,8 @@ background chromium --app='https://discordapp.com/channels/@me'
 sleep 2
 
 i3-msg 'workspace "0: comms"'
+
+for i in {1..100}; do
+    xmodmap ~/.Xmodmap;
+    sleep 2;
+done
