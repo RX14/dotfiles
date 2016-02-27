@@ -109,8 +109,6 @@ if [[ ! -z $DISPLAY && $XDG_VTNR -eq 1 ]] && mkdir /tmp/rx14startupstuff 2>/dev/
     antigen update
 fi
 
-[[ -s "/home/rx14/.gvm/bin/gvm-init.sh" ]] && source "/home/rx14/.gvm/bin/gvm-init.sh"
-
 export NVM_DIR="/home/rx14/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
