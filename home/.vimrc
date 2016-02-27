@@ -29,6 +29,7 @@ Plugin 'eagletmt/neco-ghc'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'lervag/vimtex'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'godlygeek/csapprox'
 
 call vundle#end()
 
@@ -81,6 +82,8 @@ autocmd Filetype yaml setlocal shiftwidth=2 softtabstop=2
 autocmd Filetype ruby setlocal shiftwidth=2 softtabstop=2
 
 set background=dark
+set t_Co=256
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 colorscheme base16-3024
 
 set number
@@ -130,4 +133,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <esc> :noh<return><esc>
+if has('gui_running')
+    nnoremap <silent><esc> :noh<return><esc>
+else
+    augroup no_highlight
+        autocmd TermResponse * nnoremap <esc> :noh<return><esc>
+    augroup END
+end
