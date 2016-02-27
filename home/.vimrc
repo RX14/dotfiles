@@ -6,7 +6,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'rhysd/vim-crystal'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -26,6 +27,8 @@ Plugin 'chaimleib/vim-renpy'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'lervag/vimtex'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
