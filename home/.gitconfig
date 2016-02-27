@@ -23,3 +23,9 @@
 	pushInsteadOf = https://github.com/
 [pull]
 	rebase = true
+
+[diff "zip"]
+	textconv = unzip -v
+
+[diff "bin"]
+	textconv = hexdump -v -C
