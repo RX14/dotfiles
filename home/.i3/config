@@ -67,10 +67,6 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+z workspace prev_on_output
-bindsym $mod+x workspace next_on_output
-bindsym $mod+c focus output right
-
 bindsym $mod+$mod2+Left workspace prev_on_output
 bindsym $mod+$mod2+Right workspace next_on_output
 bindsym $mod+$mod2+Down focus output right
@@ -138,8 +134,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym Print exec ~/bin/poomf -d
 bindsym Shift+Print exec ~/bin/poomf -a
 bindsym Ctrl+Print exec ~/bin/poomf -w
-bindsym Mod1+Print exec ~/bin/poomf -c
-bindsym Ctrl+Shift+Print exec ~/bin/poomf -f
+bindsym $mod+c exec ~/bin/poomf -c
+bindsym $mod+p exec ~/bin/poomf -f
 
 bindsym $mod+l exec ~/bin/lock
 
