@@ -21,3 +21,6 @@ export QT_STYLE_OVERRIDE="GTK+"
 
 gnupginf="${HOME}/.gpg-agent-info"
 [ -f $gnupginf ] && source $gnupginf
+
+SAVEHIST=1000000
+HISTSIZE=10000
