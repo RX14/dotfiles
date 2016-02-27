@@ -42,7 +42,6 @@ background synergy
 #background whatpulse
 background chromium --app='https://web.whatsapp.com/'
 background chromium --app='https://tweetdeck.twitter.com/'
-background chromium --app='https://trcommunity.slack.com/messages/?no_ls=1'
 background chromium --app='https://discordapp.com/channels/@me'
 
 sleep 2
