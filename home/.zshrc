@@ -118,3 +118,4 @@ eval "$(crenv init -)"
 [[ ! -d ~/.vim/bundle/Vundle.vim/ ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 source /home/rx14/.rvm/scripts/rvm
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
