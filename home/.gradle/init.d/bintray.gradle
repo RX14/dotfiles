@@ -1,7 +1,9 @@
 allprojects {
-    pluginManager.withPlugin("com.jfrog.bintray") {
-        bintray {
-            user = "rx14"
+    if (hasProperty("pluginManager")) {
+        pluginManager.withPlugin("com.jfrog.bintray") {
+            bintray {
+                user = "rx14"
+            }
         }
     }
 }
