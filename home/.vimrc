@@ -99,6 +99,8 @@ set noswapfile
 set guioptions-=m
 set guioptions-=T
 
+autocmd FileType tex,latex,markdown setlocal spell spelllang=en
+
 " Folding
 set foldcolumn=1
 au BufWinEnter * normal zR
