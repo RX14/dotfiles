@@ -1,0 +1,9 @@
+#!/bin/bash
+export GNUPGHOME="$XDG_CACHE_HOME/pacaur-gpg/"
+export AURDEST="$XDG_CACHE_HOME/pacaur"
+
+export BUILDDIR="/tmp/pacaur-build-$USER"
+export HOME="$BUILDDIR/pacaur-home"
+mkdir -p $HOME
+
+exec flock -s $BUILDDIR /usr/bin/pacaur "${@}"
