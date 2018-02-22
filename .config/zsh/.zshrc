@@ -25,6 +25,7 @@ source <(gr completion)
 
 ### ANTIGEN ###
 if [[ ! -d $ADOTDIR/source/ ]]; then
+    echo "Installing Antigen..."
     mkdir -p $ADOTDIR/source/
     git clone https://github.com/zsh-users/antigen.git $ADOTDIR/source/
 fi
@@ -105,4 +106,9 @@ if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/
         update
         background flock -x /tmp/pacaur-build-$USER rm -Rf /tmp/pacaur-build-$USER
     fi
+fi
+
+if [[ ! -d $HOME/.emacs.d ]]; then
+    echo "Installing Spacemacs..."
+    git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 fi
