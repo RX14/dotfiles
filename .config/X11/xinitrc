@@ -1,10 +1,11 @@
-killall gpg-agent
+#!/bin/bash
 
-[[ -s ~/.xrandrrc ]] && source ~/.xrandrrc
+dbus-update-activation-environment DISPLAY XAUTHORITY GTK2_RC_FILES
 
-[[ -s ~/.Xresources ]] && xrdb -merger ~/.Xresources
+[[ -f $XDG_CONFIG_HOME/X11/Xresources ]] && xrdb -merge -I$XDG_CONFIG_HOME/X11 $XDG_CONFIG_HOME/X11/Xresources
 
-xset -dpms
-xset s off
+xrandr --newmode "1920x1200" 193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync
+xrandr --addmode DP1 1920x1200
+$HOME/.local/bin/switch
 
-exec i3 2>&1 >> ~/.i3/log
+exec i3 # 2>&1 >> $XDG_DATA_HOME/i3/log

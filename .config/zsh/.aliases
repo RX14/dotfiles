@@ -1,68 +1,102 @@
 #!/bin/bash
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
-alias halt="sudo halt"
-alias poweroff="sudo poweroff"
-
-alias b="background"
 
 alias s="sudo"
+alias b="background"
 
-alias a="sudo apt"
-alias a-i="sudo apt install"
-alias a-u="sudo apt update"
-
-alias inst="yaourt -S"
+alias pacaur="nice -n 10 pacaur"
+alias inst="pacaur -S"
 
 alias prog="cd /data/programming"
 
-alias sc="systemctl"
-alias ssc="sudo systemctl"
+alias start="sudo systemctl start"
+alias stop="sudo systemctl stop"
+alias status="sudo systemctl status"
+alias restart="sudo systemctl restart"
+alias enable="sudo systemctl enable"
+alias disable="sudo systemctl disable"
 
-alias gvim='gvim --servername GVIM --remote-tab'
+alias ustart="systemctl --user start"
+alias ustop="systemctl --user stop"
+alias ustatus="systemctl --user status"
+alias urestart="systemctl --user restart"
+alias uenable="systemctl --user enable"
+alias udisable="systemctl --user disable"
 
-alias n='gvim'
-alias sn="sudo vim"
+alias e='emacsclient -n'
+alias ec='emacsclient -nc'
 
-alias gk='background gitkraken -p `pwd`'
+alias git=hub
 
-alias st='subl3'
-alias st.='st .'
+alias cwt="git worktree prune"
+twt() {
+    local branch="${2:-feature/$1}"
+    if git rev-parse --verify "$branch" >/dev/null 2>/dev/null; then
+        git worktree add /tmp/$1 "$branch"
+    else
+        git worktree add /tmp/$1 -b "$branch"
+    fi
+    cd /tmp/$1
+}
 
-eval "$(hub alias -s)"
-alias g='git'
-
-alias gg="background git gui"
-alias gu="echo '/bin/sh -c \"git stash; git pull; git stash pop\"'"
-
-alias idea="background intellij-idea-ultimate-edition"
-alias idea.="idea \`pwd\`"
-
-alias .X="xmodmap ~/.Xmodmap"
+alias .X="xmodmap ~/.config/X11/Xmodmap"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll="ls -laF"
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias nova='gr @NOVA'
-
-alias d='docker'
 alias dc='docker-compose'
 
+alias mpv-pl='mpv --no-resume-playback --profile=audio'
+function play() { 
+    local mpvargs=()
+    while [[ "$1" == "--"* ]]; do
+        mpvargs+="$1"
+        shift
+    done
+
+    local playlist=$1
+    shift
+
+    if [[ "$playlist" == "albums" ]]; then
+        while true; do
+            mpv-pl "${mpvargs[@]}" --no-shuffle --playlist=<(beet ls -ap "$@" | shuf)
+        done
+    elif [[ "$playlist" == "songs" ]]; then
+        mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p "$@")
+    elif [[ -f "/media/media/Music/Playlists/$playlist.url" ]]; then
+        mpv-pl $(cat "/media/media/Music/Playlists/$playlist.url") "$@"
+    elif [[ -f  "/media/media/Music/Playlists/$playlist.m3u" ]]; then
+        mpv-pl "/media/media/Music/Playlists/$playlist.m3u" "$@"
+    elif [[ -d "/media/media/Music/Playlists/$playlist" ]]; then
+        mpv-pl "/media/media/Music/Playlists/$playlist" "$@"
+    fi
+}
+
+alias fge='ssh soaryn flexget execute --no-cache'
+
+function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
+
+function update() {
+    pacaur -Syu --devel --needed --noconfirm
+    sudo pkgcacheclean -v 2
+
+    antigen selfupdate
+    antigen update
+}
+
+# THis is a function to avoid completion
+function dotfiles() {
+    git --git-dir=/data/programming/dotfiles/master/ --work-tree=/home/rx14 "${@}"
+}

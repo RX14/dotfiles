@@ -1,5 +1,1 @@
-source ~/.vimrc
-
-" ideavim pls
-iunmap <C-w>
-iunmap <C-BS>
+inoremap fd <ESC>

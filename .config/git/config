@@ -1,11 +1,12 @@
 [user]
 	name = RX14
 	email = chris@rx14.co.uk
+	signingkey = 665DEBD0
 [core]
 	autocrlf = false
 	filemode = false
 [push]
-	default = simple
+	default = current
 [color]
 	ui = auto
 [alias]
@@ -29,3 +30,11 @@
 
 [diff "bin"]
 	textconv = hexdump -v -C
+[rebase]
+	autoSquash = true
+[commit]
+	gpgsign = true
+[http "https://gopkg.in"]
+	followRedirects = true
+[mergetool "kdiff3NoAuto"]
+	cmd = kdiff3 --L1 \"$MERGED (Base)\" --L2 \"$MERGED (Local)\" --L3 \"$MERGED (Remote)\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"

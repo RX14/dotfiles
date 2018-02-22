@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEST_URL='https://aww.moe/upload.php' # could be http://pomf.se/upload.php
-OUTPUT_URL='https://aww.moe' # could be http://a.pomf.se
+# DEST_URL='https://aww.moe/upload.php?token=eT858gcUB2HagyRTwc5A'
+DEST_URL='https://mixtape.moe/upload.php'
 
 trim() {
     local orig="$1"
@@ -14,12 +14,6 @@ trim() {
         orig="$trmd"
     done
     printf -- '%s\n' "$trmd"
-}
-
-function jsonValue() {
-  KEY=$1
-  num=$2
-  awk -F"[,:}]" '{for(i=1;i<=NF;i++){if($i~/'$KEY'\042/){print $(i+1)}}}' | tr -d '"' | sed -n ${num}p
 }
 
 # Poomf for Ubuntu/linux
@@ -52,66 +46,66 @@ function jsonValue() {
 # Usage: poomfFile [fileName]
 function poomfFile ()
 {
-	if [ -z "$1" ]; then
-		echo "No file specified"
-		exit 1
-	elif [ ! -f "$1" ]; then
-		echo "poomf cancelled"
-		exit 1
-	fi
+    if [ -z "$1" ]; then
+        echo "No file specified"
+        exit 1
+    elif [ ! -f "$1" ]; then
+        echo "poomf cancelled"
+        exit 1
+    fi
 
-	file=$1
-	printf "Uploading ${file}..."
-	my_output=$(curl --silent -sf -F files[]="@${file}" "${DEST_URL}")
-	n=0  # Multipe tries
-	while [[ $n -le 3 ]]; do
-		printf "try #${n}..."
-                status="$(echo "$my_output" | jsonValue success)"
-		if [[ $status =~ 'true' ]]; then
-			return_file="$(echo "$my_output" | jsonValue url)"
-                        return_file="$(trim "$return_file")"
-			printf 'done.\n'
-			break
-		else
-			printf 'failed.\n'
-			((n = n +1))
-		fi
-	done
-	if [[ -n ${return_file} ]]; then
-		fileURL="${OUTPUT_URL}/${return_file}"
-                echo "Upload complete! $fileURL"
-		#Copy link to clipboard, show notification
-		if hash xclip 2>/dev/null; then
-			printf $fileURL | xclip -selection "clipboard"
-		fi
-		if hash notify-send 2>/dev/null; then
-			notify-send -i "$( cd "$( dirname "$0" )" && pwd )/icon.png" -t 2000 "poomf complete!" "$fileURL"
-		fi
-	else
-		echo "Upload failed."
-		if hash notify-send 2>/dev/null; then
-			notify-send -i "$( cd "$( dirname "$0" )" && pwd )/icon.png" -t 2000 "poomf failed!"
-		fi
-	fi
+    file=$1
+    printf "Uploading ${file}..."
+    n=0  # Multipe tries
+    while [[ $n -le 3 ]]; do
+        printf "try #${n}..."
+        my_output=$(curl --http1.1 -sf -F files[]="@${file}" "${DEST_URL}")
+        status="$(echo "$my_output" | jq -r .success)"
+        if [[ $status =~ 'true' ]]; then
+            return_file="$(echo "$my_output" | jq -r .files[0].url)"
+            return_file="$(trim "$return_file")"
+            printf 'done.\n'
+            break
+        else
+            printf 'failed.\n'
+            ((n = n +1))
+        fi
+    done
+    if [[ -n ${return_file} ]]; then
+        fileURL="${return_file}"
+        echo "Upload complete! $fileURL"
+        #Copy link to clipboard, show notification
+        if hash xclip 2>/dev/null; then
+            printf $fileURL | xclip -selection "clipboard"
+        fi
+        if hash notify-send 2>/dev/null; then
+            notify-send -i "$( cd "$( dirname "$0" )" && pwd )/icon.png" -t 2000 "poomf complete!" "$fileURL"
+        fi
+    else
+        echo "Upload failed."
+        if hash notify-send 2>/dev/null; then
+            notify-send -i "$( cd "$( dirname "$0" )" && pwd )/icon.png" -t 2000 "poomf failed!"
+        fi
+    fi
 }
 
 function helpText ()
 {
-  printf "_____________ poomf for linux _____________\n"
-  printf "Usage:\n"
-  printf "  poomf [OPTIONS] [PATH]\n"
-  printf "\n"
-  printf "OPTIONS:\n"
-  printf "  -d                 poomf entire desktop\n"
-  printf "  -a                 poomf selected area\n"
-  printf "  -w                 poomf current window\n"
-  printf "  -c                 poomf clipboard content\n"
-  printf "  -f                 poomf specific file (opens file dialog)\n"
-  printf "\n"
-  printf "  --help,-h          show this page\n"
-  printf "\n"
-  printf "PATH:\n"
-  printf "  PATH               optional: path of file to poomf\n"
+    printf "_____________ poomf for linux _____________\n"
+    printf "Usage:\n"
+    printf "  poomf [OPTIONS] [PATH]\n"
+    printf "\n"
+    printf "OPTIONS:\n"
+    printf "  -d                 poomf entire desktop\n"
+    printf "  -a                 poomf selected area\n"
+    printf "  -w                 poomf current window\n"
+    printf "  -c                 poomf clipboard content\n"
+    printf "  -f                 poomf specific file (opens file dialog)\n"
+    printf "\n"
+    printf "  --help,-h          show this page\n"
+    printf "\n"
+    printf "PATH:\n"
+    printf "  PATH               optional: path of file to poomf\n"
 }
 
 function generateFileName () { echo "/tmp/poomf-linux ($(date +"%Y-%m-%d at %I.%M.%S")).png"; }
@@ -120,62 +114,62 @@ function generateTextName () { echo "/tmp/poomf-linux ($(date +"%Y-%m-%d at %I.%
 
 
 if [ -z "$1" ]; then
-	echo "No file entered."
-	helpText
-  exit 1
+    echo "No file entered."
+    helpText
+    exit 1
 
 fi
 
 #Get file to poomf and poomf it
 case "$1" in
-	-d)
-		echo "Whole Desktop"
-			fileName=$(generateFileName)
-			gnome-screenshot -f "$fileName"
-			poomfFile "$fileName"
-		;;
+    -d)
+        echo "Whole Desktop"
+        fileName=$(generateFileName)
+        gnome-screenshot -f "$fileName"
+        poomfFile "$fileName"
+        ;;
 
-	-a)
-		echo "Area"
-			fileName=$(generateFileName)
-			gnome-screenshot -a -f "$fileName"
-			poomfFile "$fileName"
-		;;
+    -a)
+        echo "Area"
+        fileName=$(generateFileName)
+        gnome-screenshot -a -f "$fileName"
+        poomfFile "$fileName"
+        ;;
 
-	-w)
-		echo "Window"
-			fileName=$(generateFileName)
-			gnome-screenshot -w -f "$fileName"
-			poomfFile "$fileName"
-		;;
+    -w)
+        echo "Window"
+        fileName=$(generateFileName)
+        gnome-screenshot -w -f "$fileName"
+        poomfFile "$fileName"
+        ;;
 
-	-c)
-		echo "Clipboard upload"
-			content=`xclip -out -selection c`
-			if [ -f "$content" ]; then
-				poomfFile "$content"
-			else
-				fileName=$(generateTextName)
-				echo "$content" > "$fileName"
-				poomfFile "$fileName"
-			fi
-		;;
+    -c)
+        echo "Clipboard upload"
+        content=`xclip -out -selection c`
+        if [ -f "$content" ]; then
+            poomfFile "$content"
+        else
+            fileName=$(generateTextName)
+            echo "$content" > "$fileName"
+				    poomfFile "$fileName"
+			  fi
+		    ;;
 
-	-f)
-		echo "File Upload"
-			fileName=`zenity --file-selection`
-			poomfFile "$fileName"
-		;;
+	  -f)
+		    echo "File Upload"
+			  fileName=`zenity --file-selection`
+			  poomfFile "$fileName"
+		    ;;
 
-	-h|--help)
-		helpText
-		exit 0
-		;;
+	  -h|--help)
+		    helpText
+		    exit 0
+		    ;;
 
-	*)
-		echo "Upload $1"
-			poomfFile "$1"
-		;;
+	  *)
+		    echo "Upload $1"
+			  poomfFile "$1"
+		    ;;
 
 esac
 

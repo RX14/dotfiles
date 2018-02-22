@@ -1,5 +1,8 @@
 clear Lock
+clear mod4
+
 keycode 66 = Hyper_L
 add mod4 = Hyper_L
-!pointer = 3 2 1
+
+keycode 133 = backslash bar
 

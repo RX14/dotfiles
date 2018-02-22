@@ -1,4 +1,13 @@
 #!/bin/sh
+revert() {
+    $XDG_CONFIG_HOME/X11/dpms.sh
+}
+trap revert SIGHUP SIGINT SIGTERM
+
 sleep 0.2 # wait for keyup before running screensaver, otherwise dpms doesn't work
-i3lock -ndfc 000000
-xset -dpms
+xset +dpms dpms 5 5 5
+xset dpms force off
+
+i3lock -nfc 000000
+
+revert

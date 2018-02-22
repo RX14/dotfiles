@@ -1,4 +1,3 @@
-[[ -o login ]] && source ~/.zshenv # /etc/profile can override zshenv PATH
 ### COMPLETION ###
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' expand prefix suffix
@@ -16,38 +15,51 @@ zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' use-compctl true
-zstyle :compinstall filename '/home/rx14/.zshrc'
+zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 
 autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-. <(gr completion)
-
-source /etc/bash_completion.d/tugboat
+source <(gr completion)
 
 ### ANTIGEN ###
-[[ ! -d ~/.antigen/source/ ]] &&
-	mkdir -p ~/.antigen/source/ && git clone https://github.com/zsh-users/antigen.git ~/.antigen/source/
+if [[ ! -d $ADOTDIR/source/ ]]; then
+    mkdir -p $ADOTDIR/source/
+    git clone https://github.com/zsh-users/antigen.git $ADOTDIR/source/
+fi
 
-. ~/.antigen/source/antigen.zsh
+source $ADOTDIR/source/antigen.zsh
 
 antigen use oh-my-zsh
 
-BULLETTRAIN_PROMPT_CHAR="\$"
-
-BULLETTRAIN_TIME_SHOW=true
 BULLETTRAIN_TIME_12HR=true
 
-BULLETTRAIN_STATUS_EXIT_SHOW=true
-
-BULLETTRAIN_CONTEXT_SHOW=true
 BULLETTRAIN_CONTEXT_FG=red
-if [[ $(hostname) == "RX-MAIN1" ]]; then
-  BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
+if [[ $(hostname) == "thonk1.rx14.co.uk" ]]; then
+    BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
 fi
 
 BULLETTRAIN_DIR_EXTENDED=2
+
+BULLETTRAIN_PROMPT_ORDER=(
+    time
+    status
+    custom
+    context
+    dir
+    screen
+    perl
+    ruby
+    virtualenv
+    # nvm
+    aws
+    go
+    elixir
+    git
+    hg
+    cmd_exec_time
+)
 
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
@@ -77,47 +89,20 @@ EOBUNDLES
 
 antigen apply
 
+### OTHER ###
+
+source $ZDOTDIR/.aliases
+
 bindkey '^H' backward-kill-word
 bindkey "^Q" push-input
 setopt interactivecomments
 
-### ALIASES ###
-source ~/.aliases
+if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
+    read -r -k 1 "REPLY?:: Start update? [Y/n] "
+    echo
 
-### AGENTS ###
-function start-gpg-agent() {
-  if pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  else
-      gpg-agent -s --enable-ssh-support --daemon --log-file ~/.gnupg/gpg-agent.log > $gnupginf
-  fi
-  source $gnupginf
-}
-function gpg-reboot() { killall -9 -u "$USER" gpg-agent; start-gpg-agent }
-
-start-gpg-agent
-### OTHER ###
-
-[ -f /home/rx14/.travis/travis.sh ] && source /home/rx14/.travis/travis.sh
-
-export USE_CCACHE=1
-
-function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-if [[ ! -z $DISPLAY && $XDG_VTNR -eq 1 ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
-    yaourt -Syua
-    yaourt -Su --devel --noconfirm
-    sudo pkgcacheclean -v 2
-
-    antigen update
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        update
+        background flock -x /tmp/pacaur-build-$USER rm -Rf /tmp/pacaur-build-$USER
+    fi
 fi
-
-export NVM_DIR="/home/rx14/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[[ ! -d ~/.crenv/ ]] && curl -L https://raw.github.com/pine613/crenv/master/install.sh | CRENV_ROOT="$HOME/.crenv" bash
-eval "$(crenv init -)"
-
-[[ ! -d ~/.vim/bundle/Vundle.vim/ ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-source /home/rx14/.rvm/scripts/rvm
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
