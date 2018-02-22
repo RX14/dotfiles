@@ -104,7 +104,7 @@ if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         update
-        background flock -x /tmp/pacaur-build-$USER rm -Rf /tmp/pacaur-build-$USER
+        background flock -x /tmp/pacaur-build-$USER -c "rm -Rf /tmp/pacaur-build-$USER && cd $XDG_CACHE_HOME/pacaur && ls | grep -v -- '-git$' | parallel '(cd {}; git clean -fdx)'"
     fi
 fi
 
