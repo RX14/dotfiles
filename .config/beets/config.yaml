@@ -1,7 +1,7 @@
 directory: /media/media/Music
 library: /media/media/Music/beets.db
 
-plugins: lastgenre chroma fromfilename web duplicates replaygain smartplaylist scrub inline bpd convert edit
+plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit
 
 paths:
   default: '$albumartist/%if{$original_year,$original_year }$album%aunique{}/%if{$multidisc,Disc $disc/}%if{$track,$track }$artist - $album - $title'
@@ -22,12 +22,6 @@ acoustid:
 replaygain:
   backend: gstreamer
   # overwrite: yes
-
-smartplaylist:
-  playlist_dir: /media/media/Music/Playlists/
-  playlists:
-    - name: all.m3u
-      query: ''
 
 web:
   host: 0.0.0.0
