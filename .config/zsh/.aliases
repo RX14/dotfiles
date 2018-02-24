@@ -94,6 +94,9 @@ function update() {
 
     antigen selfupdate
     antigen update
+
+    echo "Pulling emacs crystal layer"
+    (cd ~/.emacs.d/private/crystal && git pull)
 }
 
 # THis is a function to avoid completion

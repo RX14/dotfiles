@@ -111,4 +111,5 @@ fi
 if [[ ! -d $HOME/.emacs.d ]]; then
     echo "Installing Spacemacs..."
     git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+    git clone https://github.com/brantou/spacemacs-crystal-layer ~/.emacs.d/private/crystal
 fi
