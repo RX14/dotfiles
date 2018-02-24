@@ -89,7 +89,7 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {
-    pacaur -Syu --devel --needed --noconfirm
+    pacaur -Syu --devel --needed --noconfirm --noedit
     sudo pkgcacheclean -v 2
 
     antigen selfupdate
