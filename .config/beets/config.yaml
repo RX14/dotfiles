@@ -1,5 +1,5 @@
 directory: /media/media/Music
-library: /media/media/Music/beets.db
+library: /data/beets.db
 
 plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit
 
