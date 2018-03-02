@@ -2,5 +2,6 @@ rofi.threads: 0
 rofi.modi: drun,window,run
 rofi.sidebar-mode: true
 rofi.matching: normal
+rofi.theme: ~/.config/rofi/material.rasi
 rofi.kb-mode-next: Tab
 rofi.kb-row-tab:
