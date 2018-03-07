@@ -85,6 +85,14 @@ values."
      groovy-mode
      editorconfig
      evil-smartparens
+     (crystal-mode :location (recipe
+                              :fetcher github
+                              :repo "crystal-lang-tools/emacs-crystal-mode"
+                              :branch "master"))
+     (smartparens :location (recipe
+                              :fetcher github
+                              :repo "Fuco1/smartparens"
+                              :branch "master"))
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
