@@ -113,3 +113,8 @@ if [[ ! -d $HOME/.emacs.d ]]; then
     git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
     git clone https://github.com/brantou/spacemacs-crystal-layer ~/.emacs.d/private/crystal
 fi
+
+if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
+    echo "Installing archlinux-update-modules..."
+    git clone https://github.com/t-wissmann/archlinux-update-modules $ZDOTDIR/archlinux-update-modules
+fi

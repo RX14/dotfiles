@@ -90,6 +90,7 @@ function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {
     pacaur -Syu --devel --needed --noconfirm --noedit
+    $ZDOTDIR/archlinux-update-modules/archlinux-update-modules --dont-ask
     sudo pkgcacheclean -v 2
 
     antigen selfupdate
