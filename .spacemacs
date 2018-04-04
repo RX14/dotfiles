@@ -85,7 +85,7 @@ values."
      ;;                       :repo "w-vi/apib-mode"))
      groovy-mode
      editorconfig
-     evil-smartparens
+     ;; evil-smartparens
      (crystal-mode :location (recipe
                               :fetcher github
                               :repo "crystal-lang-tools/emacs-crystal-mode"
