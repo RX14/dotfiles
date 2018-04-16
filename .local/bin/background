@@ -1,2 +1,2 @@
-#!/bin/bash
-screen -dmS DISPLAY=:0 "$@"
+#!/bin/sh
+nohup "$@" >/dev/null 2>/dev/null & disown

@@ -1,5 +1,0 @@
-#!/bin/bash
-until wmctrl -l | grep -q "$1"; do
-    sleep 0.5
-done
-sleep 0.1

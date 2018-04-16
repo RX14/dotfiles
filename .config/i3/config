@@ -11,20 +11,20 @@
 
 set $mod Mod4
 
-set $mon1 eDP1
-set $mon2 HDMI1
-set $mon3 DP1
+set $mon1 HDMI1
+set $mon2 DP1
+set $mon3 eDP1
 
 set $ws1 "1: web1"
 set $ws2 "2: dev1"
-set $ws3 "3: comms"
-set $ws4 4
-set $ws5 "5: web2"
-set $ws6 "6: dev2"
-set $ws7 7
+set $ws3 "3: other1"
+set $ws4 "4: web2"
+set $ws5 "5: dev2"
+set $ws6 "6: other2"
+set $ws7 "7: music"
 set $ws8 "8: web3"
 set $ws9 "9: dev3"
-set $ws10 "10: other"
+set $ws10 "10: comms"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -185,7 +185,7 @@ bindsym $mod+r mode "resize"
 bar {
     id bar-1
     output $mon1
-    tray_output $mon1
+    tray_output none
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     modifier $mod
@@ -206,7 +206,7 @@ bar {
     output $mon2
     tray_output none
 
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks-small.conf
     modifier $mod
 
     colors {
@@ -223,9 +223,9 @@ bar {
 bar {
     id bar-3
     output $mon3
-    tray_output none
+    tray_output $mon3
 
-    status_command i3blocks -c ~/.config/i3/i3blocks-small.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     modifier $mod
 
     colors {
@@ -249,19 +249,17 @@ for_window [class="kruler"] floating enable
 for_window [class="qemu-system.*"] floating enable
 for_window [class="Pinentry"] floating enable
 
-assign [class="Steam"] $ws10
-
-assign [class="Thunderbird"] $ws3
-assign [class="Hexchat"] $ws3
-assign [class="discord"] $ws3
+assign [class="Thunderbird"] $ws10
+assign [class="Hexchat"] $ws10
+assign [class="discord"] $ws10
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
 workspace $ws3 output $mon1
-
+workspace $ws4 output $mon2
 workspace $ws5 output $mon2
 workspace $ws6 output $mon2
-
+workspace $ws7 output $mon2
 workspace $ws8 output $mon3
 workspace $ws9 output $mon3
 workspace $ws10 output $mon3
