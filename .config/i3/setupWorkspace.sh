@@ -34,7 +34,7 @@ block_until_gui_launched terminology
 sleep 1
 i3-msg '[class="terminology"] move container to workspace "2: dev1"'
 
-if has_monitor HDMI1; then
+if has_monitor DP1-1; then
     i3-msg 'workspace "4: web2"'
     block_until_gui_launched firefox
 
