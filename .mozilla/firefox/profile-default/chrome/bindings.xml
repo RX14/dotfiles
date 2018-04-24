@@ -8,9 +8,9 @@
                 if (event.metaKey) return;
 
                 if (event.deltaY < 0) {
-                    gBrowser.tabContainer.advanceSelectedTab(-1, true);
+                    gBrowser.tabContainer.advanceSelectedTab(-1, false);
                 } else {
-                    gBrowser.tabContainer.advanceSelectedTab(1, true);
+                    gBrowser.tabContainer.advanceSelectedTab(1, false);
                 }
 
                 event.stopPropagation();
