@@ -390,6 +390,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
    ;; (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
    (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+
+   (add-hook 'before-save-hook (lambda () (when (eq major-mode 'crystal-mode) (crystal-tool-format))))
    )
   )
 
