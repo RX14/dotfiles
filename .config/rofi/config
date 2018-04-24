@@ -1,5 +1,5 @@
 rofi.threads: 0
-rofi.modi: drun,window,run
+rofi.modi: drun,clipmenu:env CM_LAUNCHER=rofi-script clipmenu,window,run
 rofi.sidebar-mode: true
 rofi.matching: normal
 rofi.theme: ~/.config/rofi/material.rasi
