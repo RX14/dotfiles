@@ -8,7 +8,7 @@ sleep 0.2 # wait for keyup before running screensaver, otherwise dpms doesn't wo
 xset +dpms dpms 5 5 5
 xset dpms force off
 
-if xrandr | grep -q 'HDMI1 connected'; then
+if xrandr | grep -q 'DP1-1 connected'; then
     i3lock --nofork --show-failed-attempts --color 000000
 else
     i3lock --nofork --show-failed-attempts --image ~/.config/i3/lockscreen.png
