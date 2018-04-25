@@ -5,6 +5,7 @@
 [core]
 	autocrlf = false
 	filemode = false
+	pager = less -iXFR
 [push]
 	default = current
 [color]
