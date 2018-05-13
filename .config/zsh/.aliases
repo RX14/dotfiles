@@ -10,6 +10,8 @@ alias inst="pacaur -S"
 
 alias prog="cd /data/programming"
 
+alias fork="background terminology"
+
 alias start="sudo systemctl start"
 alias stop="sudo systemctl stop"
 alias status="sudo systemctl status"
