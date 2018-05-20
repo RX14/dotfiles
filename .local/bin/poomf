@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_KEY=$(cat $XDG_CONFIG_HOME/owo.key)
+API_KEY=$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/owo.key)
 DEST_URL="https://api.awau.moe/upload/pomf?key=${API_KEY}"
 BASE_URL="https://owo.sh"
 
