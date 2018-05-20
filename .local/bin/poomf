@@ -1,20 +1,8 @@
 #!/bin/bash
 
-# DEST_URL='https://aww.moe/upload.php?token=eT858gcUB2HagyRTwc5A'
-DEST_URL='https://mixtape.moe/upload.php'
-
-trim() {
-    local orig="$1"
-    local trmd=""
-    while true;
-    do
-        trmd="${orig#[[:space:]]}"
-        trmd="${trmd%[[:space:]]}"
-        test "$trmd" = "$orig" && break
-        orig="$trmd"
-    done
-    printf -- '%s\n' "$trmd"
-}
+API_KEY=$(cat $XDG_CONFIG_HOME/owo.key)
+DEST_URL="https://api.awau.moe/upload/pomf?key=${API_KEY}"
+BASE_URL="https://owo.sh"
 
 # Poomf for Ubuntu/linux
 # Owner : Max Gurela
@@ -31,12 +19,12 @@ trim() {
 # - Place this file wherever you want (/usr/local/bin)
 # - Set up keyboard shortcuts within linux (in Ubuntu it's system settings > keyboard > keyboard shortcuts > custom shortcuts)
 #
-# 		command			description		(recommended keyboard shortcut)
-#		---------------------------------------------------------------
-#		poomf -c		upload window		(Ctrl + Shift + 2/@)
-#		poomf -a		upload desktop	(Ctrl + Shift + 3/#)
-#		poomf -b		upload clipping	(Ctrl + Shift + 4/$)
-#		poomf -d		upload file			(Ctrl + Shift + U)
+#     command      description    (recommended keyboard shortcut)
+#    ---------------------------------------------------------------
+#    poomf -c    upload window    (Ctrl + Shift + 2/@)
+#    poomf -a    upload desktop  (Ctrl + Shift + 3/#)
+#    poomf -b    upload clipping  (Ctrl + Shift + 4/$)
+#    poomf -d    upload file      (Ctrl + Shift + U)
 #
 #
 # Notes:
@@ -63,7 +51,6 @@ function poomfFile ()
         status="$(echo "$my_output" | jq -r .success)"
         if [[ $status =~ 'true' ]]; then
             return_file="$(echo "$my_output" | jq -r .files[0].url)"
-            return_file="$(trim "$return_file")"
             printf 'done.\n'
             break
         else
@@ -72,7 +59,7 @@ function poomfFile ()
         fi
     done
     if [[ -n ${return_file} ]]; then
-        fileURL="${return_file}"
+        fileURL="${BASE_URL}/${return_file}"
         echo "Upload complete! $fileURL"
         #Copy link to clipboard, show notification
         if hash xclip 2>/dev/null; then
@@ -151,25 +138,24 @@ case "$1" in
         else
             fileName=$(generateTextName)
             echo "$content" > "$fileName"
-				    poomfFile "$fileName"
-			  fi
-		    ;;
+            poomfFile "$fileName"
+        fi
+        ;;
 
-	  -f)
-		    echo "File Upload"
-			  fileName=`zenity --file-selection`
-			  poomfFile "$fileName"
-		    ;;
+    -f)
+        echo "File Upload"
+        fileName=`zenity --file-selection`
+        poomfFile "$fileName"
+        ;;
 
-	  -h|--help)
-		    helpText
-		    exit 0
-		    ;;
+    -h|--help)
+        helpText
+        exit 0
+        ;;
 
-	  *)
-		    echo "Upload $1"
-			  poomfFile "$1"
-		    ;;
-
+    *)
+        echo "Upload $1"
+        poomfFile "$1"
+        ;;
 esac
 
