@@ -119,7 +119,7 @@ case "$1" in
     -a)
         echo "Area"
         fileName=$(generateFileName)
-        maim -s "$fileName"
+        maim -s -t 0 "$fileName"
         poomfFile "$fileName"
         ;;
 
