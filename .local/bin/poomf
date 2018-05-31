@@ -112,21 +112,21 @@ case "$1" in
     -d)
         echo "Whole Desktop"
         fileName=$(generateFileName)
-        gnome-screenshot -f "$fileName"
+        maim "$fileName"
         poomfFile "$fileName"
         ;;
 
     -a)
         echo "Area"
         fileName=$(generateFileName)
-        gnome-screenshot -a -f "$fileName"
+        maim -s "$fileName"
         poomfFile "$fileName"
         ;;
 
     -w)
         echo "Window"
         fileName=$(generateFileName)
-        gnome-screenshot -w -f "$fileName"
+        maim -i $(xdotool getactivewindow) "$fileName"
         poomfFile "$fileName"
         ;;
 
