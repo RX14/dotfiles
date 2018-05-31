@@ -1,5 +1,5 @@
 __module_name__ = "Bridge Bot Integration"
-__module_version__ = "1.9R"
+__module_version__ = "1.11R"
 __module_description__ = "Integrates messages from IRC Bridge Bots - Vex Edition"
 __author__ = "Michiyo, gamax92, Vexatos"
 
@@ -9,9 +9,11 @@ hexchat.emit_print("Generic Message", "Loading", "{} {} - {}".format(
                    __module_description__))
 
 
+types = ["<>", "()", ":"]
 
 ignorelist = {}
 botlist = {}
+typelist = {}
 
 userlist = {}
 
@@ -20,25 +22,31 @@ def getusers(channel):
 
 def adduser(channel, user):
     users = getusers(channel)
-    if not user in users:
-        users.append(user)
+    if user in users:
+        users.insert(0, users.pop(users.index(user)))
+    else:
+        users.insert(0, user)
         #hexchat.command('RECV :{3}{0}!~{1}@bridgebot.py JOIN :{2}'.format(user, bot, channel, botprefix))
 
 def loadlist():
     global ignorelist
     global botlist
+    global typelist
     try:
         ignorelist = eval(hexchat.get_pluginpref('ignorelist'))
         botlist = eval(hexchat.get_pluginpref('botlist'))
+        typelist = eval(hexchat.get_pluginpref('typelist'))
     except Exception as e:
         hexchat.prnt(str(e))
 
 def savelist():
     global ignorelist
     global botlist
+    global typelist
     ignorelist = list(filter(None, ignorelist))
     hexchat.set_pluginpref('ignorelist', str(ignorelist))
     hexchat.set_pluginpref('botlist', str(botlist))
+    hexchat.set_pluginpref('typelist', str(typelist))
     loadlist()
     printlist()
 
@@ -48,6 +56,7 @@ def nested(x, ys):
 def privmsg(word, word_eol, userdata, attrs):
     global ignorelist
     global botlist
+    global typelist
     def send(*args, **kwargs):
         if attrs.time:
             kwargs.setdefault("time", attrs.time)
@@ -61,6 +70,9 @@ def privmsg(word, word_eol, userdata, attrs):
     bnick, _, bhost = split_prefix(bprefix)
     for key in botlist:
         if bnick.lower() == key.lower():
+            nicktype = ""
+            if key in typelist:
+                nicktype = typelist[key]
             channel = word[2]
             nick = hexchat.strip(word[3][1:])
             for iggynick in ignorelist:
@@ -76,7 +88,7 @@ def privmsg(word, word_eol, userdata, attrs):
                 else:
                     send("Channel Action", hexchat.strip(word[4]), word_eol[5] if len(word_eol) >= 6 else "", botlist[key])
                     hexchat.command('gui color 2')
-            elif nick[0] == '<':
+            elif nick[0] == '<' and (not nicktype or nicktype == "<>"):
                 found = False
                 if nick[-1] == '>':
                     found = True
@@ -97,7 +109,7 @@ def privmsg(word, word_eol, userdata, attrs):
                 else:
                     send("Channel Message", nick[1:-1], word_eol[4] if len(word_eol) >= 5 else "", botlist[key])
                     hexchat.command('gui color 2')
-            elif nick[0] == '(':
+            elif nick[0] == '(' and (not nicktype or nicktype == "()"):
                 found = False
                 if nick[-1] == ')':
                     found = True
@@ -118,6 +130,8 @@ def privmsg(word, word_eol, userdata, attrs):
                 else:
                     send("Channel Message", nick[1:-1], word_eol[4] if len(word_eol) >= 5 else "", botlist[key])
                     hexchat.command('gui color 2')
+            elif nicktype and nicktype != ":":
+                return hexchat.EAT_NONE
             else:
                 found = False
                 if nick[-1] == ':':
@@ -171,18 +185,26 @@ def addignore(word, word_eol, userdata):
 
 def addbot(word, word_eol, userdata):
     global botlist
-    if len(word) != 3:
-        hexchat.prnt("Syntax is /addbot botnick prefix: /addbot Corded ^")
+    global typelist
+    if len(word) < 3 or len(word) > 4 or (len(word) == 4 and not word[3] in types):
+        hexchat.prnt("Syntax is /addbot botnick prefix [type]: /addbot Corded ^")
+        hexchat.prnt("Types are: <> () :")
         return hexchat.EAT_ALL
     botlist.update({word[1]:word[2]})
-    hexchat.prnt("Added " + word[1] + " to your bot list with prefix " + word[2] + ".")
+    if len(word) == 4 and word[3] in types:
+        typelist.update({word[1]:word[3]})
+        hexchat.prnt("Added " + word[1] + " to your bot list with prefix " + word[2] + " at type " + word[3] + ".")
+    else:
+        hexchat.prnt("Added " + word[1] + " to your bot list with prefix " + word[2] + ".")
     savelist()
     return hexchat.EAT_ALL
 
 def delbot(word, word_eol, userdata):
     global botlist
+    global typelist
     try:
         botlist.pop(word[1], None)
+        typelist.pop(word[1], None)
         hexchat.prnt("Removed " + word[1] + " from your bot list.")
         savelist()
     except: pass
@@ -262,7 +284,10 @@ def check_completion(word, word_eol, userdata):
                     return hexchat.EAT_NONE
                 cycle = 0
                 matching = []
-                for nick in getusers(channel.channel):
+                users = getusers(channel.channel)
+                if hexchat.get_prefs("completion_sort") != 1:
+                    users.sort()
+                for nick in users:
                     if nick.lower().startswith(nickname.lower()):
                         matching.append(re.sub("[\u200b]", "", nick))
             if not len(matching):
