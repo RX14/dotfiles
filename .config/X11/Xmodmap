@@ -3,6 +3,3 @@ clear mod4
 
 keycode 66 = Hyper_L
 add mod4 = Hyper_L
-
-keycode 133 = backslash bar
-
