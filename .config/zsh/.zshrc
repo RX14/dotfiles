@@ -115,3 +115,5 @@ if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
     echo "Installing archlinux-update-modules..."
     git clone https://github.com/t-wissmann/archlinux-update-modules $ZDOTDIR/archlinux-update-modules
 fi
+
+[[ ! -d $XDG_DATA_HOME/zsh ]] && mkdir -p $XDG_DATA_HOME/zsh
