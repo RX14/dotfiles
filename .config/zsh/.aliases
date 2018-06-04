@@ -102,7 +102,13 @@ function update() {
     (cd ~/.emacs.d/private/crystal && git pull)
 }
 
-# THis is a function to avoid completion
+# This is a function to avoid completion
 function dotfiles() {
-    git --git-dir=/data/programming/dotfiles/master/ --work-tree=/home/rx14 "${@}"
+    if [ -d ~/.local/share/dotfiles ]; then
+        local dotfiles_dir=$HOME/.local/share/dotfiles
+    else
+        local dotfiles_dir=/data/programming/dotfiles/master
+    fi
+
+    git --git-dir="$dotfiles_dir" --work-tree=/home/rx14 "${@}"
 }
