@@ -21,7 +21,9 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-source <(gr completion)
+if which gr; then
+    source <(gr completion)
+fi
 
 ### ANTIGEN ###
 if [[ ! -d $ADOTDIR/source/ ]]; then
