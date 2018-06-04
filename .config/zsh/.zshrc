@@ -21,7 +21,7 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-if which gr; then
+if which gr >/dev/null; then
     source <(gr completion)
 fi
 
