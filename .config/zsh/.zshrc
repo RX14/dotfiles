@@ -117,3 +117,6 @@ if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
 fi
 
 [[ ! -d $XDG_DATA_HOME/zsh ]] && mkdir -p $XDG_DATA_HOME/zsh
+
+# Set $? to 0 so the prompt doesn't show a failure on startup
+true
