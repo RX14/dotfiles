@@ -6,7 +6,11 @@ alias s="sudo"
 alias b="background"
 
 alias pacaur="nice -n 10 pacaur"
-alias inst="pacaur -S"
+if which pacaur >/dev/null; then
+    alias inst="pacaur -S"
+else
+    alias inst="sudo pacman -S"
+fi
 
 alias prog="cd /data/programming"
 
