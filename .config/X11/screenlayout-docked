@@ -1,3 +1,3 @@
 #!/bin/sh
 xrandr --dpi 120 --output eDP1 --primary --mode 1920x1080 --pos 0x1064 --rotate normal --output DP1-1 --mode 2048x1152 --pos 1920x580 --rotate normal --output DP1-2 --off
-xrandr --dpi 120 --output eDP1 --primary --mode 1920x1080 --pos 0x1064 --rotate normal --output DP1-1 --mode 2048x1152 --pos 1920x580 --rotate normal --output DP1-2 --mode 1920x1200 --pos 3968x0 --rotate left
+xrandr --dpi 120 --output eDP1 --primary --mode 1920x1080 --pos 0x1064 --rotate normal --output DP1-1 --mode 2048x1152 --pos 1920x380 --rotate normal --output DP1-2 --mode 1920x1200 --pos 3968x0 --rotate left
