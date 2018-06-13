@@ -22,7 +22,7 @@ compinit
 bashcompinit
 
 if which gr >/dev/null; then
-    source <(gr completion)
+#    source <(gr completion)
 fi
 
 ### ANTIGEN ###
@@ -107,8 +107,7 @@ fi
 
 if [[ ! -d $HOME/.emacs.d ]]; then
     echo "Installing Spacemacs..."
-    git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
-    git clone https://github.com/brantou/spacemacs-crystal-layer ~/.emacs.d/private/crystal
+    git clone -b develop https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 fi
 
 if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
