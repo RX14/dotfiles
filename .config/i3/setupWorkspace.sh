@@ -23,7 +23,7 @@ background thunderbird
 background hexchat
 background emacs --daemon
 background dunst
-background clipmenud
+# background clipmenud
 
 i3-msg 'workspace "1: web1"'
 block_until_gui_launched firefox
