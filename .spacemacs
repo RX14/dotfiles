@@ -64,7 +64,8 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      version-control
-     crystal
+     (crystal :variables
+              crystal-enable-auto-format t)
      docker
      (shell :variables
             shell-default-shell 'eshell
@@ -490,8 +491,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
                        :front "^```(cr|crystal)[\n\r]+"
                        :back "^```$")))
    (mmm-add-mode-ext-class 'markdown-mode nil 'markdown-crystal)
-
-   (add-hook 'before-save-hook (lambda () (when (eq major-mode 'crystal-mode) (crystal-tool-format))))
 
    (spacemacs|do-after-display-system-init
     (spacemacs-modeline/init-spaceline))
