@@ -9,7 +9,7 @@
 
                 if (event.deltaY < 0) {
                     gBrowser.tabContainer.advanceSelectedTab(-1, false);
-                } else {
+                } else if (event.deltaY > 0) {
                     gBrowser.tabContainer.advanceSelectedTab(1, false);
                 }
 
