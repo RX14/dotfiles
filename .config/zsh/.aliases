@@ -113,3 +113,9 @@ function dotfiles() {
 
     git --git-dir="$dotfiles_dir" --work-tree=/home/rx14 "${@}"
 }
+
+function gwt() {
+    cdpath=$(~/.local/bin/gwt ${@}) || return $?
+    test -n "$cdpath" && cd "$cdpath"
+    return 0
+}
