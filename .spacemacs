@@ -465,6 +465,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
     ;; Scrolling config
     mouse-wheel-scroll-amount '(2 ((shift) . 1))
+    mouse-wheel-progressive-speed nil
     mouse-wheel-follow-mouse 't
     scroll-step 1
     redisplay-dont-pause t
