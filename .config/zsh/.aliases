@@ -35,6 +35,9 @@ alias ec='emacsclient -nc'
 
 alias git=hub
 
+alias cat=bat
+alias pping='prettyping --nolegend'
+
 alias cwt="git worktree prune"
 twt() {
     local branch="${2:-feature/$1}"
