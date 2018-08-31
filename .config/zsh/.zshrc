@@ -115,6 +115,9 @@ if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
     git clone https://github.com/t-wissmann/archlinux-update-modules $ZDOTDIR/archlinux-update-modules
 fi
 
+[[ -e /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+[[ -e /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
+
 [[ ! -d $XDG_DATA_HOME/zsh ]] && mkdir -p $XDG_DATA_HOME/zsh
 
 # Set $? to 0 so the prompt doesn't show a failure on startup
