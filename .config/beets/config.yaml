@@ -1,7 +1,7 @@
 directory: /media/media/Music
 library: /data/beets.db
 
-plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit
+plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit mbsync
 
 paths:
   default: '$albumartist/%if{$original_year,$original_year }$album%aunique{}/%if{$multidisc,Disc $disc/}%if{$track,$track }$artist - $album - $title'
