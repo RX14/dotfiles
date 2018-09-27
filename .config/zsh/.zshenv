@@ -59,6 +59,9 @@ export QT_STYLE_OVERRIDE="GTK2"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export ELM_SCALE=1.25
 
+export BAT_STYLE=plain
+export BAT_PAGER=
+
 export MPW_FULLNAME='Christopher John Hobbs'
 
 # export MOZ_USE_XINPUT2=1
