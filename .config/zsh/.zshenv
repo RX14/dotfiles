@@ -52,7 +52,12 @@ setopt INC_APPEND_HISTORY
 
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 
-export EDITOR="emacsclient -c"
+if [[ -n "$DISPLAY" ]]; then
+    export EDITOR="emacsclient -c"
+else
+    export EDITOR="vim"
+fi
+
 export TERMINAL="terminology"
 
 export QT_STYLE_OVERRIDE="GTK2"
