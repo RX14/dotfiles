@@ -30,8 +30,11 @@ alias urestart="systemctl --user restart"
 alias uenable="systemctl --user enable"
 alias udisable="systemctl --user disable"
 
-alias e='emacsclient -n'
-alias ec='emacsclient -nc'
+if [[ -n "$DISPLAY" ]]; then
+    alias ec='emacsclient -nc'
+else
+    alias ec='vim'
+fi
 
 alias git=hub
 
