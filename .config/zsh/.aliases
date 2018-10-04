@@ -38,7 +38,12 @@ fi
 
 alias git=hub
 
-alias cat=bat
+if which bat >/dev/null; then
+    alias cat=bat
+else
+    echo "Install bat!"
+fi
+
 alias pping='prettyping --nolegend'
 
 alias cwt="git worktree prune"
