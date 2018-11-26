@@ -17,7 +17,7 @@ has_monitor() {
     xrandr | grep -q "$1 connected"
 }
 
-amixer set Master 30%
+amixer set Master 34%
 
 background thunderbird
 background hexchat
