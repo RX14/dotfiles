@@ -99,6 +99,13 @@ function play() {
     fi
 }
 
+function mpv-gjm() {
+    local filename="$1"
+
+    mpv "$filename" --sub-file <(mkvextract -r /dev/stderr "$filename" tracks 2:/dev/stdout | sed 's/sparky/biribiri/; s/Sparky/Biribiri/; s/milady/onee-sama/; s/Milady/Onee-sama/')
+}
+
+
 alias fge='ssh soaryn flexget execute --no-cache'
 
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
