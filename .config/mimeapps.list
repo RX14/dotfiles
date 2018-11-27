@@ -31,3 +31,4 @@ message/rfc822=thunderbird.desktop;
 image/png=feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
 text/plain=emacs.desktop;
+image/jpeg=feh.desktop;
