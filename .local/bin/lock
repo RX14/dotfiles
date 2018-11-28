@@ -11,7 +11,7 @@ xset dpms force off
 if xrandr | grep -q 'DP1-1 connected'; then
     i3lock --nofork --show-failed-attempts --color 000000
 else
-    i3lock --nofork --show-failed-attempts --image ~/.config/i3/lockscreen.png
+    i3lock --nofork --show-failed-attempts --image $(find ~/.config/i3/lockscreens -type f | shuf -n 1)
 fi
 
 revert
