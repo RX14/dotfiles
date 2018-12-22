@@ -1,6 +1,7 @@
 #!/bin/bash
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
+alias suspend="systemctl suspend"
 
 alias s="sudo"
 alias b="background"
