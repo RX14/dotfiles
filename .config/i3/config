@@ -11,7 +11,7 @@
 
 set $mod Mod4
 
-set $mon1 DP1-1
+set $mon1 DP1
 set $mon2 DP1-2
 set $mon3 eDP1
 

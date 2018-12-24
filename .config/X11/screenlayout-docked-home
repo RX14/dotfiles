@@ -1,0 +1,4 @@
+#!/bin/sh
+xrandr --newmode "2048x1152"  197.97  2048 2184 2408 2768  1152 1153 1156 1192  -hSync +vsync
+xrandr --addmode DP1 2048x1152
+xrandr --output eDP1 --mode 1920x1080 --pos 0x792 --rotate normal --output DP1 --primary --mode 2048x1152 --pos 1920x0 --rotate normal
