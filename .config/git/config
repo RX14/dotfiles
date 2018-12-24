@@ -5,7 +5,7 @@
 [core]
 	autocrlf = false
 	filemode = false
-	pager = less -iXFR
+	pager = diff-so-fancy | less --tabs=4 -iXFR
 [push]
 	default = current
 [color]
@@ -41,3 +41,15 @@
 	cmd = kdiff3 --L1 \"$MERGED (Base)\" --L2 \"$MERGED (Local)\" --L3 \"$MERGED (Remote)\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [github]
 	user = RX14
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
