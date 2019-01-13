@@ -10,11 +10,11 @@ paths:
 
 import:
   languages: en
+  timid: yes
 
 item_fields:
   multidisc: 1 if disctotal > 1 else 0
 
-timid: yes
 
 acoustid:
   apikey: ITwDyyiq
