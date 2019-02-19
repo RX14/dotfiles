@@ -16,6 +16,7 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CCACHE_DIR="$XDG_CACHE_HOME"/ccache
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export DISTCC_DIR="$XDG_CACHE_HOME"/distcc
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
@@ -39,7 +40,6 @@ export bower_storage__links="$XDG_DATA_HOME"/bower/links
 export bower_storage__packages="$XDG_DATA_HOME"/bower/packages
 export bower_storage__registry="$XDG_DATA_HOME"/bower/registry
 export npm_config_devdir="$XDG_CACHE_HOME"/node-gyp
-
 
 # ZSH History
 
