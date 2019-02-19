@@ -39,6 +39,8 @@ fi
 
 alias git=hub
 
+alias aoe="zathura /data/bible.pdf &!"
+
 if which bat >/dev/null; then
     alias cat=bat
 else
