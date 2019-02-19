@@ -6,9 +6,9 @@ alias suspend="systemctl suspend"
 alias s="sudo"
 alias b="background"
 
-if [ -e /usr/bin/pacaur ]; then
-    alias pacaur="nice -n 10 pacaur"
-    alias inst="pacaur -S"
+if [ -e /usr/bin/yay ]; then
+    alias yay="nice -n 10 yay"
+    alias inst="yay -S"
 else
     alias inst="sudo pacman -S"
 fi
@@ -116,7 +116,8 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {
-    pacaur -Syu --devel --needed --noconfirm --noedit
+    yay -Syu --devel --noconfirm
+    yay -Sc --aur --noconfirm
     $ZDOTDIR/archlinux-update-modules/archlinux-update-modules --dont-ask
     sudo pkgcacheclean -v 2
 

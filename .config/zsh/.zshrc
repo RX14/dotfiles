@@ -99,9 +99,8 @@ if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/
     read -r -k 1 "REPLY?:: Start update? [Y/n] "
     echo
 
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if echo -n "$REPLY" | grep -Pzq '^[Yy\n]$'; then
         time update
-        background flock -x /tmp/pacaur-build-$USER -c "rm -Rf /tmp/pacaur-build-$USER && cd $XDG_CACHE_HOME/pacaur && ls | grep -v -- '-git$' | parallel '(cd {}; git clean -fdx)'"
     fi
 fi
 
