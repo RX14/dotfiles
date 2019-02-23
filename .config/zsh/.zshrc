@@ -39,7 +39,7 @@ antigen use oh-my-zsh
 BULLETTRAIN_TIME_12HR=true
 
 BULLETTRAIN_CONTEXT_FG=red
-if [[ $(hostname) == "thonk1.rx14.co.uk" ]]; then
+if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
 fi
 
