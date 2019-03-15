@@ -182,8 +182,7 @@ exec {
 
   dino
   hexchat
-  thunderbird
-
+  thunderbird-nightly
 }
 
 bar status_command i3blocks -c ~/.config/i3/i3blocks.conf
