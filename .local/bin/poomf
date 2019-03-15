@@ -62,8 +62,9 @@ function poomfFile ()
         fileURL="${BASE_URL}/${return_file}"
         echo "Upload complete! $fileURL"
         #Copy link to clipboard, show notification
-        if hash xclip 2>/dev/null; then
-            printf $fileURL | xclip -selection "clipboard"
+        if hash wl-copy 2>/dev/null; then
+            printf $fileURL | wl-copy
+            printf $fileURL | wl-copy -p
         fi
         if hash notify-send 2>/dev/null; then
             notify-send -i "$( cd "$( dirname "$0" )" && pwd )/icon.png" -t 2000 "poomf complete!" "$fileURL"
@@ -112,27 +113,27 @@ case "$1" in
     -d)
         echo "Whole Desktop"
         fileName=$(generateFileName)
-        maim "$fileName"
+        grim "$fileName"
         poomfFile "$fileName"
         ;;
 
     -a)
         echo "Area"
         fileName=$(generateFileName)
-        maim -s -t 0 "$fileName"
+        grim -g "$(slurp)" "$fileName"
         poomfFile "$fileName"
         ;;
 
     -w)
         echo "Window"
         fileName=$(generateFileName)
-        maim -i $(xdotool getactivewindow) "$fileName"
+        grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused? == true).rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$fileName"
         poomfFile "$fileName"
         ;;
 
     -c)
         echo "Clipboard upload"
-        content=`xclip -out -selection c`
+        content=`wl-paste`
         if [ -f "$content" ]; then
             poomfFile "$content"
         else
