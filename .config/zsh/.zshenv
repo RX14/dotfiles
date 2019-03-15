@@ -49,6 +49,7 @@ setopt INC_APPEND_HISTORY
 # Misc
 
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 if [[ -n "$DISPLAY" ]]; then
     export EDITOR="emacsclient -c"
