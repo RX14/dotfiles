@@ -57,7 +57,6 @@ twt() {
     cd /tmp/$1
 }
 
-alias .X="xmodmap ~/.config/X11/Xmodmap"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
