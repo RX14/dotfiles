@@ -4,7 +4,6 @@ alias reboot="sudo reboot"
 alias suspend="systemctl suspend"
 
 alias s="sudo"
-alias b="background"
 
 if [ -e /usr/bin/yay ]; then
     alias yay="nice -n 10 yay"
@@ -14,8 +13,6 @@ else
 fi
 
 alias prog="cd /data/programming"
-
-alias fork="background terminology"
 
 alias start="sudo systemctl start"
 alias stop="sudo systemctl stop"
