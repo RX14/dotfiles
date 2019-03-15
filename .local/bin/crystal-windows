@@ -1,0 +1,25 @@
+#!/bin/sh
+set -euxo pipefail
+
+windows=192.168.0.221
+
+filename=$1
+shift
+
+bin/crystal build --progress --stats --cross-compile --target x86_64-unknown-windows-msvc -o .build/cross "$filename"
+# ../windows-old/bin/crystal build --progress --stats --cross-compile --target x86_64-unknown-windows-msvc -o .build/cross "${@}"
+
+scp .build/cross.o $windows:'C:\Crystal\cross.obj'
+
+cat <<EOF | ssh $windows cmd /S /C "C:\Program^ Files^ ^(x86^)\Microsoft^ Visual^ Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat x64 && powershell -Command -"
+cd C:\Crystal
+del cross.exe
+
+cl cross.obj /nologo /Fecross /MTd /Zi pcre.lib gc.lib advapi32.lib libcmtd.lib llvm_ext.obj \$((& 'C:\Program Files\llvm\bin\llvm-config.exe' --libs --system-libs --libnames).split()) /link "/LIBPATH:C:\Program Files\llvm\lib"
+
+\$env:CRYSTAL_PATH = '/crystal/src/src/'
+
+echo ""
+cd src
+../cross.exe ${@}
+EOF

@@ -1,0 +1,2 @@
+#!/bin/bash
+WINEARCH=win32 wine explorer /desktop=foo,1920x1150 $WINEPREFIX/drive_c/GOG\ Games/Worms\ Armageddon/WA.exe

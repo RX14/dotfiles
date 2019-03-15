@@ -1,0 +1,6 @@
+#!/bin/bash
+if swaymsg -t get_workspaces | jq -e '.[] | select(.focused == true).output != "eDP-1"'; then
+    export ELM_SCALE=1
+fi
+
+exec /usr/bin/terminology -B "${@}"
