@@ -179,6 +179,7 @@ exec {
   dbus-update-activation-environment --systemd --all
   amixer set Master 34%
   env GDK_BACKEND=x11 emacs --daemon
+  mako
 
   dino
   hexchat

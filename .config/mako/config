@@ -1,0 +1,12 @@
+output=eDP-1
+
+font=Noto Sans Medium 10
+background-color=#0088CC
+padding=8
+border-size=0
+
+[urgency=low]
+background-color=#333333
+
+[urgency=high]
+background-color=#900000
