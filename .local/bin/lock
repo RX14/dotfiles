@@ -1,17 +1,14 @@
 #!/bin/sh
-revert() {
-    $XDG_CONFIG_HOME/X11/dpms.sh
-}
-trap revert SIGHUP SIGINT SIGTERM
 
-sleep 0.2 # wait for keyup before running screensaver, otherwise dpms doesn't work
-xset +dpms dpms 5 5 5
-xset dpms force off
+lockscreen_image="$(find ~/.config/sway/lockscreens -type f | shuf -n 1)"
 
-if xrandr | grep -q 'DP1-1 connected'; then
-    i3lock --nofork --show-failed-attempts --color 000000
-else
-    i3lock --nofork --show-failed-attempts --image $(find ~/.config/i3/lockscreens -type f | shuf -n 1)
-fi
+swayidle \
+    timeout 5 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' &
 
-revert
+swayidle_pid=$!
+
+sleep 0.2
+kill -USR1 $swayidle_pid
+swaylock -i "$lockscreen_image" --show-failed-attempts --indicator-radius=90
+kill $swayidle_pid

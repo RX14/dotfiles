@@ -1,9 +1,0 @@
-#!/bin/bash
-
-dbus-update-activation-environment DISPLAY XAUTHORITY GTK2_RC_FILES
-
-[[ -f $XDG_CONFIG_HOME/X11/Xresources ]] && xrdb -merge -I$XDG_CONFIG_HOME/X11 $XDG_CONFIG_HOME/X11/Xresources
-
-$HOME/.local/bin/switch
-
-exec i3 # 2>&1 >> $XDG_DATA_HOME/i3/log

@@ -1,9 +1,0 @@
-#!/bin/sh
-
-$XDG_CONFIG_HOME/X11/dpms.sh
-
-if xrandr | grep -q 'DP1-1 connected'; then
-    $XDG_CONFIG_HOME/X11/screenlayout-docked
-else
-    $XDG_CONFIG_HOME/X11/screenlayout-mobile
-fi
