@@ -65,6 +65,7 @@ export QT_STYLE_OVERRIDE="GTK2"
 
 export ELM_SCALE=1.25
 export GDK_DPI_SCALE=1.25
+export QT_FONT_DPI=120
 
 export GDK_BACKEND=wayland
 export ELM_DISPLAY=wl
