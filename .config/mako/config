@@ -6,7 +6,7 @@ padding=8
 border-size=0
 
 [urgency=low]
-background-color=#333333
+background-color=#64727D
 
 [urgency=high]
-background-color=#900000
+background-color=#F53C3C
