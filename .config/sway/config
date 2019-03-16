@@ -178,8 +178,11 @@ workspace $ws10 output $mon3
 exec {
   dbus-update-activation-environment --systemd --all
   amixer set Master 34%
+
   env GDK_BACKEND=x11 emacs --daemon
   mako
+  swayidle timeout 300 '[[ $(cat /sys/class/power_supply/BAT1/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
+           resume      'swaymsg "output * dpms on"'
 
   dino
   hexchat
