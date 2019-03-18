@@ -4,9 +4,11 @@ font=Noto Sans Medium 10
 background-color=#0088CC
 padding=8
 border-size=0
+default-timeout=10
 
 [urgency=low]
 background-color=#64727D
 
 [urgency=high]
 background-color=#F53C3C
+default-timeout=0
