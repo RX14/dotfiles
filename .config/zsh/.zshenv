@@ -39,6 +39,10 @@ export bower_storage__packages="$XDG_DATA_HOME"/bower/packages
 export bower_storage__registry="$XDG_DATA_HOME"/bower/registry
 export npm_config_devdir="$XDG_CACHE_HOME"/node-gyp
 
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_NDK=/opt/android-ndk
+export ANDROID_NDK_HOME="$ANDROID_NDK"
+
 # ZSH History
 
 HISTFILE=$XDG_DATA_HOME/zsh/history
