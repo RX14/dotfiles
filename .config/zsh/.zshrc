@@ -70,7 +70,6 @@ gradle
 lein
 mercurial
 mvn
-npm
 pip
 sbt
 scala
