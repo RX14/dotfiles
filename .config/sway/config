@@ -159,7 +159,7 @@ bindsym --locked XF86AudioNext         exec echo "playlist-next" | socat - /tmp/
 
 for_window [class="kruler"] floating enable
 
-assign [class="Thunderbird"] $ws10
+assign [app_id="thunderbird"] $ws10
 assign [class="Hexchat"] $ws10
 assign [class="discord"] $ws10
 assign [app_id="dino"] $ws10
