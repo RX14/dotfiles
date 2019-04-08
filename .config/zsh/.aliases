@@ -34,7 +34,11 @@ else
     alias ec='vim'
 fi
 
-alias git=hub
+if which hub >/dev/null; then
+    alias git=hub
+else
+    echo "Install hub!"
+fi
 
 alias aoe="zathura /data/bible.pdf &!"
 
