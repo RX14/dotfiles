@@ -1,0 +1,95 @@
+* {
+  border: none;
+  border-radius: 0;
+  animation: none;
+
+  font-family: Noto Sans Nerd Font;
+  font-size: 14px;
+
+  min-height: 25px;
+}
+
+window#waybar {
+  background: transparent;
+  color: white;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+  padding: 0 5px;
+  background-color: rgba(43, 48, 59, 0.5);
+  text-shadow: none;
+}
+
+/* GTK flouride */
+#workspaces button:hover {
+  background-image: none;
+}
+
+#workspaces button.visible {
+  background-color: rgba(100, 114, 125, 0.5);
+}
+
+#workspaces button.focused {
+  background-color: #0088CC;
+}
+
+#workspaces button.urgent {
+  background-color: #F53C3C;
+}
+
+#clock,
+#battery,
+#temperature,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#backlight {
+  padding: 0 10px;
+}
+
+#battery {
+  background-color: #26A65B;
+}
+
+#battery.charging {
+  background-color: transparent;
+}
+
+#battery.warning:not(.charging) {
+  background-color: #F6C346;
+  color: black;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #F53C3C;
+  color: white;
+}
+
+@keyframes danger-blink {
+  0%   { background-color: transparent; }
+  49%  { background-color: transparent; }
+  50%  { background-color: #F53C3C;     }
+  100% { background-color: #F53C3C;     }
+}
+
+#battery.supercritical:not(.charging) {
+  color: white;
+  animation-name: danger-blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#temperature {
+  padding-left: 0;
+}
+
+#cpu {
+  padding-right: 5px;
+}
+
+#tray {
+  padding: 0 10px;
+}

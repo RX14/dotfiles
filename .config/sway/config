@@ -179,6 +179,7 @@ exec {
   dbus-update-activation-environment --systemd --all
   amixer set Master 34%
 
+  sh -c 'while true; do waybar; done'
   env GDK_BACKEND=x11 emacs --daemon
   mako
   mpris-proxy
@@ -188,18 +189,6 @@ exec {
   dino
   hexchat
   thunderbird-nightly
-}
-
-bar {
-  status_command -
-
-  colors {
-    background #00000000
-    focused_workspace #0088CC #0088CC #FFFFFF
-    active_workspace #64727D80 #64727D80 #FFFFFF
-    inactive_workspace #2B303B80 #2B303B80 #FFFFFF
-    urgent_workspace #F53C3C #F53C3C #FFFFFF
-  }
 }
 
 client.focused #0088CC #0088CC #FFFFFF #0088CC #0088CC

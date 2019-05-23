@@ -1,0 +1,74 @@
+[
+  {
+    "position": "bottom",
+    // "output": ["eDP-1", "DP-2"],
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["tray", "backlight", "pulseaudio", "network", "memory", "cpu", "temperature", "battery", "clock"],
+
+    "sway/workspaces": {
+      "disable-scroll-wraparound": true
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+    "backlight": {
+      "format": "\uF5DF {percent}%"
+    },
+    "pulseaudio": {
+      "format": "\uFA7D {volume}%",
+      "format-muted": "\u200E\uFC5D\u200E {volume}%",
+      "scroll-step": "2.0"
+    },
+    "network": {
+      "format-wifi": "\uFAA8 {essid} ({signalStrength}%)",
+      "format-ethernet": "\uF6FF {ifname}: {ipaddr}/{cidr}",
+      "format-linked": "\uF818 {ifname}: (No IP)",
+      "format-disconnected": "\uFAA9 Disconnected"
+    },
+    "memory": {
+      "interval": 2,
+      "format": "\uF85B {avail:.2f}GiB"
+    },
+    "cpu": {
+      "interval": 2,
+      "format": "\uE266 {usage:02}%"
+    },
+    "temperature": {
+      "interval": 2,
+      "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input"
+    },
+    "battery": {
+      "states": {
+        "warning": 40,
+        "critical": 20,
+        "supercritical": 5
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["\uF58D", "\uF579", "\uF57A", "\uF57B", "\uF57C", "\uF57D", "\uF57E", "\uF57F", "\uF580", "\uF581", "\uF578"],
+      "format-charging": "\u200E\uFBA3\u200E {capacity}%"
+    },
+    "clock": {
+      "interval": 1,
+      "format": "{:%F %T}"
+    }
+  }
+  // {
+  //   "position": "bottom",
+  //   "output": "DP-3",
+
+  //   "modules-left": ["sway/workspaces", "sway/mode"],
+  //   "modules-center": [],
+  //   "modules-right": ["clock"],
+
+  //   "sway/workspaces": {
+  //     "disable-scroll-wraparound": true
+  //   },
+  //   "clock": {
+  //     "interval": 1,
+  //     "format": "{:%F %T}"
+  //   }
+  // }
+]
