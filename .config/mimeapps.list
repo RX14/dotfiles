@@ -10,8 +10,8 @@ application/x-extension-shtml=userapp-Nightly-PC7TYZ.desktop
 application/xhtml+xml=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-xhtml=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-xht=userapp-Nightly-PC7TYZ.desktop
-x-scheme-handler/mailto=userapp-Daily-940SYZ.desktop
-message/rfc822=userapp-Daily-940SYZ.desktop
+x-scheme-handler/mailto=userapp-Daily-MN0L1Z.desktop
+message/rfc822=userapp-Daily-MN0L1Z.desktop
 application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
@@ -26,8 +26,8 @@ application/x-extension-shtml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/xhtml+xml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/x-extension-xhtml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/x-extension-xht=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
-x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;
-message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;
+message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;
 image/png=feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
 text/plain=emacs.desktop;
