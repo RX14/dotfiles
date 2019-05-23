@@ -29,3 +29,7 @@ web:
 convert:
   never_convert_lossy_files: yes
   format: opus
+  formats:
+    opus:
+      command: ffmpeg -i $source -y -vn -acodec libopus -ab 96k $dest
+      extension: ogg
