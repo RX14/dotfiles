@@ -74,6 +74,9 @@ export GDK_BACKEND=wayland
 export MOZ_ENABLE_WAYLAND=1
 export ELM_DISPLAY=wl
 
+# Needed for waybar tray
+export XDG_CURRENT_DESKTOP=Unity
+
 export BAT_STYLE=plain
 export BAT_PAGER=
 
