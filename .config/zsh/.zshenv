@@ -71,6 +71,7 @@ export GDK_DPI_SCALE=1.25
 export QT_FONT_DPI=120
 
 export GDK_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
 export ELM_DISPLAY=wl
 
 export BAT_STYLE=plain
