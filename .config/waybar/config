@@ -8,7 +8,8 @@
     "modules-right": ["tray", "backlight", "pulseaudio", "network", "memory", "cpu", "temperature", "battery", "clock"],
 
     "sway/workspaces": {
-      "disable-scroll-wraparound": true
+      "disable-scroll-wraparound": true,
+      "enable-bar-scroll": true
     },
 
     "tray": {
