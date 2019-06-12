@@ -28,6 +28,11 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
   scroll_method two_finger
 }
 
+input "2:14:ETPS\/2_Elantech_TrackPoint" {
+  accel_profile flat
+  pointer_accel 0.2
+}
+
 output $mon3 {
   res 1920x1080
   pos 0 840
