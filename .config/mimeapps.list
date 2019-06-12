@@ -1,18 +1,20 @@
 [Default Applications]
-x-scheme-handler/http=userapp-Nightly-PC7TYZ.desktop
-x-scheme-handler/https=userapp-Nightly-PC7TYZ.desktop
+x-scheme-handler/http=firefox-nightly.desktop
+x-scheme-handler/https=firefox-nightly.desktop
 x-scheme-handler/ftp=userapp-Nightly-PC7TYZ.desktop
 x-scheme-handler/chrome=userapp-Nightly-PC7TYZ.desktop
-text/html=userapp-Nightly-PC7TYZ.desktop
+text/html=firefox-nightly.desktop
 application/x-extension-htm=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-html=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-shtml=userapp-Nightly-PC7TYZ.desktop
 application/xhtml+xml=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-xhtml=userapp-Nightly-PC7TYZ.desktop
 application/x-extension-xht=userapp-Nightly-PC7TYZ.desktop
-x-scheme-handler/mailto=userapp-Daily-MN0L1Z.desktop
-message/rfc822=userapp-Daily-MN0L1Z.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-AFSX2Z.desktop
+message/rfc822=userapp-Thunderbird-AFSX2Z.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/about=firefox-nightly.desktop
+x-scheme-handler/unknown=firefox-nightly.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
@@ -26,8 +28,8 @@ application/x-extension-shtml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/xhtml+xml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/x-extension-xhtml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
 application/x-extension-xht=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;
-x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;
-message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
+message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
 image/png=feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
 text/plain=emacs.desktop;
