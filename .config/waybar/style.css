@@ -53,7 +53,8 @@ window#waybar {
   background-color: #26A65B;
 }
 
-#battery.charging {
+#battery.charging,
+#battery.full {
   background-color: transparent;
 }
 
