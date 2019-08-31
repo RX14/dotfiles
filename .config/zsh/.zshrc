@@ -62,7 +62,6 @@ BULLETTRAIN_PROMPT_ORDER=(
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 antigen bundles <<EOBUNDLES
-autojump
 colored-man-pages
 docker
 gem
