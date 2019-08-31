@@ -165,10 +165,11 @@ bindsym --locked XF86AudioNext         exec echo "playlist-next" | socat - /tmp/
 
 for_window [class="kruler"] floating enable
 
-assign [class="Thunderbird"] $ws10
 assign [class="Hexchat"] $ws10
-assign [class="discord"] $ws10
 assign [app_id="dino"] $ws10
+assign [class="TelegramDesktop"] $ws10
+assign [class="discord"] $ws10
+assign [class="Thunderbird"] $ws10
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
@@ -192,8 +193,10 @@ exec {
   swayidle timeout 300 '[[ $(cat /sys/class/power_supply/BAT1/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
            resume      'swaymsg "output * dpms on"'
 
-  dino
   hexchat
+  dino
+  telegram-desktop
+  discord-canary
   thunderbird
 }
 
