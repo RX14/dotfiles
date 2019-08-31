@@ -72,6 +72,9 @@ default_border pixel 1
 
 focus_follows_mouse yes
 
+# Disable all window dragging without holding $mod
+tiling_drag_threshold 99999
+
 # start a terminal
 bindsym $mod+Return exec terminology
 
