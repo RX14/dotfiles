@@ -189,7 +189,7 @@ exec {
   dbus-update-activation-environment --systemd --all
   amixer set Master 34%
 
-  waybar
+  sh -c 'while true; do waybar; done'
   env GDK_BACKEND=x11 emacs --daemon
   mako
   mpris-proxy
