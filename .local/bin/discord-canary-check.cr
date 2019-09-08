@@ -20,4 +20,6 @@ loop do
   end
 
   sleep 60.seconds
+rescue
+  sleep 60.seconds
 end
