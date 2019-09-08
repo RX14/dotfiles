@@ -29,7 +29,16 @@ alias uenable="systemctl --user enable"
 alias udisable="systemctl --user disable"
 
 if [[ -n "$DISPLAY" ]]; then
-    alias ec='emacsclient -nc'
+    ec() {
+        setopt local_options bash_rematch re_match_pcre
+        if [[ "$1" =~ '^(.+?):([0-9]+(:[0-9]+)?)$' ]]; then
+            local file="${BASH_REMATCH[2]}"
+            local line="${BASH_REMATCH[3]}"
+            emacsclient -nc "+$line" "$file"
+        else
+            emacsclient -nc "${@}"
+        fi
+    }
 else
     alias ec='vim'
 fi
