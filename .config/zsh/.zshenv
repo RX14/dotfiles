@@ -68,9 +68,10 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 export ELM_SCALE=1.25
 export GDK_DPI_SCALE=1.25
-export QT_FONT_DPI=120
+export QT_WAYLAND_FORCE_DPI=120
 
 export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland-egl
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
 
