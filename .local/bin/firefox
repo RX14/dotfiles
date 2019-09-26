@@ -1,2 +1,2 @@
 #!/bin/sh
-exec env GTK_THEME=Adwaita GDK_BACKEND=wayland /usr/bin/firefox "${@}"
+exec env GTK_THEME=Adwaita /usr/bin/firefox "${@}"
