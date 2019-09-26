@@ -71,7 +71,8 @@ export GDK_DPI_SCALE=1.25
 export QT_FONT_DPI=120
 
 export MOZ_ENABLE_WAYLAND=1
-export ELM_DISPLAY=wl
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
 
 # Needed for waybar tray
 export XDG_CURRENT_DESKTOP=Unity
