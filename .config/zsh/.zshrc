@@ -102,9 +102,9 @@ if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/
     fi
 fi
 
-if [[ ! -d $HOME/.emacs.d ]]; then
-    echo "Installing Spacemacs..."
-    git clone -b develop https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+if [[ ! -d $XDG_DATA_HOME/emacs ]]; then
+    echo "Installing Doom Emacs..."
+    git clone https://github.com/hlissner/doom-emacs $XDG_DATA_HOME/emacs
 fi
 
 if [[ ! -d $ZDOTDIR/archlinux-update-modules ]]; then
