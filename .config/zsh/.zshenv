@@ -82,3 +82,5 @@ export BAT_STYLE=plain
 export BAT_PAGER=
 
 export MPW_FULLNAME='Christopher John Hobbs'
+
+export LMOD_PAGER=less
