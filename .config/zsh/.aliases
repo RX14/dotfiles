@@ -43,7 +43,7 @@ else
     alias ec='vim'
 fi
 
-if which hub >/dev/null; then
+if which hub >/dev/null 2>&1; then
     alias git=hub
 else
     echo "Install hub!"
@@ -51,7 +51,7 @@ fi
 
 alias aoe="zathura /data/bible.pdf &!"
 
-if which bat >/dev/null; then
+if which bat >/dev/null 2>&1; then
     alias cat=bat
 else
     echo "Install bat!"
@@ -142,7 +142,7 @@ function dotfiles() {
         local dotfiles_dir=/data/programming/dotfiles/master
     fi
 
-    git --git-dir="$dotfiles_dir" --work-tree=/home/rx14 "${@}"
+    git --git-dir="$dotfiles_dir" --work-tree="$HOME" "${@}"
 }
 
 function gwt() {

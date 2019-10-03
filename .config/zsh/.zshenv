@@ -55,7 +55,7 @@ setopt INC_APPEND_HISTORY
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-if [[ -n "$DISPLAY" ]]; then
+if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     export EDITOR="emacsclient -c"
 else
     export EDITOR="vim"
