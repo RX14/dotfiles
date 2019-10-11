@@ -3,7 +3,6 @@
 (map! :leader
       (:prefix "w"
         "f" #'make-frame
-        "d" #'delete-frame
         "o" #'other-frame)
 
       "q q" #'save-buffers-kill-emacs)
