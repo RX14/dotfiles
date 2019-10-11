@@ -195,7 +195,7 @@ exec {
   mpris-proxy
   swayidle timeout 300 '[[ $(cat /sys/class/power_supply/BAT1/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
            resume      'swaymsg "output * dpms on"'
-  discord-canary-check.cr
+  discord-canary-check
 
   hexchat
   dino
@@ -203,6 +203,7 @@ exec {
   discord-canary
   thunderbird
 }
+
 
 client.focused #0088CC #0088CC #FFFFFF #0088CC #0088CC
 client.focused_inactive #64727D80 #64727D80 #FFFFFF #64727D80 #64727D80
