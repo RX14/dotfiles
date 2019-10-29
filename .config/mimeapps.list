@@ -18,6 +18,7 @@ x-scheme-handler/unknown=firefox-nightly.desktop
 image/gif=firefox-beta-bin.desktop
 application/x-glib-test=userapp-cmdline-app-test-QHEZ4Z.desktop
 application/x-extension-gio-tests=userapp-cmdline-app-test-QHEZ4Z.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;userapp-Firefox-IDBO3Z.desktop;
