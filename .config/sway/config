@@ -26,6 +26,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 
   natural_scroll on
   scroll_method two_finger
+  scroll_factor 0.4
 }
 
 input "2:14:ETPS/2_Elantech_TrackPoint" {
