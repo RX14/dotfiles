@@ -1,7 +1,7 @@
 directory: /media/media/Music
 library: /data/beets.db
 
-plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit mbsync
+plugins: lastgenre chroma fromfilename web duplicates replaygain scrub inline bpd convert edit mbsync fetchart
 
 paths:
   default: '$albumartist/%if{$original_year,$original_year }$album%aunique{}/%if{$multidisc,Disc $disc/}%if{$track,$track }$artist - $album - $title'
@@ -26,9 +26,14 @@ replaygain:
 web:
   host: 0.0.0.0
 
+fetchart:
+  sources: coverart
+
 convert:
   never_convert_lossy_files: yes
   format: opus
+  copy_album_art: yes
+  embed: no
   formats:
     opus:
       command: ffmpeg -i $source -y -vn -acodec libopus -ab 96k $dest
