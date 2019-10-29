@@ -5,7 +5,8 @@
         "f" #'make-frame
         "o" #'other-frame)
 
-      "q q" #'save-buffers-kill-emacs)
+      "q q" #'save-buffers-kill-emacs
+      "t F" #'format-all-mode)
 
 (use-package! pkgbuild-mode
   :mode "/PKGBUILD$")
