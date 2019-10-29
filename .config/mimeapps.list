@@ -33,8 +33,8 @@ application/x-extension-xhtml=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;use
 application/x-extension-xht=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;userapp-Firefox-IDBO3Z.desktop;
 x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
 message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
-image/png=feh.desktop;
+image/png=qimgv.desktop;feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
-image/jpeg=feh.desktop;
+image/jpeg=qimgv.desktop;feh.desktop;
 
 [Removed Associations]
