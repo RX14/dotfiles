@@ -150,3 +150,7 @@ function gwt() {
     test -n "$cdpath" && cd "$cdpath"
     return 0
 }
+
+function fork() {
+    terminology 2>/dev/null >/dev/null &!
+}
