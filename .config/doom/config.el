@@ -12,3 +12,5 @@
   :mode "/PKGBUILD$")
 
 (+global-word-wrap-mode +1)
+
+(setq evil-want-fine-undo t)
