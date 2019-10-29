@@ -10,3 +10,5 @@
 
 (use-package! pkgbuild-mode
   :mode "/PKGBUILD$")
+
+(+global-word-wrap-mode +1)
