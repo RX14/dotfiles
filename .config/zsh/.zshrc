@@ -93,7 +93,7 @@ bindkey '^H' backward-kill-word
 bindkey "^Q" push-input
 setopt interactivecomments
 
-if [[ $(basename "$(cat "/proc/$PPID/comm")") == "terminology" ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
+if [[ $(basename "$(cat "/proc/$PPID/comm")") == "$TERMINAL" ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
     read -r -k 1 "REPLY?:: Start update? [Y/n] "
     echo
 

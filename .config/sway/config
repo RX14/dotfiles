@@ -79,7 +79,7 @@ focus_follows_mouse yes
 tiling_drag_threshold 99999
 
 # start a terminal
-bindsym $mod+Return exec terminology
+bindsym $mod+Return exec "$TERMINAL"
 
 # kill focused window
 bindsym $mod+Shift+q kill

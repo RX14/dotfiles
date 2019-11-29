@@ -152,5 +152,5 @@ function gwt() {
 }
 
 function fork() {
-    terminology 2>/dev/null >/dev/null &!
+    kitty --detach
 }
