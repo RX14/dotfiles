@@ -6,12 +6,14 @@
 	autocrlf = false
 	filemode = false
 	pager = (diff-so-fancy || cat) | less --tabs=4 -iFR
+	attributesfile = ~/.config/git/attributes
 [push]
 	default = current
 [color]
 	ui = auto
 [alias]
 	root = !pwd
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [merge]
 	tool = kdiff3
 [mergetool]
@@ -53,3 +55,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[diff "image"]
+	command = git_diff_image
