@@ -95,6 +95,8 @@ setopt interactivecomments
 
 eval "$(dircolors $XDG_CONFIG_HOME/dircolors)"
 
+mkdir -p -m700 "$GNUPGHOME"
+
 if [[ $(basename "$(cat "/proc/$PPID/comm")") == "$TERMINAL" ]] && mkdir /tmp/rx14startupstuff 2>/dev/null; then
     read -r -k 1 "REPLY?:: Start update? [Y/n] "
     echo
