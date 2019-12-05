@@ -1,0 +1,11 @@
+#!/bin/sh
+
+file="$HOME/.local/share/monitor-desktop-module-id"
+if [ -e "$file" ]; then
+    pactl unload-module "$(cat "$file")"
+    rm "$file"
+    echo "Stopped"
+else
+    pactl load-module module-loopback latency_msec=10 source=alsa_input.usb-0d8c_USB_Sound_Device-00.analog-stereo > "$file"
+    echo "Started"
+fi
