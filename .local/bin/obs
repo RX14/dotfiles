@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+unset QT_QPA_PLATFORM
+exec /usr/bin/obs "${@}"
