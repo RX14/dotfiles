@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+exec $XDG_DATA_HOME/emacs/bin/doom "${@}"
