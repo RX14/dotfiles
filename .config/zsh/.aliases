@@ -98,7 +98,7 @@ function play() {
 
     if [[ "$playlist" == "albums" ]]; then
         while true; do
-            mpv-pl "${mpvargs[@]}" --no-shuffle --playlist=<(beet ls -ap "$@" | shuf)
+            mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:$(beet ls -a -f '$id' "${@}" | shuf -n 1))
         done
     elif [[ "$playlist" == "songs" ]]; then
         mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p "$@")
