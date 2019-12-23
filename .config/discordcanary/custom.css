@@ -1,4 +1,4 @@
-.theme-light div[class*="guilds-"],
+.theme-light nav[class*="guilds-"],
 .theme-light div[class*="base"] div[class*="sidebar-"] {
     --header-primary: #fff;
     --header-secondary: #b9bbbe;
