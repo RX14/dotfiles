@@ -199,6 +199,7 @@ exec {
   swayidle timeout 300 '[[ $(cat /sys/class/power_supply/BAT1/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
            resume      'swaymsg "output * dpms on"'
   discord-canary-check
+  kdeconnect-indicator
 
   hexchat
   dino
