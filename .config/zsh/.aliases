@@ -101,7 +101,7 @@ function play() {
             mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:$(beet ls -a -f '$id' "${@}" | shuf -n 1) track+)
         done
     elif [[ "$playlist" == "albums_ordered" ]]; then
-        for albumid in "$(beet ls -a -f '$id' "${@}")"; do
+        beet ls -a -f '$id' "${@}" | while read -r albumid; do
             mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:"$albumid" track+)
         done
     elif [[ "$playlist" == "songs" ]]; then
