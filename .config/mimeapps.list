@@ -37,5 +37,6 @@ message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Da
 image/png=qimgv.desktop;feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
 image/jpeg=qimgv.desktop;feh.desktop;
+text/calendar=thunderbird.desktop;
 
 [Removed Associations]
