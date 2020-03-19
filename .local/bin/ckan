@@ -1,1 +1,3 @@
-GTK2_RC_FILES=/usr/share/themes/Default/gtk-2.0-key/gtkrc mono /usr/bin/ckan
+#!/bin/sh
+
+exec env GTK2_RC_FILES=/usr/share/themes/Default/gtk-2.0-key/gtkrc /usr/bin/ckan "${@}"
