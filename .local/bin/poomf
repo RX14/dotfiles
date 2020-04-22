@@ -1,8 +1,7 @@
 #!/bin/bash
 
-API_KEY=$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/owo.key)
-DEST_URL="https://api.awau.moe/upload/pomf?key=${API_KEY}"
-BASE_URL="http://owo.sh"
+API_KEY=$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/elixire.token)
+DEST_URL="https://elixi.re/api/upload"
 
 # Poomf for Ubuntu/linux
 # Owner : Max Gurela
@@ -47,10 +46,9 @@ function poomfFile ()
     n=0  # Multipe tries
     while [[ $n -le 3 ]]; do
         printf "try #${n}..."
-        my_output=$(curl --http1.1 -sf -F files[]="@${file}" "${DEST_URL}")
-        status="$(echo "$my_output" | jq -r .success)"
-        if [[ $status =~ 'true' ]]; then
-            return_file="$(echo "$my_output" | jq -r .files[0].url)"
+        my_output=$(curl -sf -X POST -F f="@${file}" -H "Authorization: $API_KEY" "${DEST_URL}")
+        return_file="$(echo "$my_output" | jq -r .url)"
+        if [ -n "$return_file" ]; then
             printf 'done.\n'
             break
         else
@@ -59,7 +57,7 @@ function poomfFile ()
         fi
     done
     if [[ -n ${return_file} ]]; then
-        fileURL="${BASE_URL}/${return_file}"
+        fileURL="${return_file}"
         echo "Upload complete! $fileURL"
         #Copy link to clipboard, show notification
         if hash wl-copy 2>/dev/null; then
