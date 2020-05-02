@@ -77,6 +77,8 @@ export XDG_CURRENT_DESKTOP=Unity
 export BAT_STYLE=plain
 export BAT_PAGER=
 
-export MPW_FULLNAME='Christopher John Hobbs'
-
 export LMOD_PAGER=less
+
+export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
+
+source "$ZDOTDIR"/.zshenv.priv
