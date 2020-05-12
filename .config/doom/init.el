@@ -59,6 +59,7 @@
        :emacs
        (dired +ranger +icons) ; making dired pretty [functional]
        electric               ; smarter, keyword-based electric-indent
+       undo
        vc                     ; version-control and Emacs, sitting in a tree
 
        :term
@@ -66,6 +67,11 @@
        ;;shell             ; a terminal REPL for Emacs
        ;;term              ; terminals in Emacs
        ;;vterm             ; another terminals in Emacs
+
+       :checkers
+       syntax
+       spell
+       grammar
 
        :tools
        ;;ansible
@@ -75,8 +81,6 @@
        editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        eval              ; run code, run (also, repls)
-       flycheck          ; tasing you for every semicolon you forget
-       flyspell          ; tasing you for misspelling mispelling
        ;;gist              ; interacting with github gists
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
