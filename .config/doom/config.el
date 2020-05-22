@@ -13,4 +13,7 @@
 
 (+global-word-wrap-mode +1)
 
-(setq evil-want-fine-undo t)
+(setq evil-want-fine-undo t
+
+      lsp-clients-elixir-server-executable "elixir-ls"
+      lsp-enable-snippet nil)
