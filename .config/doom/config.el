@@ -17,3 +17,5 @@
 
       lsp-clients-elixir-server-executable "elixir-ls"
       lsp-enable-snippet nil)
+
+(sql-set-product 'postgres)
