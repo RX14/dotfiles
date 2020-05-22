@@ -38,6 +38,8 @@ export bower_storage__links="$XDG_DATA_HOME"/bower/links
 export bower_storage__packages="$XDG_DATA_HOME"/bower/packages
 export bower_storage__registry="$XDG_DATA_HOME"/bower/registry
 export npm_config_devdir="$XDG_CACHE_HOME"/node-gyp
+export PSQLRC="$XDG_CONFIG_HOME"/psql
+export PSQL_HISTORY="$XDG_DATA_HOME"/psql_history
 
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
