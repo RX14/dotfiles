@@ -19,3 +19,5 @@
       lsp-enable-snippet nil)
 
 (sql-set-product 'postgres)
+
+(flycheck-add-next-checker 'lsp 'golangci-lint)
