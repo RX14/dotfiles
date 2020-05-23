@@ -18,6 +18,8 @@
       lsp-clients-elixir-server-executable "elixir-ls"
       lsp-enable-snippet nil)
 
-(sql-set-product 'postgres)
+(after! sql
+  (sql-set-product 'postgres))
 
-(flycheck-add-next-checker 'lsp 'golangci-lint)
+(after! (flycheck lsp-mode flycheck-golangci-lint)
+  (flycheck-add-next-checker 'lsp 'golangci-lint))
