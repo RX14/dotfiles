@@ -17,7 +17,7 @@ set $ws10 "10: comms"
 
 input * {
   xkb_layout gb
-  xkb_options caps:hyper
+  xkb_options "caps:hyper,compose:rctrl"
 }
 
 input "2:14:ETPS/2_Elantech_Touchpad" {
