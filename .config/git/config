@@ -57,3 +57,5 @@
 	whitespace = red reverse
 [diff "image"]
 	command = git_diff_image
+[init]
+	templateDir = ~/.config/git/template/
