@@ -4,7 +4,7 @@
     // "output": ["eDP-1", "DP-2"],
 
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
+    "modules-center": ["custom/music"],
     "modules-right": ["tray", "backlight", "pulseaudio", "network", "memory", "cpu", "temperature", "battery", "clock"],
 
     "sway/workspaces": {
@@ -12,8 +12,16 @@
       "enable-bar-scroll": true
     },
 
+    "custom/music": {
+      "exec": "$HOME/.config/waybar/mediaplayer.py --player mpv 2>/dev/null",
+      "return-type": "json",
+
+      "format": "\uF001 {}",
+      "max-length": 40
+    },
+
     "tray": {
-        "spacing": 10
+      "spacing": 10
     },
     "backlight": {
       "format": "\uF5DF {percent}%"
