@@ -83,4 +83,6 @@ export LMOD_PAGER=less
 
 export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
 
-source "$ZDOTDIR"/.zshenv.priv
+if test -f "$ZDOTDIR"/.zshenv.priv; then
+    source "$ZDOTDIR"/.zshenv.priv
+fi
