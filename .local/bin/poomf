@@ -93,6 +93,7 @@ function helpText ()
     printf "  -w                 poomf current window\n"
     printf "  -c                 poomf clipboard content\n"
     printf "  -f                 poomf specific file (opens file dialog)\n"
+    printf "  -n                 respect original file name when uploading\n"
     printf "\n"
     printf "  --help,-h          show this page\n"
     printf "\n"
