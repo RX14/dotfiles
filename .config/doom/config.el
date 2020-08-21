@@ -23,3 +23,7 @@
 
 (after! (flycheck lsp-mode flycheck-golangci-lint)
   (flycheck-add-next-checker 'lsp 'golangci-lint))
+
+(use-package! caddyfile-mode
+  :mode (("Caddyfile\\'" . caddyfile-mode)
+         ("caddy\\.conf\\'" . caddyfile-mode)))

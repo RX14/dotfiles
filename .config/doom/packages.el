@@ -3,3 +3,4 @@
 
 (package! pkgbuild-mode)
 (package! verilog-mode)
+(package! caddyfile-mode)
