@@ -1,7 +1,7 @@
 #!/bin/bash
 
-API_KEY=$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/elixire.token)
-DEST_URL="https://elixi.re/api/upload"
+API_KEY=$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/rory.token)
+DEST_URL="https://stephanie.is/upload"
 
 # Poomf for Ubuntu/linux
 # Owner : Max Gurela
@@ -46,8 +46,7 @@ function poomfFile ()
     n=0  # Multipe tries
     while [[ $n -le 3 ]]; do
         printf "try #${n}..."
-        my_output=$(curl -sf -X POST -F f="@${file}" -H "Authorization: $API_KEY" "${DEST_URL}")
-        return_file="$(echo "$my_output" | jq -r .url)"
+        return_file=$(curl -sSf -X POST -F file="@${file}" -H "Authorization: Bearer $API_KEY" "${DEST_URL}")
         if [ -n "$return_file" ]; then
             printf 'done.\n'
             break
