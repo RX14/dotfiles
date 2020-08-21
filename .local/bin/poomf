@@ -43,10 +43,17 @@ function poomfFile ()
 
     file=$1
     printf "Uploading ${file}..."
-    n=0  # Multipe tries
+
+    if [ -n "$useLocalFileName" ]; then
+        fileArgs=(-F file="@${file};headers=\"X-Rory-Use-Filename: yes\"")
+    else
+        fileArgs=(-F file="@${file}")
+    fi
+
+    n=0  # Multiple tries
     while [[ $n -le 3 ]]; do
         printf "try #${n}..."
-        return_file=$(curl -sSf -X POST -F file="@${file}" -H "Authorization: Bearer $API_KEY" "${DEST_URL}")
+        return_file=$(curl -sSf -X POST "${fileArgs[@]}" -H "Authorization: Bearer $API_KEY" "${DEST_URL}")
         if [ -n "$return_file" ]; then
             printf 'done.\n'
             break
@@ -103,6 +110,11 @@ if [ -z "$1" ]; then
     helpText
     exit 1
 
+fi
+
+if [ "$1" = "-n" ]; then
+    shift
+    useLocalFileName=1
 fi
 
 #Get file to poomf and poomf it
