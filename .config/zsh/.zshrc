@@ -79,8 +79,6 @@ vagrant
 zsh-users/zsh-completions src
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
-
-djui/alias-tips
 EOBUNDLES
 
 antigen apply
