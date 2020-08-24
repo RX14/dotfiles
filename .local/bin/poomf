@@ -101,9 +101,9 @@ function helpText ()
     printf "  PATH               optional: path of file to poomf\n"
 }
 
-function generateFileName () { echo "/tmp/poomf-linux-$(date +%Y-%m-%dT%H:%M:%S).png"; }
+function generateFileName () { echo "/tmp/poomf-linux-$(date +%Y-%m-%dT%H.%M.%S).png"; }
 
-function generateTextName () { echo "/tmp/poomf-linux-$(date +%Y-%m-%dT%H:%M:%S).txt"; }
+function generateTextName () { echo "/tmp/poomf-linux-$(date +%Y-%m-%dT%H.%M.%S).txt"; }
 
 
 if [ -z "$1" ]; then
