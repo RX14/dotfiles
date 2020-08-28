@@ -19,6 +19,8 @@ image/gif=firefox-beta-bin.desktop
 application/x-glib-test=userapp-cmdline-app-test-QHEZ4Z.desktop
 application/x-extension-gio-tests=userapp-cmdline-app-test-QHEZ4Z.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 image/png=qimgv.desktop
 image/jpeg=qimgv.desktop
 
@@ -40,5 +42,6 @@ image/png=qimgv.desktop;feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
 image/jpeg=qimgv.desktop;feh.desktop;
 text/calendar=thunderbird.desktop;
+audio/ogg=mpv.desktop;
 
 [Removed Associations]
