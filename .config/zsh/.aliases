@@ -127,12 +127,12 @@ alias fge='ssh soaryn flexget execute --no-cache'
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 function cdtmp() {
-    if [[ "$#" = 0 ]]; then
-        mkcd "/tmp/$(pwgen 10 1)"
-    else
-        local IFS="-"
-        mkcd "/tmp/${*}-$(pwgen 10 1)"
-    fi
+  if [[ "$#" = 0 ]]; then
+      mkcd "/tmp/$(pwgen 10 1)"
+  else
+      local IFS="-"
+      mkcd "/tmp/${*}-$(pwgen 10 1)"
+  fi
 }
 
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
