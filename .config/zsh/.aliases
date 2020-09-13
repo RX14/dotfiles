@@ -132,6 +132,32 @@ function cdtmp() {
   fi
 }
 
+function cp-base() {
+    local dest
+    local dest_opt_index="${argv[(ie)--dest]}"
+    if [ "$dest_opt_index" -lt "${#argv}" ]; then
+        # We got a match
+        dest="${argv[$((dest_opt_index + 1))]}"
+
+        # Delete --dest
+        argv[$dest_opt_index]=()
+        # Delete dest arg
+        argv[$dest_opt_index]=()
+    fi
+
+    local base="$1"
+    local src="$2"
+
+    if [ -n "$dest" ]; then
+        dest="$dest"/"$src"
+    else
+        dest="$src"
+    fi
+
+    mkdir -p "$(dirname "$dest")"
+    cp "$base"/"$src" "$dest"
+}
+
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {

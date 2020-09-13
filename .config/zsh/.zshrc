@@ -20,6 +20,7 @@ zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
+fpath+="$ZDOTDIR/autoload"
 
 if which gr >/dev/null 2>&1; then
 #    source <(gr completion)
