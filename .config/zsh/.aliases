@@ -146,16 +146,19 @@ function cp-base() {
     fi
 
     local base="$1"
-    local src="$2"
+    shift
 
-    if [ -n "$dest" ]; then
-        dest="$dest"/"$src"
-    else
-        dest="$src"
-    fi
+    local this_dest
+    for src in "${@}"; do
+        if [ -n "$dest" ]; then
+            this_dest="$dest"/"$src"
+        else
+            this_dest="$src"
+        fi
 
-    mkdir -p "$(dirname "$dest")"
-    cp "$base"/"$src" "$dest"
+        mkdir -p "$(dirname "$this_dest")"
+        cp "$base"/"$src" "$this_dest"
+    done
 }
 
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }

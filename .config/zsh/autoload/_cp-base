@@ -2,5 +2,5 @@
 
 _arguments \
     "1:base directory:_files" \
-    "2:source file:_files -W \"\${words[2]}\"" \
+    "*:source file:_files -W \"\${words[2]}\"" \
     "--dest::dest dir:_files"
