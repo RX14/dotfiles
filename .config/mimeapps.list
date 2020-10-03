@@ -23,6 +23,7 @@ x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 image/png=qimgv.desktop
 image/jpeg=qimgv.desktop
+text/csv=libreoffice-calc.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;userapp-Firefox-IDBO3Z.desktop;
