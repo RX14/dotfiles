@@ -58,4 +58,4 @@
 [diff "image"]
 	command = git_diff_image
 [init]
-	templateDir = ~/.config/git/template/
+	defaultBranch = main
