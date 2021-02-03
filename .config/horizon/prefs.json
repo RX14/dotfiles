@@ -1,12 +1,13 @@
 {
     "action_bar": {
         "enable": true,
-        "remember": true
+        "remember": true,
+        "show_in_tool": true
     },
     "board": {
-        "drag_start_track": true,
+        "drag_start_track": false,
         "highlight_on_top": true,
-        "move_using_router": true,
+        "move_using_router": false,
         "show_text_in_tracks": true,
         "show_text_in_vias": true
     },
@@ -169,7 +170,7 @@
             }
         },
         "cursor_size": "default",
-        "cursor_size_tool": "large",
+        "cursor_size_tool": "full",
         "grid_fine_modifier": "alt",
         "grid_opacity": 1.0,
         "grid_style": "cross",
@@ -293,9 +294,9 @@
             }
         },
         "min_line_width": 1.0,
-        "min_selectable_size": 20.0,
+        "min_selectable_size": 10.0,
         "msaa": 4,
-        "snap_radius": 30.0
+        "snap_radius": 20.0
     },
     "canvas_non_layer": {
         "colors": {
@@ -585,6 +586,7 @@
         "snap_radius": 30.0
     },
     "capture_output": false,
+    "hud_debug": false,
     "in_tool_key_sequences": {
         "ARBITRARY_ANGLE_MODE": [
             [
@@ -1486,6 +1488,20 @@
         {
             "action": "TOOL",
             "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "a",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "ANNOTATE"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
                 "16": [],
                 "2": [],
                 "255": [
@@ -1554,10 +1570,6 @@
                     [
                         {
                             "key": "i",
-                            "mod": 0
-                        },
-                        {
-                            "key": "p",
                             "mod": 0
                         }
                     ]
@@ -1753,6 +1765,20 @@
                 "16": [
                     [
                         {
+                            "key": "n",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_VIA_NET"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "16": [
+                    [
+                        {
                             "key": "g",
                             "mod": 0
                         }
@@ -1937,6 +1963,13 @@
         {
             "action": "TOOL",
             "keys": {
+                "255": []
+            },
+            "tool": "ADD_KEEPOUT"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
                 "255": [
                     [
                         {
@@ -1979,7 +2012,7 @@
                             "mod": 0
                         },
                         {
-                            "key": "c",
+                            "key": "C",
                             "mod": 0
                         }
                     ]
@@ -2091,6 +2124,20 @@
                 "8": []
             },
             "tool": "MIRROR_CURSOR"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "g",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "DRAG_POLYGON_EDGE"
         },
         {
             "action": "UNDO",
@@ -2956,6 +3003,20 @@
             "tool": "NONE"
         },
         {
+            "action": "SELECT_POLYGON",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "a",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
             "action": "PAN_UP",
             "keys": {
                 "255": [
@@ -3090,6 +3151,10 @@
             "tool": "NONE"
         }
     ],
+    "mouse": {
+        "drag_polygon_edges": true,
+        "switch_layers": true
+    },
     "partinfo": {
         "enable": true,
         "ignore_moq_gt_1": false,
@@ -3098,8 +3163,8 @@
         "url": "https://dev-partinfo.kitspace.org/graphql"
     },
     "schematic": {
-        "bend_non_ortho": true,
-        "drag_start_net_line": true,
+        "bend_non_ortho": false,
+        "drag_start_net_line": false,
         "show_all_junctions": true
     },
     "show_pull_request_tools": false,
