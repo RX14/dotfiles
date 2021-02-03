@@ -84,6 +84,13 @@ export LMOD_PAGER=less
 
 export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
 
+if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
+    export CCACHE_PREFIX="distcc"
+    export DISTCC_HOSTS="[203:ada2:f8d5:e206:dbc1:5c9a:d848:fce6]/28,lzo localhost/3"
+    export DISTCC_BACKOFF_PERIOD=5
+    export MAKEFLAGS="-j32"
+fi
+
 if test -f "$ZDOTDIR"/.zshenv.priv; then
     source "$ZDOTDIR"/.zshenv.priv
 fi
