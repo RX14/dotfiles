@@ -38,12 +38,12 @@ input "2:14:ETPS/2_Elantech_TrackPoint" {
 
 output $mon3 {
   res 1920x1080
-  pos 0 840
+  pos 0 550
 }
 
 output $mon1 {
   res 1920x1200
-  pos 1920 216
+  pos 1920 265
 }
 
 output $mon2 {
