@@ -75,7 +75,7 @@ export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
 
 # Needed for waybar tray
-export XDG_CURRENT_DESKTOP=Unity
+export XDG_CURRENT_DESKTOP=sway
 
 export BAT_STYLE=plain
 export BAT_PAGER=
