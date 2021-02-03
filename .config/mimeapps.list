@@ -24,6 +24,8 @@ x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 image/png=qimgv.desktop
 image/jpeg=qimgv.desktop
 text/csv=libreoffice-calc.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;userapp-Nightly-PC7TYZ.desktop;userapp-Firefox-IDBO3Z.desktop;
@@ -44,5 +46,6 @@ application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mu
 image/jpeg=qimgv.desktop;feh.desktop;
 text/calendar=thunderbird.desktop;
 audio/ogg=mpv.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;
 
 [Removed Associations]
