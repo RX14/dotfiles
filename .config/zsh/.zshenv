@@ -84,6 +84,8 @@ export LMOD_PAGER=less
 
 export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
 
+#export PULSE_LATENCY_MSEC=22
+
 if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     export CCACHE_PREFIX="distcc"
     export DISTCC_HOSTS="[203:ada2:f8d5:e206:dbc1:5c9a:d848:fce6]/28,lzo localhost/3"
