@@ -47,7 +47,7 @@ export ANDROID_NDK=/opt/android-ndk
 export ANDROID_NDK_HOME="$ANDROID_NDK"
 
 # Set paths for PREFIX=~/.local
-typeset -xUT PATH path :
+typeset -U PATH path
 path=("$HOME/.local/bin" "/usr/lib/ccache/bin" $path "$GOPATH/bin" "$ANDROID_NDK")
 
 typeset -xUT LIBRARY_PATH library_path :
