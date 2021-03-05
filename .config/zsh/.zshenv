@@ -46,6 +46,22 @@ export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
 export ANDROID_NDK_HOME="$ANDROID_NDK"
 
+# Set paths for PREFIX=~/.local
+typeset -xUT PATH path :
+path=("$HOME/.local/bin" "/usr/lib/ccache/bin" $path "$GOPATH/bin" "$ANDROID_NDK")
+
+typeset -xUT LIBRARY_PATH library_path :
+library_path=("$HOME/.local/lib" $library_path)
+
+typeset -xUT LD_LIBRARY_PATH ld_library_path :
+ld_library_path=("$HOME/.local/lib" $ld_library_path)
+
+typeset -xUT CPATH cpath :
+cpath=("$HOME/.local/include" $cpath)
+
+typeset -xUT PKG_CONFIG_PATH pkg_config_path :
+pkg_config_path=("$HOME/.local/lib/pkgconfig" $pkg_config_path)
+
 # ZSH History
 
 HISTFILE=$XDG_DATA_HOME/zsh/history
