@@ -70,7 +70,7 @@
 
        :checkers
        syntax
-       spell
+       (spell +everywhere)
        grammar
 
        :tools

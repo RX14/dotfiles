@@ -16,7 +16,9 @@
 (setq evil-want-fine-undo t
 
       lsp-clients-elixir-server-executable "elixir-ls"
-      lsp-enable-snippet nil)
+      lsp-enable-snippet nil
+
+      langtool-default-language "en-GB")
 
 (after! sql
   (sql-set-product 'postgres))
