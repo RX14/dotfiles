@@ -18,6 +18,8 @@
       lsp-clients-elixir-server-executable "elixir-ls"
       lsp-enable-snippet nil
 
+      jit-lock-stealth-time 2
+
       langtool-default-language "en-GB")
 
 (after! sql
