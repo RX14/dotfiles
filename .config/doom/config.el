@@ -35,3 +35,7 @@
 (use-package! caddyfile-mode
   :mode (("Caddyfile\\'" . caddyfile-mode)
          ("caddy\\.conf\\'" . caddyfile-mode)))
+
+(after! treemacs-evil
+  (evil-define-key 'treemacs treemacs-mode-map (kbd "h")      #'treemacs-TAB-action)
+  (evil-define-key 'treemacs treemacs-mode-map (kbd "l")      #'treemacs-TAB-action))
