@@ -23,8 +23,12 @@
 (after! sql
   (sql-set-product 'postgres))
 
-(after! (flycheck lsp-mode flycheck-golangci-lint)
-  (flycheck-add-next-checker 'lsp 'golangci-lint))
+(add-hook! 'lsp-after-initialize-hook
+  (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+
+(add-hook 'go-mode-lsp-hook
+          (lambda ()
+            (flycheck-add-next-checker 'lsp 'golangci-lint)))
 
 (use-package! caddyfile-mode
   :mode (("Caddyfile\\'" . caddyfile-mode)
