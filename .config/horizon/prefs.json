@@ -596,6 +596,14 @@
         "snap_radius": 30.0
     },
     "capture_output": false,
+    "digikey_api": {
+        "client_id": "",
+        "client_secret": "",
+        "currency": "EUR",
+        "enable": false,
+        "max_price_breaks": 3,
+        "site": "DE"
+    },
     "hud_debug": false,
     "in_tool_key_sequences": {
         "ARBITRARY_ANGLE_MODE": [
@@ -1114,6 +1122,12 @@
                     [
                         {
                             "key": "n",
+                            "mod": 0
+                        }
+                    ],
+                    [
+                        {
+                            "key": "x",
                             "mod": 0
                         }
                     ]
@@ -2138,6 +2152,20 @@
         {
             "action": "TOOL",
             "keys": {
+                "1": [
+                    [
+                        {
+                            "key": "s",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "RESIZE_SYMBOL"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
                 "255": [
                     [
                         {
@@ -2148,6 +2176,38 @@
                 ]
             },
             "tool": "DRAG_POLYGON_EDGE"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "d",
+                            "mod": 0
+                        },
+                        {
+                            "key": "m",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "MEASURE"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "c",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "EDIT_CUSTOM_VALUE"
         },
         {
             "action": "UNDO",
@@ -3159,14 +3219,43 @@
                 ]
             },
             "tool": "NONE"
+        },
+        {
+            "action": "NEXT_SHEET",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "Page_Down",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "PREV_SHEET",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "Page_Up",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
         }
     ],
     "mouse": {
         "drag_polygon_edges": true,
+        "drag_to_move": false,
         "switch_layers": true
     },
     "partinfo": {
-        "enable": true,
+        "enable": false,
         "ignore_moq_gt_1": false,
         "max_price_breaks": 3,
         "preferred_distributor": "Farnell",
@@ -3177,8 +3266,10 @@
         "drag_start_net_line": false,
         "show_all_junctions": false
     },
-    "show_pull_request_tools": false,
+    "show_pull_request_tools": true,
+    "stock_info_provider": "none",
     "zoom": {
+        "keyboard_zoom_to_cursor": false,
         "smooth_zoom_2d": true,
         "smooth_zoom_3d": false,
         "touchpad_pan": false,
