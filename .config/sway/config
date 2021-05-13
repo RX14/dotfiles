@@ -192,7 +192,7 @@ workspace $ws10 output $mon3
 
 exec {
   dbus-update-activation-environment --systemd --all
-  amixer set Master 30%
+  amixer set Master 24%
 
   sh -c 'while true; do waybar; done'
   doom run --daemon
