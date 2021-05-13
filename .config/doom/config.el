@@ -20,7 +20,9 @@
 
       jit-lock-stealth-time 2
 
-      langtool-default-language "en-GB")
+      langtool-default-language "en-GB"
+
+      ispell-dictionary "en_GB")
 
 (after! sql
   (sql-set-product 'postgres))
