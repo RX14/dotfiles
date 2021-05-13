@@ -20,8 +20,9 @@ acoustid:
   apikey: ITwDyyiq
 
 replaygain:
-  backend: gstreamer
-  # overwrite: yes
+  backend: ffmpeg
+  overwrite: yes
+  peak: 'true'
 
 web:
   host: 0.0.0.0
