@@ -59,3 +59,5 @@
 	command = git_diff_image
 [init]
 	defaultBranch = main
+[tag]
+	gpgSign = true
