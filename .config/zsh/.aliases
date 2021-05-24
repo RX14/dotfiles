@@ -164,9 +164,11 @@ function cp-base() {
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {
-    yay -Syu --devel --noconfirm
-    yay -Sc --aur --noconfirm
+    yay -Syu --repo --noconfirm
     $ZDOTDIR/archlinux-update-modules/archlinux-update-modules --dont-ask
+    yay -Syu --devel --noconfirm
+
+    yay -Sc --aur --noconfirm
     sudo pkgcacheclean -v 2
 
     antigen selfupdate
