@@ -100,7 +100,7 @@ export LMOD_PAGER=less
 
 export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
 
-#export PULSE_LATENCY_MSEC=22
+export CRYSTAL_OPTS="--link-flags=-fuse-ld=lld --progress"
 
 if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     export CCACHE_PREFIX="distcc"
