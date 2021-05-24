@@ -1,0 +1,2 @@
+#!/bin/sh
+swaymsg -t get_outputs | jq -e '[.[].dpms | not] | any' && swaymsg 'output * dpms on'
