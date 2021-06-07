@@ -22,7 +22,9 @@
 
       langtool-default-language "en-GB"
 
-      ispell-dictionary "en_GB")
+      ispell-dictionary "en_GB"
+
+      +format-on-save-enabled-modes '(crystal-mode))
 
 (after! sql
   (sql-set-product 'postgres))
