@@ -41,6 +41,7 @@ export npm_config_devdir="$XDG_CACHE_HOME"/node-gyp
 export PSQLRC="$XDG_CONFIG_HOME"/psql
 export PSQL_HISTORY="$XDG_DATA_HOME"/psql_history
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME"/julia:"$JULIA_DEPOT_PATH"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME"/ripgrep/ripgreprc
 
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
