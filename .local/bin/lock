@@ -12,3 +12,5 @@ sleep 0.2
 kill -USR1 $swayidle_pid
 swaylock -i "$lockscreen_image" --show-failed-attempts --indicator-radius=90
 kill $swayidle_pid
+
+(sleep 1; amixer set Master 24%) &
