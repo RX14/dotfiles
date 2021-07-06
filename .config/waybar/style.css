@@ -80,7 +80,7 @@ window#waybar {
 
 #battery.charging,
 #battery.plugged {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 #temperature {
