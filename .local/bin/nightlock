@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while true; do
-    if [ "$(date +"%H")" = "01" ]; then
+    if ([ "$(date +"%H")" -eq "00" ]) || [ "$(date +"%H")" -eq "01" ]; then
         sudo setfan off
         lock
     fi
