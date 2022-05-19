@@ -2,6 +2,7 @@
 
 while true; do
     if [ "$(date +"%H")" = "01" ]; then
+        sudo setfan off
         lock
     fi
     sleep 5m
