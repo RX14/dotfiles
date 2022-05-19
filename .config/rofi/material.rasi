@@ -83,6 +83,10 @@ button, textbox {
 	padding: 5px;
 }
 
+button {
+    horizontal-align: 0.5;
+}
+
 button selected {
 	background-color: @base0D;
 }
@@ -128,4 +132,13 @@ element normal urgent, element selected urgent, element alternate urgent {
 
 element normal active, element selected active, element alternate active {
 	text-color: @base0B;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    margin: 0 5px;
 }

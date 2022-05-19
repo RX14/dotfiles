@@ -1,0 +1,14 @@
+configuration {
+    modi: "drun,emoji:~/.config/rofi/emoji.sh,window,run";
+    sidebar-mode: true;
+
+    threads: 0;
+    matching: "normal";
+
+    show-icons: true;
+
+    kb-mode-next: "Tab";
+    kb-row-tab: "";
+}
+
+@theme "~/.config/rofi/material.rasi"
