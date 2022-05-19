@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# If swaylock is already running, exit
+if pgrep swaylock; then
+    echo "Swaylock already running!"
+    exit 1
+else
+    echo "Swaylock not running!"
+fi
+
 lockscreen_image="$(find ~/.config/sway/lockscreens -type f | shuf -n 1)"
 
 swayidle \
