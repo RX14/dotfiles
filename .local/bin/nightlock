@@ -5,5 +5,5 @@ while true; do
         sudo setfan off
         lock
     fi
-    sleep 5m
+    sleep 1m
 done
