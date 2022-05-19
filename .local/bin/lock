@@ -3,7 +3,7 @@
 lockscreen_image="$(find ~/.config/sway/lockscreens -type f | shuf -n 1)"
 
 swayidle \
-    timeout 5 'swaymsg "output * dpms off"' \
+    timeout 10 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
 
 swayidle_pid=$!
