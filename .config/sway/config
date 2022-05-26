@@ -56,6 +56,12 @@ output $mon2 {
   transform 90
 }
 
+output "Goldstar Company Ltd LG HDR 4K 0x000081B5" {
+  res 3840x2160
+  pos 1920 550
+  scale 2
+}
+
 output * bg ~/.config/sway/background.png fill
 
 # Font for window titles. Will also be used by the bar unless a different font
