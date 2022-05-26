@@ -42,7 +42,7 @@ input "1133:16489:Logitech_MX_Master_2S" {
 
 output $mon3 {
   res 1920x1080
-  pos 0 550
+  pos 0 385
 }
 
 output $mon1 {
