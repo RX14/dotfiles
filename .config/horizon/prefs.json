@@ -98,6 +98,11 @@
                 "g": 1.0,
                 "r": 0.0
             },
+            "NET_TIE": {
+                "b": 0.5,
+                "g": 0.10000000149011612,
+                "r": 1.0
+            },
             "NOPOPULATE_X": {
                 "b": 0.4000000059604645,
                 "g": 0.4000000059604645,
@@ -390,6 +395,11 @@
                 "g": 1.0,
                 "r": 0.0
             },
+            "NET_TIE": {
+                "b": 0.5,
+                "g": 0.10000000149011612,
+                "r": 1.0
+            },
             "NOPOPULATE_X": {
                 "b": 0.4000000059604645,
                 "g": 0.4000000059604645,
@@ -610,6 +620,14 @@
             [
                 {
                     "key": "a",
+                    "mod": 0
+                }
+            ]
+        ],
+        "ARC_MODE": [
+            [
+                {
+                    "key": "m",
                     "mod": 0
                 }
             ]
@@ -896,6 +914,14 @@
             [
                 {
                     "key": "a",
+                    "mod": 0
+                }
+            ]
+        ],
+        "TOGGLE_DEG45_RESTRICT": [
+            [
+                {
+                    "key": "q",
                     "mod": 0
                 }
             ]
@@ -2210,6 +2236,25 @@
             "tool": "EDIT_CUSTOM_VALUE"
         },
         {
+            "action": "TOOL",
+            "keys": {
+                "1": [],
+                "16": [],
+                "2": [],
+                "255": [
+                    [
+                        {
+                            "key": "Return",
+                            "mod": 0
+                        }
+                    ]
+                ],
+                "4": [],
+                "8": []
+            },
+            "tool": "EDIT_TEXT"
+        },
+        {
             "action": "UNDO",
             "keys": {
                 "1": [],
@@ -3247,12 +3292,125 @@
                 ]
             },
             "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_PERSP",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "p",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_ORTHO",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "o",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_FRONT",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "1",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_BACK",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "2",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_TOP",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "3",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_BOTTOM",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "4",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_LEFT",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "6",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "VIEW_3D_RIGHT",
+            "keys": {
+                "256": [
+                    [
+                        {
+                            "key": "5",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
         }
     ],
     "mouse": {
         "drag_polygon_edges": true,
         "drag_to_move": false,
-        "switch_layers": true
+        "switch_layers": true,
+        "switch_sheets": true
     },
     "partinfo": {
         "enable": false,
@@ -3267,7 +3425,27 @@
         "show_all_junctions": false
     },
     "show_pull_request_tools": true,
+    "spacenav": {
+        "buttons": [
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE",
+            "NONE"
+        ],
+        "pan_scale": 0.05000000074505806,
+        "rotation_scale": 0.009999999776482582,
+        "threshold": 10.0,
+        "zoom_scale": 0.0010000000474974513
+    },
     "stock_info_provider": "none",
+    "undo_redo": {
+        "max_depth": 50,
+        "show_hints": true
+    },
     "zoom": {
         "keyboard_zoom_to_cursor": false,
         "smooth_zoom_2d": true,
