@@ -27,6 +27,12 @@ alias urestart="systemctl --user restart"
 alias uenable="systemctl --user enable"
 alias udisable="systemctl --user disable"
 
+if which zathura >/dev/null 2>&1; then
+    zathura() {
+        /usr/bin/zathura "${@}" &!
+    }
+fi
+
 if [[ -n "$DISPLAY" ]]; then
     ec() {
         setopt local_options bash_rematch re_match_pcre
