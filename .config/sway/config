@@ -215,7 +215,6 @@ exec {
            resume       'dpms-on' \
            before-sleep 'lock'
   nightlock
-  discord-canary-check
   kdeconnect-indicator
 
   hexchat
