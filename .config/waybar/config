@@ -32,9 +32,9 @@
       "scroll-step": "2.0"
     },
     "network": {
-      "format-wifi": "\uFAA8 {essid} ({signalStrength}%)",
-      "format-ethernet": "\uF6FF {ifname}: {ipaddr}/{cidr}",
-      "format-linked": "\uF818 {ifname}: (No IP)",
+      "format-wifi": "\uFAA8 {signalStrength}%",
+      "format-ethernet": "\uF6FF {ifname}",
+      "format-linked": "\uF818 {ifname}",
       "format-disconnected": "\uFAA9 Disconnected"
     },
     "memory": {
