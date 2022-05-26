@@ -53,7 +53,7 @@ output $mon1 {
 output $mon2 {
   res 1920x1200
   pos 3840 0
-  transform 270
+  transform 90
 }
 
 output * bg ~/.config/sway/background.png fill
