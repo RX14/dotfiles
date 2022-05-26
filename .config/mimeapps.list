@@ -48,5 +48,6 @@ image/jpeg=qimgv.desktop;feh.desktop;
 text/calendar=thunderbird.desktop;
 audio/ogg=mpv.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;
+video/quicktime=mpv.desktop;
 
 [Removed Associations]
