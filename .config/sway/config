@@ -211,8 +211,9 @@ exec {
   doom run --daemon
   mako
   mpris-proxy
-  swayidle timeout 300 '[[ $(cat /sys/class/power_supply/BAT1/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
-           resume      'dpms-on'
+  swayidle timeout 300  '[[ $(cat /sys/class/power_supply/BAT0/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
+           resume       'dpms-on' \
+           before-sleep 'lock'
   nightlock
   discord-canary-check
   kdeconnect-indicator
