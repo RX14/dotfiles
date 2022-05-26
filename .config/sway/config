@@ -220,7 +220,7 @@ exec {
   hexchat
   dino
   telegram-desktop
-  discord-canary
+  discord
   thunderbird
   pulseeffects
 }
