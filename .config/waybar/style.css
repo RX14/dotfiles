@@ -51,6 +51,7 @@ window#waybar {
 
 #battery {
   background-color: #26A65B;
+  color: white;
 }
 
 #battery.warning {
@@ -81,6 +82,7 @@ window#waybar {
 #battery.charging,
 #battery.plugged {
   background-color: transparent;
+  color: white;
 }
 
 #temperature {
