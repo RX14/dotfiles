@@ -216,6 +216,7 @@ exec {
            before-sleep 'lock'
   nightlock
   kdeconnect-indicator
+  solaar -w hide
 
   hexchat
   dino
