@@ -6,7 +6,6 @@ alias suspend="systemctl suspend"
 alias s="sudo"
 
 if [ -e /usr/bin/yay ]; then
-    alias yay="nice -n 10 yay"
     alias inst="yay -S"
 else
     alias inst="sudo pacman -S"
