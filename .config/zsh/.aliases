@@ -169,8 +169,10 @@ function cp-base() {
 function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 
 function update() {
-    yay -Syu --repo --noconfirm
+    yay -Syu --repo
     $ZDOTDIR/archlinux-update-modules/archlinux-update-modules --dont-ask
+
+    yay -Qu
     yay -Quq --aur --devel | xargs -n 1 yay -S --noconfirm
 
     yay -Sc --aur --noconfirm
