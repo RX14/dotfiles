@@ -104,6 +104,8 @@ export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7:3perl"
 
 export CRYSTAL_OPTS="--link-flags=-fuse-ld=lld --progress"
 
+export PICO_SDK_FETCH_FROM_GIT=on
+
 if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     # export CCACHE_PREFIX="distcc"
     # export DISTCC_HOSTS="[203:ada2:f8d5:e206:dbc1:5c9a:d848:fce6]/28,lzo localhost/3"
