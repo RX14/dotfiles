@@ -4,6 +4,9 @@
         "remember": true,
         "show_in_tool": true
     },
+    "appearance": {
+        "dark_theme": false
+    },
     "board": {
         "drag_start_track": false,
         "highlight_on_top": true,
@@ -950,6 +953,9 @@
                 }
             ]
         ]
+    },
+    "input_devices": {
+        "devices": {}
     },
     "key_sequences": [
         {
@@ -1923,6 +1929,184 @@
         {
             "action": "TOOL",
             "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "g",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_GROUP"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "G",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_NEW_GROUP"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "r",
+                            "mod": 0
+                        },
+                        {
+                            "key": "g",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "RENAME_GROUP"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "c",
+                            "mod": 0
+                        },
+                        {
+                            "key": "g",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "CLEAR_GROUP"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "t",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_TAG"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "T",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_NEW_TAG"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "r",
+                            "mod": 0
+                        },
+                        {
+                            "key": "t",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "RENAME_TAG"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "c",
+                            "mod": 0
+                        },
+                        {
+                            "key": "t",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "CLEAR_TAG"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "v",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "TOGGLE_GROUP_TAG_VISIBLE"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
                 "1": [],
                 "16": [],
                 "2": [],
@@ -2009,6 +2193,24 @@
                 ]
             },
             "tool": "SWAP_NETS"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "p",
+                            "mod": 0
+                        },
+                        {
+                            "key": "x",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "SET_NC"
         },
         {
             "action": "TOOL",
@@ -2975,6 +3177,50 @@
             "tool": "NONE"
         },
         {
+            "action": "HIGHLIGHT_GROUP",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "l",
+                            "mod": 0
+                        },
+                        {
+                            "key": "g",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "HIGHLIGHT_TAG",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "L",
+                            "mod": 0
+                        },
+                        {
+                            "key": "l",
+                            "mod": 0
+                        },
+                        {
+                            "key": "t",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
             "action": "SEARCH",
             "keys": {
                 "1": [],
@@ -3442,6 +3688,9 @@
         "zoom_scale": 0.0010000000474974513
     },
     "stock_info_provider": "none",
+    "tool_bar": {
+        "vertical_layout": false
+    },
     "undo_redo": {
         "max_depth": 50,
         "show_hints": true
@@ -3450,7 +3699,7 @@
         "keyboard_zoom_to_cursor": false,
         "smooth_zoom_2d": true,
         "smooth_zoom_3d": false,
-        "touchpad_pan": false,
+        "touchpad_pan": true,
         "zoom_factor": 50.0
     }
 }
