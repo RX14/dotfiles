@@ -8,7 +8,7 @@ configuration {
     show-icons: true;
 
     kb-mode-next: "Tab";
-    kb-row-tab: "";
+    kb-element-next: "";
 }
 
 @theme "~/.config/rofi/material.rasi"
