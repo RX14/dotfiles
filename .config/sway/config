@@ -190,7 +190,7 @@ assign [app_id="dino"] $ws10
 assign [app_id="telegramdesktop"] $ws10
 assign [class="discord"] $ws10
 assign [app_id="thunderbird"] $ws10
-assign [app_id="pulseeffects"] $ws10
+assign [app_id="com.github.wwmm.easyeffects"] $ws10
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
@@ -223,7 +223,7 @@ exec {
   telegram-desktop
   discord
   thunderbird
-  pulseeffects
+  easyeffects
 }
 
 
