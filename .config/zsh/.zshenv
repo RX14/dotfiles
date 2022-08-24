@@ -100,7 +100,7 @@ export BAT_PAGER=
 
 export LMOD_PAGER=less
 
-export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7"
+export MANSECT="2:3:1:n:l:8:0:5:4:9:6:7:3perl"
 
 export CRYSTAL_OPTS="--link-flags=-fuse-ld=lld --progress"
 
