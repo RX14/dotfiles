@@ -5,5 +5,8 @@ while true; do
         sudo setfan off
         lock
     fi
+    # if [ "$(date +"%H")" = "11" ]; then
+    #     lock
+    # fi
     sleep 1m
 done
