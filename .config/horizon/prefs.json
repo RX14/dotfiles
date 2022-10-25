@@ -176,6 +176,11 @@
                 "g": 0.30000001192092896,
                 "r": 0.30000001192092896
             },
+            "SYMBOL_BOUNDING_BOX": {
+                "b": 0.5,
+                "g": 0.5,
+                "r": 0.5
+            },
             "TEXT_OVERLAY": {
                 "b": 1.0,
                 "g": 1.0,
@@ -473,6 +478,11 @@
                 "g": 0.30000001192092896,
                 "r": 0.30000001192092896
             },
+            "SYMBOL_BOUNDING_BOX": {
+                "b": 0.5,
+                "g": 0.5,
+                "r": 0.5
+            },
             "TEXT_OVERLAY": {
                 "b": 1.0,
                 "g": 1.0,
@@ -663,6 +673,14 @@
             [
                 {
                     "key": "O",
+                    "mod": 0
+                }
+            ]
+        ],
+        "DELETE_LAST_SEGMENT": [
+            [
+                {
+                    "key": "BackSpace",
                     "mod": 0
                 }
             ]
@@ -921,6 +939,14 @@
                 }
             ]
         ],
+        "TOGGLE_CORNER_STYLE": [
+            [
+                {
+                    "key": "c",
+                    "mod": 0
+                }
+            ]
+        ],
         "TOGGLE_DEG45_RESTRICT": [
             [
                 {
@@ -955,6 +981,7 @@
         ]
     },
     "input_devices": {
+        "device_types": {},
         "devices": {}
     },
     "key_sequences": [
@@ -3644,6 +3671,38 @@
                     [
                         {
                             "key": "5",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "CYCLE_LAYER_DISPLAY_MODE",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "m",
+                            "mod": 8
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "ASSIGN_PART",
+            "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "p",
+                            "mod": 0
+                        },
+                        {
+                            "key": "a",
                             "mod": 0
                         }
                     ]
