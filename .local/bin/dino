@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec env GDK_DPI_SCALE=1.25 /usr/bin/dino "${@}"
