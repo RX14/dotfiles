@@ -13,11 +13,12 @@
     },
 
     "custom/music": {
-      "exec": "$HOME/.config/waybar/mediaplayer.py --player mpv 2>/dev/null",
+      "exec": "waybar-mpris --autofocus --play \uf8e3 --pause ''",
       "return-type": "json",
+      "escape": true,
 
-      "format": "\uF001 {}",
-      "max-length": 40
+      "max-length": 40,
+      "on-click-right": "waybar-mpris --send player-next"
     },
 
     "tray": {
