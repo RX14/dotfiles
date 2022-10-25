@@ -1,8 +1,9 @@
 set $mod Mod4
 
-set $mon1 "Dell Inc. DELL U2415 7MT0184Q4TKL"
-set $mon2 "Dell Inc. DELL U2415 08DXD48O3Y2L"
-set $mon3 eDP-1
+set $deskcentre "Unknown MateView              "
+set $deskright "Dell Inc. DELL U2415 7MT0184Q4TKL"
+set $deskleft "Dell Inc. DELL U2415 08DXD48O3Y2L"
+set $internal eDP-1
 
 set $ws1 "1: web1"
 set $ws2 "2: dev1"
@@ -40,25 +41,32 @@ input "1133:16489:Logitech_MX_Master_2S" {
   pointer_accel 0.2
 }
 
-output $mon3 {
+output $internal {
   res 1920x1080
-  pos 0 385
+  pos 1200 1370
 }
 
-output $mon1 {
+output $deskleft {
   res 1920x1200
-  pos 1920 265
+  transform 270
+  pos 0 0
 }
 
-output $mon2 {
+output $deskcentre {
+  res 3840x2560
+  scale 2
+  pos 1200 90
+}
+
+output $deskright {
   res 1920x1200
-  pos 3840 0
   transform 90
+  pos 3120 0
 }
 
 output "Goldstar Company Ltd LG HDR 4K 0x000081B5" {
   res 3840x2160
-  pos 1920 550
+  pos 1200 0
   scale 2
 }
 
@@ -192,16 +200,16 @@ assign [class="discord"] $ws10
 assign [app_id="thunderbird"] $ws10
 assign [app_id="com.github.wwmm.easyeffects"] $ws10
 
-workspace $ws1 output $mon1
-workspace $ws2 output $mon1
-workspace $ws3 output $mon1
-workspace $ws4 output $mon2
-workspace $ws5 output $mon2
-workspace $ws6 output $mon2
-workspace $ws7 output $mon2
-workspace $ws8 output $mon3
-workspace $ws9 output $mon3
-workspace $ws10 output $mon3
+workspace $ws1 output $deskcentre
+workspace $ws2 output $deskcentre
+workspace $ws3 output $deskcentre
+workspace $ws4 output $deskright
+workspace $ws5 output $deskright
+workspace $ws6 output $deskright
+workspace $ws7 output $deskright
+workspace $ws8 output $deskleft
+workspace $ws9 output $deskleft
+workspace $ws10 output $deskleft
 
 exec {
   dbus-update-activation-environment --systemd --all
