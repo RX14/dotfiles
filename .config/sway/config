@@ -225,12 +225,10 @@ exec {
   kanshi
   nightlock
   kdeconnect-indicator
-  solaar -w hide
 
   hexchat
   dino
   telegram-desktop
-  discord
   thunderbird
   easyeffects
 }
