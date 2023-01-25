@@ -64,7 +64,7 @@ output $deskright {
   pos 3120 0
 }
 
-output "Goldstar Company Ltd LG HDR 4K 0x000081B5" {
+output "LG Electronics LG HDR 4K 0x000081B5" {
   res 3840x2160
   pos 1200 0
   scale 2
