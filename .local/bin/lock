@@ -22,4 +22,3 @@ swaylock -i "$lockscreen_image" --show-failed-attempts --indicator-radius=90
 kill $swayidle_pid
 
 sudo setfan auto
-#(sleep 1; amixer set Master 24%) &
