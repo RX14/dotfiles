@@ -1,6 +1,6 @@
 set $mod Mod4
 
-set $deskcentre "Unknown MateView              "
+set $deskcentre "Huawei Technologies Co., Inc. MateView              "
 set $deskright "Dell Inc. DELL U2415 7MT0184Q4TKL"
 set $deskleft "Dell Inc. DELL U2415 08DXD48O3Y2L"
 set $internal eDP-1
