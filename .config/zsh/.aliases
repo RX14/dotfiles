@@ -92,6 +92,8 @@ alias ll="ls -laF"
 
 alias dc='docker-compose'
 
+alias ip='ip -color=auto'
+
 alias mpv-pl='mpv --no-resume-playback --profile=audio'
 function play() { 
     local mpvargs=()
