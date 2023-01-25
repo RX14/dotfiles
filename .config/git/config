@@ -37,8 +37,6 @@
 	autoSquash = true
 [commit]
 	gpgsign = true
-[http "https://gopkg.in"]
-	followRedirects = true
 [mergetool "kdiff3NoAuto"]
 	cmd = kdiff3 --L1 \"$MERGED (Base)\" --L2 \"$MERGED (Local)\" --L3 \"$MERGED (Remote)\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [github]
@@ -61,3 +59,7 @@
 	defaultBranch = main
 [tag]
 	gpgSign = true
+[hub]
+	protocol = ssh
+[http]
+	followRedirects = false
