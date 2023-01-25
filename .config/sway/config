@@ -55,7 +55,7 @@ output $deskleft {
 output $deskcentre {
   res 3840x2560
   scale 2
-  pos 1200 90
+  pos 1200 40
 }
 
 output $deskright {
@@ -66,7 +66,7 @@ output $deskright {
 
 output "LG Electronics LG HDR 4K 0x000081B5" {
   res 3840x2160
-  pos 1200 0
+  pos 1200 290
   scale 2
 }
 
