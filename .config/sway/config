@@ -222,7 +222,6 @@ exec {
   sh -c 'while true; do waybar; done'
   doom run --daemon
   mako
-  mpris-proxy
   swayidle timeout 300  '[[ $(cat /sys/class/power_supply/BAT0/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
            resume       'dpms-on' \
            before-sleep 'lock'
