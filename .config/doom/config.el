@@ -2,8 +2,8 @@
 
 (map! :leader
       (:prefix "w"
-        "f" #'make-frame
-        "o" #'other-frame)
+               "f" #'make-frame
+               "o" #'other-frame)
 
       "q q" #'save-buffers-kill-emacs
       "t F" #'format-all-mode)
@@ -15,7 +15,6 @@
 
 (setq evil-want-fine-undo t
 
-      lsp-clients-elixir-server-executable "elixir-ls"
       lsp-enable-snippet nil
 
       jit-lock-stealth-time 2
@@ -24,7 +23,7 @@
 
       ispell-dictionary "en_GB"
 
-      +format-on-save-enabled-modes '(crystal-mode))
+      +format-on-save-enabled-modes '(crystal-mode python-mode))
 
 (after! sql
   (sql-set-product 'postgres))
