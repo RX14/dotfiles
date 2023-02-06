@@ -200,7 +200,7 @@ for_window [class="kruler"] floating enable
 
 assign [class="Hexchat"] $ws10
 assign [app_id="dino"] $ws10
-assign [app_id="telegramdesktop"] $ws10
+assign [app_id="org.telegram.desktop"] $ws10
 assign [class="discord"] $ws10
 assign [app_id="thunderbird"] $ws10
 assign [app_id="com.github.wwmm.easyeffects"] $ws10
