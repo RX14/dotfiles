@@ -13,10 +13,11 @@
        ;;japanese
 
        :completion
-       company             ; the ultimate code completion backend
+       (company +childframe +tng)             ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy)        ; a search engine for love and life
+       ;;(ivy +fuzzy)        ; a search engine for love and life
+       (vertico +childframe +icons)
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -96,6 +97,7 @@
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
        ;;wakatime
+       tree-sitter
 
        :lang
        ;;agda              ; types of types of types of types...
