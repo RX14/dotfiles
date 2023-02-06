@@ -25,7 +25,7 @@ image/png=qimgv.desktop
 image/jpeg=qimgv.desktop
 text/csv=libreoffice-calc.desktop
 x-scheme-handler/msteams=teams.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/figma=figma-linux.desktop
 
 [Added Associations]
@@ -47,7 +47,7 @@ application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mu
 image/jpeg=qimgv.desktop;feh.desktop;
 text/calendar=thunderbird.desktop;
 audio/ogg=mpv.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;org.telegram.desktop.desktop;
 video/quicktime=mpv.desktop;
 
 [Removed Associations]
