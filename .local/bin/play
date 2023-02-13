@@ -1,0 +1,42 @@
+#!/bin/zsh
+source $ZDOTDIR/.aliases
+
+mpvargs=()
+files_local=false
+while [[ "$1" == "--"* ]]; do
+    if [[ "$1" == "--local" ]]; then
+        files_local=true
+    else
+        mpvargs+="$1"
+    fi
+    shift
+done
+
+playlist=$1
+shift
+
+transform() {
+    if [[ "$files_local" == "true" ]]; then
+        sed 's|/media/|/data/|' | sed 's/flac/ogg/'
+    else
+        cat
+    fi
+}
+
+if [[ "$playlist" == "albums" ]]; then
+    while true; do
+        mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:$(beet ls -a -f '$id' "${@}" | shuf -n 1) track+ | transform)
+    done
+elif [[ "$playlist" == "albums_ordered" ]]; then
+    beet ls -a -f '$id' "${@}" | while read -r albumid; do
+        mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:"$albumid" track+ | transform)
+    done
+elif [[ "$playlist" == "songs" ]]; then
+    mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p "$@" | transform)
+elif [[ -f "/media/media/Music/Playlists/$playlist.url" ]]; then
+    mpv-pl "${mpvargs[@]}" $(cat "/media/media/Music/Playlists/$playlist.url") "$@"
+elif [[ -f  "/media/media/Music/Playlists/$playlist.m3u" ]]; then
+    mpv-pl "${mpvargs[@]}" "/media/media/Music/Playlists/$playlist.m3u" "$@"
+elif [[ -d "/media/media/Music/Playlists/$playlist" ]]; then
+    mpv-pl "${mpvargs[@]}" "/media/media/Music/Playlists/$playlist" "$@"
+fi
