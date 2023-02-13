@@ -94,6 +94,47 @@ alias dc='docker-compose'
 alias ip='ip -color=auto'
 
 alias mpv-pl='mpv --no-resume-playback --profile=audio'
+function _play_transform () {
+    if [[ "${_play_files_local}" == "true" ]]; then
+        sed 's|/media/|/data/|' | sed 's/flac/ogg/'
+    else
+        cat
+    fi
+}
+
+function play() {
+    local mpvargs=()
+    _play_files_local=false
+    while [[ "$1" == "--"* ]]; do
+        if [[ "$1" == "--local" ]]; then
+            _play_files_local=true
+        else
+            mpvargs+="$1"
+        fi
+        shift
+    done
+
+    local playlist=$1
+    shift
+
+    if [[ "$playlist" == "albums" ]]; then
+        while true; do
+            mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:$(beet ls -a -f '$id' "${@}" | shuf -n 1) track+ | _play_transform)
+        done
+    elif [[ "$playlist" == "albums_ordered" ]]; then
+        beet ls -a -f '$id' "${@}" | while read -r albumid; do
+            mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p album_id:"$albumid" track+ | _play_transform)
+        done
+    elif [[ "$playlist" == "songs" ]]; then
+        mpv-pl "${mpvargs[@]}" --playlist=<(beet ls -p "$@" | _play_transform)
+    elif [[ -f "/media/media/Music/Playlists/$playlist.url" ]]; then
+        mpv-pl "${mpvargs[@]}" $(cat "/media/media/Music/Playlists/$playlist.url") "$@"
+    elif [[ -f  "/media/media/Music/Playlists/$playlist.m3u" ]]; then
+        mpv-pl "${mpvargs[@]}" "/media/media/Music/Playlists/$playlist.m3u" "$@"
+    elif [[ -d "/media/media/Music/Playlists/$playlist" ]]; then
+        mpv-pl "${mpvargs[@]}" "/media/media/Music/Playlists/$playlist" "$@"
+    fi
+}
 
 function mpv-gjm() {
     local filename="$1"
