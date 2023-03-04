@@ -1,11 +1,11 @@
 #!/bin/sh
 
 while true; do
-    if ([ "$(date +"%H")" -eq "00" ]) || [ "$(date +"%H")" -eq "01" ]; then
+    if [ "$(date +"%H")" -eq 00 ] || [ "$(date +"%H")" -eq 01 ]; then
         sudo setfan off
         lock
     fi
-    if [ "$(date +"%H")" = "10" ]; then
+    if [ "$(date +"%H")" -eq 10 ] && [ "$(date +"%M")" -le 30 ]; then
         lock
     fi
     sleep 1m
