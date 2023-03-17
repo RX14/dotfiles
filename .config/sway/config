@@ -5,6 +5,8 @@ set $deskright "Dell Inc. DELL U2415 7MT0184Q4TKL"
 set $deskleft "Dell Inc. DELL U2415 08DXD48O3Y2L"
 set $internal eDP-1
 
+set $aframon "LG Electronics LG HDR 4K 0x000081B5"
+
 set $ws1 "1: web1"
 set $ws2 "2: dev1"
 set $ws3 "3: other1"
@@ -64,7 +66,7 @@ output $deskright {
   pos 3120 0
 }
 
-output "LG Electronics LG HDR 4K 0x000081B5" {
+output $aframon {
   res 3840x2160
   pos 1200 290
   scale 2
@@ -206,16 +208,16 @@ assign [class="discord"] $ws10
 assign [app_id="thunderbird"] $ws10
 assign [app_id="com.github.wwmm.easyeffects"] $ws10
 
-workspace $ws1 output $deskcentre
-workspace $ws2 output $deskcentre
-workspace $ws3 output $deskcentre
-workspace $ws4 output $deskright
-workspace $ws5 output $deskright
-workspace $ws6 output $deskright
-workspace $ws7 output $deskright
-workspace $ws8 output $deskleft
-workspace $ws9 output $deskleft
-workspace $ws10 output $deskleft
+workspace $ws1 output $deskcentre $aframon
+workspace $ws2 output $deskcentre $aframon
+workspace $ws3 output $deskcentre $aframon
+workspace $ws4 output $deskright $internal
+workspace $ws5 output $deskright $internal
+workspace $ws6 output $deskright $internal
+workspace $ws7 output $deskright $internal
+workspace $ws8 output $deskleft $internal
+workspace $ws9 output $deskleft $internal
+workspace $ws10 output $deskleft $internal
 
 exec {
   dbus-update-activation-environment --systemd --all
