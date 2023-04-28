@@ -200,6 +200,7 @@ bindsym --locked XF86Display           output * enable; output * dpms on
 
 for_window [class="kruler"] floating enable
 for_window [app_id="firefox" title="Firefox - Teilen-Hinweis"] floating enable, sticky enable, move position 300px 99ppt, focus tiling
+for_window [title="HARDCODED"] floating enable
 
 assign [class="Hexchat"] $ws10
 assign [app_id="dino"] $ws10
