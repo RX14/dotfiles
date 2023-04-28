@@ -42,3 +42,5 @@
 (after! treemacs-evil
   (evil-define-key 'treemacs treemacs-mode-map (kbd "h")      #'treemacs-TAB-action)
   (evil-define-key 'treemacs treemacs-mode-map (kbd "l")      #'treemacs-TAB-action))
+
+(set-popup-rule! "^ ?\\*Treemacs" :ignore t)

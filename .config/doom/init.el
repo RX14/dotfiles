@@ -1,8 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
 (doom! :completion
-       (company +childframe +tng)             ; the ultimate code completion backend
-       (vertico +childframe +icons)
+       (company +tng)             ; the ultimate code completion backend
+       (vertico +icons)
 
        :ui
        doom              ; what makes DOOM look the way it does
