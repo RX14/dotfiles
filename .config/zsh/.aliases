@@ -48,6 +48,8 @@ else
     alias ec='vim'
 fi
 
+alias sec='sudoedit'
+
 if which hub >/dev/null 2>&1; then
     alias git=hub
 else
