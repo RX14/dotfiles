@@ -23,7 +23,9 @@
 
       ispell-dictionary "en_GB"
 
-      +format-on-save-enabled-modes '(crystal-mode python-mode))
+      +format-on-save-enabled-modes '(crystal-mode python-mode)
+
+      highlight-indent-guides-auto-character-face-perc 5)
 
 (after! sql
   (sql-set-product 'postgres))
