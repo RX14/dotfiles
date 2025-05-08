@@ -199,8 +199,7 @@ function update() {
 
     rustup update
 
-    antigen selfupdate
-    antigen update
+    antidote update
 }
 
 # This is a function to avoid completion

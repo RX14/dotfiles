@@ -6,7 +6,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 
 ZDOTDIR=$XDG_CONFIG_HOME/zsh
-ADOTDIR=$XDG_DATA_HOME/antigen
 
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export ANDROID_SDK_ROOT="$XDG_CONFIG_HOME"/android

@@ -1,0 +1,14 @@
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/gradle
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/systemd
+
+zsh-users/zsh-completions path:src kind:fpath
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+
+caiogondim/bullet-train.zsh path:bullet-train.zsh-theme

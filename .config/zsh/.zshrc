@@ -29,15 +29,12 @@ if which gr >/dev/null 2>&1; then
 fi
 
 ### ANTIGEN ###
-if [[ ! -d $ADOTDIR/source/ ]]; then
-    echo "Installing Antigen..."
-    mkdir -p $ADOTDIR/source/
-    git clone https://github.com/zsh-users/antigen.git $ADOTDIR/source/
+if [[ ! -d "$XDG_DATA_HOME"/antidote/ ]]; then
+    echo "Installing Antidote..."
+    git clone https://github.com/mattmc3/antidote.git "$XDG_DATA_HOME"/antidote/
 fi
 
-source $ADOTDIR/source/antigen.zsh
-
-antigen use oh-my-zsh
+source "$XDG_DATA_HOME"/antidote/antidote.zsh
 
 BULLETTRAIN_TIME_12HR=true
 
@@ -62,29 +59,7 @@ BULLETTRAIN_PROMPT_ORDER=(
     cmd_exec_time
 )
 
-antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-
-antigen bundles <<EOBUNDLES
-colored-man-pages
-docker
-gem
-gradle
-lein
-mercurial
-mvn
-pip
-sbt
-scala
-sudo
-systemd
-vagrant
-
-zsh-users/zsh-completions src
-zsh-users/zsh-history-substring-search
-zsh-users/zsh-syntax-highlighting
-EOBUNDLES
-
-antigen apply
+antidote load
 
 ### OTHER ###
 
