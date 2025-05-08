@@ -36,8 +36,6 @@ fi
 
 source "$XDG_DATA_HOME"/antidote/antidote.zsh
 
-BULLETTRAIN_TIME_12HR=true
-
 BULLETTRAIN_CONTEXT_FG=red
 if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
     BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
