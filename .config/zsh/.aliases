@@ -189,7 +189,6 @@ function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 function update() {
     setopt local_options err_return
     yay -Syu --repo "${@}"
-    $ZDOTDIR/archlinux-update-modules/archlinux-update-modules --dont-ask || true
 
     yay -Qu --aur --devel
     yay -Quq --aur --devel | xargs -n 1 yay -S --noconfirm
