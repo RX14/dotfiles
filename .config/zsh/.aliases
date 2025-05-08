@@ -56,7 +56,7 @@ else
     echo "Install hub!"
 fi
 
-alias aoe="zathura /data/bible.pdf &!"
+alias aoe="evince /data/bible.pdf &!"
 
 if which bat >/dev/null 2>&1; then
     alias cat=bat
