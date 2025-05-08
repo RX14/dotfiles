@@ -63,30 +63,34 @@ input "1133:16489:Logitech_MX_Master_2S" {
 
 output $internal {
   res 1920x1080
-  pos 1200 1370
+  pos 1200 1430
 }
 
 output $deskleft {
   res 1920x1200
   transform 270
-  pos 0 0
+  pos 0 150
+#  subpixel vrgb
 }
 
 output $deskcentre {
   res 3840x2560
+  render_bit_depth 10
   scale 2
-  pos 1200 40
+  pos 1200 150
+  subpixel rgb
 }
 
 output $deskright {
   res 1920x1200
   transform 90
   pos 3120 0
+#  subpixel vbgr
 }
 
 output $aframon {
   res 3840x2160
-  pos 1200 290
+  pos 1200 350
   scale 2
 }
 
