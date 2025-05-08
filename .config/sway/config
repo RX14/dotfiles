@@ -240,9 +240,9 @@ assign [class="discord"] $ws10
 assign [app_id="thunderbird"] $ws10
 assign [app_id="com.github.wwmm.easyeffects"] $ws10
 
-workspace $ws1 output $deskcentre $aframon
-workspace $ws2 output $deskcentre $aframon
-workspace $ws3 output $deskcentre $aframon
+workspace $ws1 output $deskcentre $workbench $aframon $internal
+workspace $ws2 output $deskcentre $workbench $aframon $internal
+workspace $ws3 output $deskcentre $workbench $aframon $internal
 workspace $ws4 output $deskright $internal
 workspace $ws5 output $deskright $internal
 workspace $ws6 output $deskright $internal
