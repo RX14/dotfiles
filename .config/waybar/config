@@ -13,7 +13,7 @@
     },
 
     "custom/music": {
-      "exec": "waybar-mpris --autofocus --play \uf8e3 --pause ''",
+      "exec": "waybar-mpris --autofocus --play \uf8e3 --pause '' --order SYMBOL:TITLE:ARTIST:ALBUM:POSITION",
       "return-type": "json",
       "escape": true,
 
