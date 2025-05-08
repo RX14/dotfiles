@@ -67,9 +67,8 @@ pkg_config_path=("$HOME/.local/lib/pkgconfig" $pkg_config_path)
 # ZSH History
 
 HISTFILE=$XDG_DATA_HOME/zsh/history
-SAVEHIST=1000000
-HISTSIZE=10000
-setopt INC_APPEND_HISTORY
+SAVEHIST=1000
+HISTSIZE=1000
 
 # Misc
 
