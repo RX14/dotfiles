@@ -34,6 +34,23 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
   scroll_factor 0.4
 }
 
+input "1133:16641:Logitech_Rechargeable_Touchpad_T650" {
+  accel_profile adaptive
+  pointer_accel -0.07
+  # pointer_accel 0
+
+  tap disabled
+  drag disabled
+  tap_button_map lrm
+
+  click_method clickfinger
+  clickfinger_button_map lrm
+
+  natural_scroll on
+  scroll_method two_finger
+  scroll_factor 0.2
+}
+
 input "2:10:TPPS/2_Elan_TrackPoint" {
   pointer_accel 0.5
   scroll_factor 0.5
@@ -154,8 +171,11 @@ bindsym $mod+0 workspace $ws10
 bindsym --whole-window button8 workspace prev_on_output
 bindsym --whole-window button9 workspace next_on_output
 
-bindgesture swipe:right workspace prev_on_output
-bindgesture swipe:left workspace next_on_output
+bindgesture swipe:3:right workspace prev_on_output
+bindgesture swipe:3:left workspace next_on_output
+
+bindgesture swipe:4:right focus left
+bindgesture swipe:4:left focus right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
