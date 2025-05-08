@@ -1,12 +1,17 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
-(map! :leader
-      (:prefix "w"
-               "f" #'make-frame
-               "o" #'other-frame)
+(map!
+ "M-c" #'clipboard-kill-ring-save
+ "M-v" #'clipboard-yank
 
-      "q q" #'save-buffers-kill-emacs
-      "t F" #'format-all-mode)
+ :leader
+ (:prefix "w"
+          "f" #'make-frame
+          "o" #'other-frame)
+
+ "q q" #'save-buffers-kill-emacs
+ "t F" #'format-all-mode
+ )
 
 (use-package! pkgbuild-mode
   :mode "/PKGBUILD$")
