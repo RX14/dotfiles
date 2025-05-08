@@ -263,12 +263,12 @@ exec {
   kanshi
   nightlock
   kdeconnect-indicator
+  gnome-calls --daemon
 
   hexchat
   dino
   telegram-desktop
   thunderbird
-  easyeffects
 }
 
 
