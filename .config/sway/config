@@ -6,6 +6,7 @@ set $deskleft "Dell Inc. DELL U2415 08DXD48O3Y2L"
 set $internal eDP-1
 
 set $aframon "LG Electronics LG HDR 4K 0x000081B5"
+set $workbench "Dell Inc. DELL U2415 XKV0P0190HCL"
 
 set $ws1 "1: web1"
 set $ws2 "2: dev1"
@@ -87,6 +88,12 @@ output $aframon {
   res 3840x2160
   pos 1200 290
   scale 2
+}
+
+output $workbench {
+  res 1920x1200
+  pos 3120 1430
+  subpixel rgb
 }
 
 output * bg ~/.config/sway/background.png fill
