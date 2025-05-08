@@ -1,12 +1,24 @@
 #!/bin/sh
 
 while true; do
-    if [ "$(date +"%H")" -eq 00 ] || [ "$(date +"%H")" -eq 01 ]; then
-        sudo setfan off
-        lock
-    fi
-    if [ "$(date +"%H")" -eq 10 ] && [ "$(date +"%M")" -le 30 ]; then
-        lock
-    fi
     sleep 1m
+
+    unset lock
+    if [ "$(date +"%H")" -eq 10 ] && [ "$(date +"%M")" -lt 30 ] && [ "$(($(date +"%j") % 2))" -ne 0 ]; then
+        lock="day"
+    fi
+    if [ "$(date +"%H")" -eq 23 ] && [ "$(date +"%M")" -ge 30 ]; then
+        lock="night"
+    fi
+    if [ "$(date +"%H")" -eq 00 ] || [ "$(date +"%H")" -eq 01 ]; then
+        lock="night"
+    fi
+
+    # do nothing if it's a day lock and lockskip exists
+    [ "$lock" = "day" ] && [ -e /tmp/lockskip ] && continue
+    # if we're here, nightskip isn't active, so delete the file
+    rm -f /tmp/lockskip
+
+    # [ "$lock" = "night" ] && sudo setfan off
+    [ -n "$lock" ] && lock
 done
