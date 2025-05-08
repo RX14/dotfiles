@@ -189,9 +189,10 @@ function spectrum() { sox $1 -n spectrogram -o - | feh -. - }
 function update() {
     setopt local_options err_return
     yay -Syu --repo "${@}"
+    sudo depmod
 
     yay -Qu --aur --devel
-    yay -Quq --aur --devel | xargs -n 1 yay -S --noconfirm
+    yay -Quq --aur --devel | xargs -n 1 yay -S --noconfirm || true
 
     yay -Sc --aur --noconfirm
     sudo pkgcacheclean -v 2
