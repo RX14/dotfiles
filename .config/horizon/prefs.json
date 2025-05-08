@@ -8,11 +8,12 @@
         "dark_theme": false
     },
     "board": {
-        "drag_start_track": false,
+        "drag_start_track": true,
         "highlight_on_top": true,
-        "move_using_router": false,
+        "move_using_router": true,
         "show_text_in_tracks": true,
-        "show_text_in_vias": true
+        "show_text_in_vias": true,
+        "show_via_span": "blind_buried"
     },
     "canvas_layer": {
         "colors": {
@@ -255,6 +256,26 @@
                 "g": 1.0,
                 "r": 0.0
             },
+            "-5": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-6": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-7": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-8": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
             "0": {
                 "b": 0.0,
                 "g": 0.0,
@@ -270,10 +291,50 @@
                 "g": 0.6274510025978088,
                 "r": 0.6274510025978088
             },
+            "1000": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
             "10000": {
                 "b": 1.0,
                 "g": 1.0,
                 "r": 1.0
+            },
+            "1001": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1002": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1003": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1004": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1005": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1006": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1007": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
             },
             "110": {
                 "b": 0.0,
@@ -557,6 +618,26 @@
                 "g": 1.0,
                 "r": 1.0
             },
+            "-5": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-6": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-7": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
+            "-8": {
+                "b": 0.0,
+                "g": 1.0,
+                "r": 1.0
+            },
             "0": {
                 "b": 0.0,
                 "g": 1.0,
@@ -572,10 +653,50 @@
                 "g": 0.6000000238418579,
                 "r": 0.6000000238418579
             },
+            "1000": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
             "10000": {
                 "b": 1.0,
                 "g": 1.0,
                 "r": 1.0
+            },
+            "1001": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1002": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1003": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1004": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1005": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1006": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
+            },
+            "1007": {
+                "b": 1.0,
+                "g": 1.0,
+                "r": 0.25
             },
             "110": {
                 "b": 0.0,
@@ -923,6 +1044,14 @@
                 }
             ]
         ],
+        "SELECT_VIA_DEFINITION": [
+            [
+                {
+                    "key": "d",
+                    "mod": 0
+                }
+            ]
+        ],
         "TOGGLE_ANGLE_SNAP": [
             [
                 {
@@ -951,6 +1080,14 @@
             [
                 {
                     "key": "q",
+                    "mod": 0
+                }
+            ]
+        ],
+        "TOGGLE_NAME_ORIENTATION": [
+            [
+                {
+                    "key": "t",
                     "mod": 0
                 }
             ]
@@ -3060,6 +3197,112 @@
             "tool": "NONE"
         },
         {
+            "action": "SELECTION_MODIFIER_ACTION_TOGGLE",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "S",
+                            "mod": 0
+                        },
+                        {
+                            "key": "x",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "SELECTION_MODIFIER_ACTION_ADD",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "S",
+                            "mod": 0
+                        },
+                        {
+                            "key": "plus",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "SELECTION_MODIFIER_ACTION_REMOVE",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "S",
+                            "mod": 0
+                        },
+                        {
+                            "key": "minus",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "SELECTION_STICKY",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "S",
+                            "mod": 0
+                        },
+                        {
+                            "key": "y",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "UNDO_SELECTION",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "z",
+                            "mod": 8
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
+            "action": "REDO_SELECTION",
+            "keys": {
+                "255": [
+                    [
+                        {
+                            "key": "Z",
+                            "mod": 8
+                        }
+                    ],
+                    [
+                        {
+                            "key": "y",
+                            "mod": 8
+                        }
+                    ]
+                ]
+            },
+            "tool": "NONE"
+        },
+        {
             "action": "TO_BOARD",
             "keys": {
                 "2": [
@@ -3725,8 +3968,8 @@
         "url": "https://dev-partinfo.kitspace.org/graphql"
     },
     "schematic": {
-        "bend_non_ortho": false,
-        "drag_start_net_line": false,
+        "bend_non_ortho": true,
+        "drag_start_net_line": true,
         "show_all_junctions": false
     },
     "show_pull_request_tools": true,
@@ -3751,7 +3994,8 @@
         "vertical_layout": false
     },
     "undo_redo": {
-        "max_depth": 50,
+        "max_depth": 100,
+        "never_forgets": true,
         "show_hints": true
     },
     "zoom": {
