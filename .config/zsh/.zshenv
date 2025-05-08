@@ -42,6 +42,7 @@ export PSQL_HISTORY="$XDG_DATA_HOME"/psql_history
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME"/julia:"$JULIA_DEPOT_PATH"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME"/ripgrep/ripgreprc
 export RACK_USER_DIR="$XDG_DATA_HOME"/vcvrack
+export IPFS_PATH="$XDG_DATA_HOME"/ipfs
 
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
