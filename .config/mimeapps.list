@@ -21,12 +21,13 @@ application/x-extension-gio-tests=userapp-cmdline-app-test-QHEZ4Z.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
-image/png=com.github.weclaw1.ImageRoll.desktop
-image/jpeg=com.github.weclaw1.ImageRoll.desktop
+image/png=org.gnome.eog.desktop
+image/jpeg=org.gnome.eog.desktop
 text/csv=libreoffice-calc.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/figma=figma-linux.desktop
+image/tiff=org.gnome.eog.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop
@@ -42,13 +43,14 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
 message/rfc822=thunderbird.desktop;userapp-Thunderbird-THFUYZ.desktop;userapp-Daily-940SYZ.desktop;userapp-Daily-MN0L1Z.desktop;userapp-Daily-63RC2Z.desktop;userapp-Daily-VILO2Z.desktop;userapp-Thunderbird-AFSX2Z.desktop;
-image/png=qimgv.desktop;feh.desktop;
+image/png=krita_png.desktop;gimp.desktop;org.gnome.eog.desktop;qimgv.desktop;feh.desktop;
 application/octet-stream=libreoffice-startcenter.desktop;org.pwmt.zathura-pdf-mupdf.desktop;libreoffice-calc.desktop;zathura.desktop;feh.desktop;
-image/jpeg=qimgv.desktop;feh.desktop;
+image/jpeg=krita_jpeg.desktop;org.gnome.eog.desktop;qimgv.desktop;feh.desktop;
 text/calendar=thunderbird.desktop;
 audio/ogg=mpv.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;org.telegram.desktop.desktop;
 video/quicktime=mpv.desktop;
 application/pdf=org.gnome.Evince.desktop;okularApplication_pdf.desktop;org.gnome.Papers.desktop;
+image/tiff=org.gnome.eog.desktop;
 
 [Removed Associations]
