@@ -22,7 +22,7 @@ input * {
   accel_profile flat
 
   xkb_layout gb
-  xkb_options "caps:hyper,compose:rctrl"
+  xkb_options "caps:super,altwin:ctrl_win,compose:rctrl"
 }
 
 input "2:7:SynPS/2_Synaptics_TouchPad" {
