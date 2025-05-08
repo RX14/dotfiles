@@ -28,6 +28,13 @@ x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/figma=figma-linux.desktop
 image/tiff=org.gnome.eog.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+application/rtf=okularApplication_txt.desktop
+x-scheme-handler/cider=cider.desktop
+x-scheme-handler/itms=cider.desktop
+x-scheme-handler/itmss=cider.desktop
+x-scheme-handler/music=cider.desktop
+x-scheme-handler/itunes=cider.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop
@@ -50,7 +57,11 @@ text/calendar=thunderbird.desktop;
 audio/ogg=mpv.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-AGG6W0.desktop;org.telegram.desktop.desktop;
 video/quicktime=mpv.desktop;
+audio/flac=mpv.desktop;
 application/pdf=org.gnome.Evince.desktop;okularApplication_pdf.desktop;org.gnome.Papers.desktop;
 image/tiff=org.gnome.eog.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+text/markdown=emacsclient.desktop;
+application/rtf=okularApplication_txt.desktop;
 
 [Removed Associations]
