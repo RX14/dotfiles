@@ -49,7 +49,7 @@ input "1133:16641:Logitech_Rechargeable_Touchpad_T650" {
   scroll_factor 0.2
 }
 
-input "2:10:TPPS/2_Elan_TrackPoint" {
+input type:pointer {
   pointer_accel 0.5
   scroll_factor 0.5
 }
