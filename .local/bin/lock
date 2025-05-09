@@ -19,9 +19,7 @@ swayidle \
 
 swayidle_pid=$!
 
-sleep 0.2
-kill -USR1 $swayidle_pid
+#sleep 0.2
+#kill -USR1 $swayidle_pid
 $LOCKER -i "$lockscreen_image"
 kill $swayidle_pid
-
-sudo setfan auto
