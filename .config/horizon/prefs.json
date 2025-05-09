@@ -2379,6 +2379,24 @@
         {
             "action": "TOOL",
             "keys": {
+                "2": [
+                    [
+                        {
+                            "key": "p",
+                            "mod": 0
+                        },
+                        {
+                            "key": "X",
+                            "mod": 0
+                        }
+                    ]
+                ]
+            },
+            "tool": "CLEAR_NC"
+        },
+        {
+            "action": "TOOL",
+            "keys": {
                 "255": []
             },
             "tool": "ADD_KEEPOUT"
