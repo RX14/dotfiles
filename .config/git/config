@@ -63,3 +63,7 @@
 	protocol = ssh
 [http]
 	followRedirects = false
+[credential]
+	helper = store
+[credential "https://github.com"]
+	username = RX14
