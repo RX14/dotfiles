@@ -92,5 +92,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 [[ ! -d $XDG_DATA_HOME/zsh ]] && mkdir -p $XDG_DATA_HOME/zsh
 
+which direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+
 # Set $? to 0 so the prompt doesn't show a failure on startup
 true
