@@ -1,11 +1,14 @@
 #!/bin/sh
 
+LOCKER="swaylock --show-failed-attempts --indicator-radius=90"
+# LOCKER="schlock --pin-file ~/.config/schlock.pin"
+
 # If swaylock is already running, exit
-if pgrep swaylock; then
-    echo "Swaylock already running!"
+if pgrep "$LOCKER"; then
+    echo "$LOCKER already running!"
     exit 1
 else
-    echo "Swaylock not running!"
+    echo "$LOCKER not running!"
 fi
 
 lockscreen_image="$(find ~/.config/sway/lockscreens -type f | shuf -n 1)"
@@ -18,7 +21,7 @@ swayidle_pid=$!
 
 sleep 0.2
 kill -USR1 $swayidle_pid
-swaylock -i "$lockscreen_image" --show-failed-attempts --indicator-radius=90
+$LOCKER -i "$lockscreen_image"
 kill $swayidle_pid
 
 sudo setfan auto
