@@ -26,29 +26,26 @@ input * {
   xkb_options "caps:super,altwin:ctrl_win,compose:rctrl"
 }
 
-input "2:7:SynPS/2_Synaptics_TouchPad" {
-  tap enabled
-  tap_button_map lmr
+input type:touchpad {
+  accel_profile adaptive
+
+  tap disabled
+  drag disabled
+  click_method clickfinger
 
   natural_scroll on
   scroll_method two_finger
+}
+
+input "6127:24757:Chicony_ThinkPad_X1_Tablet_Thin_Keyboard_Gen_3" {
+  tap enabled
+  tap_button_map lmr
+  clickfinger_button_map lmr
   scroll_factor 0.4
 }
 
 input "1133:16641:Logitech_Rechargeable_Touchpad_T650" {
-  accel_profile adaptive
   pointer_accel -0.07
-  # pointer_accel 0
-
-  tap disabled
-  drag disabled
-  tap_button_map lrm
-
-  click_method clickfinger
-  clickfinger_button_map lrm
-
-  natural_scroll on
-  scroll_method two_finger
   scroll_factor 0.2
 }
 
