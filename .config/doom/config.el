@@ -30,7 +30,9 @@
 
       +format-on-save-enabled-modes '(crystal-mode python-mode elm-mode)
 
-      highlight-indent-guides-auto-character-face-perc 5)
+      highlight-indent-guides-auto-character-face-perc 5
+
+      git-commit-summary-max-length 68)
 
 (after! sql
   (sql-set-product 'postgres))
@@ -41,6 +43,9 @@
 (add-hook 'go-mode-lsp-hook
           (lambda ()
             (flycheck-add-next-checker 'lsp 'golangci-lint)))
+
+(after! git-commit
+  (remove-hook! 'git-commit-setup-hook 'git-commit-turn-on-auto-fill))
 
 (use-package! caddyfile-mode
   :mode (("Caddyfile\\'" . caddyfile-mode)
