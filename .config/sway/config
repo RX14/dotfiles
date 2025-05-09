@@ -225,12 +225,14 @@ bindsym $mod+p exec ~/.local/bin/poomf -f
 
 bindsym $mod+semicolon exec ~/.local/bin/lock
 
-bindsym --locked XF86MonBrightnessUp   exec light -A 5
-bindsym --locked XF86MonBrightnessDown exec light -U 5
+bindsym --locked XF86MonBrightnessUp   exec light -T 1.33333
+bindsym --locked XF86MonBrightnessDown exec light -T 0.75
+bindsym --locked XF86AudioRaiseVolume  exec light -T 1.33333
+bindsym --locked XF86AudioLowerVolume  exec light -T 0.75
 
 bindsym --locked XF86AudioMute         exec pamixer -t
-bindsym --locked XF86AudioLowerVolume  exec pamixer -d 2
-bindsym --locked XF86AudioRaiseVolume  exec pamixer -i 2
+# bindsym --locked XF86AudioLowerVolume  exec pamixer -d 2
+# bindsym --locked XF86AudioRaiseVolume  exec pamixer -i 2
 bindsym --locked XF86AudioMicMute      exec pamixer --default-source -t
 bindsym --locked XF86Tools             exec pamixer --default-source -t
 bindsym --locked XF86AudioPlay         exec playerctl -p mpv play-pause
