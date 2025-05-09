@@ -68,7 +68,7 @@ bindkey '^H' backward-kill-word
 bindkey "^Q" push-input
 setopt interactivecomments
 
-eval "$(dircolors $XDG_CONFIG_HOME/dircolors)"
+eval "$(gdircolors $XDG_CONFIG_HOME/dircolors)"
 
 mkdir -p -m700 "$GNUPGHOME"
 
