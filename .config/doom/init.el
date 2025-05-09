@@ -72,6 +72,7 @@
        web                 ; the tubes
        yaml
        (csharp +lsp +dotnet)
+       (elm +lsp +tree-sitter)
 
        :config
        (default +bindings +smartparens))

@@ -28,7 +28,7 @@
 
       ispell-dictionary "en_GB"
 
-      +format-on-save-enabled-modes '(crystal-mode python-mode)
+      +format-on-save-enabled-modes '(crystal-mode python-mode elm-mode)
 
       highlight-indent-guides-auto-character-face-perc 5)
 
