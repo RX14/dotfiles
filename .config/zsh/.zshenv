@@ -43,6 +43,9 @@ export JULIA_DEPOT_PATH="$XDG_DATA_HOME"/julia:"$JULIA_DEPOT_PATH"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME"/ripgrep/ripgreprc
 export RACK_USER_DIR="$XDG_DATA_HOME"/vcvrack
 export IPFS_PATH="$XDG_DATA_HOME"/ipfs
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export OMNISHARPHOME="$XDG_CONFIG_HOME"/omnisharp
 
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
@@ -50,7 +53,7 @@ export ANDROID_NDK_HOME="$ANDROID_NDK"
 
 # Set paths for PREFIX=~/.local
 typeset -U PATH path
-path=("$HOME/.local/bin" "/usr/lib/ccache/bin" $path "$GOPATH/bin" "$ANDROID_NDK")
+path=("$HOME/.local/bin" "/usr/lib/ccache/bin" $path "$GOPATH/bin" "$ANDROID_NDK" "$DOTNET_CLI_HOME"/.dotnet/tools)
 
 typeset -xUT LIBRARY_PATH library_path :
 library_path=("$HOME/.local/lib" $library_path)

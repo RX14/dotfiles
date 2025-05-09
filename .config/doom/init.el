@@ -68,6 +68,7 @@
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        web                 ; the tubes
        yaml
+       (csharp +lsp +dotnet)
 
        :config
        (default +bindings +smartparens))
