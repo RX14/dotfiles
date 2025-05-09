@@ -242,6 +242,9 @@ bindsym --locked XF86AudioNext         exec playerctl -p mpv next
 
 bindsym --locked XF86Display           output * enable; output * dpms on
 
+bindswitch --locked tablet:on exec systemctl --user start tablet-mode.target
+bindswitch --locked tablet:off exec systemctl --user stop tablet-mode.target
+
 for_window [class="kruler"] floating enable
 for_window [app_id="firefox" title="Firefox - Teilen-Hinweis"] floating enable, sticky enable, move position 300px 99ppt, focus tiling
 for_window [title="HARDCODED"] floating enable
