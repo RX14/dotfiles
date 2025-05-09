@@ -265,7 +265,7 @@ workspace $ws10 output $deskleft $internal
 exec {
   dbus-update-activation-environment --systemd --all
 
-  sh -c 'while true; do waybar; done'
+  waybar
   doom run --daemon
   mako
   swayidle timeout 300  '[[ $(cat /sys/class/power_supply/BAT0/status) == "Discharging" ]] && swaymsg "output * dpms off"' \
