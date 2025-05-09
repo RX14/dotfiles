@@ -59,6 +59,7 @@
        :lang
        cc                ; C/C++/Obj-C madness
        crystal           ; ruby at the speed of c
+       (ruby +lsp +rails)
        data              ; config/data formats
        (elixir +lsp)       ; erlang done right
        emacs-lisp        ; drown in parentheses
