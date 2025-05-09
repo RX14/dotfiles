@@ -64,7 +64,6 @@ else
     echo "Install bat!"
 fi
 
-alias icat='kitty +kitten icat'
 
 alias pping='prettyping --nolegend'
 
@@ -220,12 +219,14 @@ function gwt() {
 }
 
 function fork() {
-    kitty --detach
+    foot &!
 }
 
 if which kitty >/dev/null 2>&1 && [[ "$TERM" == "xterm-kitty" ]]; then
     alias ssh="kitty +kitten ssh"
     alias sssh="TERM=xterm-256color \ssh"
+
+    alias icat='kitty +kitten icat'
 fi
 
 alias issh="TERM=xterm-256color \ssh -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa"

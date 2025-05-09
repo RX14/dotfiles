@@ -84,7 +84,7 @@ else
     export EDITOR="vim"
 fi
 
-export TERMINAL="kitty"
+export TERMINAL="foot"
 
 export GTK_THEME="Vertex-Dark"
 export QT_QPA_PLATFORMTHEME=gtk2
