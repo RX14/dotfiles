@@ -4,7 +4,7 @@
 (setq evil-respect-visual-line-mode t)
 
 (doom! :completion
-       (company +tng)             ; the ultimate code completion backend
+       (corfu +icons +dabbrev +orderless)             ; the ultimate code completion backend
        (vertico +icons)
 
        :ui
