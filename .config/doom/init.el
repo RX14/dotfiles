@@ -1,5 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
+;; Set here since it needs to be set before evil is loaded
+(setq evil-respect-visual-line-mode t)
+
 (doom! :completion
        (company +tng)             ; the ultimate code completion backend
        (vertico +icons)
