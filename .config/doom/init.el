@@ -40,7 +40,7 @@
        vc                     ; version-control and Emacs, sitting in a tree
 
        :checkers
-       syntax
+       (syntax +childframe)
        (spell +everywhere)
        grammar
 
