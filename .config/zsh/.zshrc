@@ -53,7 +53,6 @@ BULLETTRAIN_PROMPT_ORDER=(
     dir
     screen
     git
-    hg
     cmd_exec_time
 )
 
