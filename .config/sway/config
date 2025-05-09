@@ -58,6 +58,14 @@ input "1133:16489:Logitech_MX_Master_2S" {
   pointer_accel 0.2
 }
 
+input "1386:20762:Wacom_HID_511A_Finger" {
+  map_to_output $internal
+}
+
+input "1386:20762:Wacom_HID_511A_Pen" {
+  map_to_output $internal
+}
+
 output $internal {
   res 1920x1080
   pos 1200 1430
