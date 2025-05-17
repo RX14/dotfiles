@@ -81,7 +81,7 @@ if [[ "$(uname)" == "Linux" ]] &&
     fi
 fi
 
-if [[ ! -d $XDG_DATA_HOME/emacs ]]; then
+if which emacs >/dev/null 2>&1 && [[ ! -d $XDG_DATA_HOME/emacs ]]; then
     echo "Installing Doom Emacs..."
     git clone https://github.com/hlissner/doom-emacs $XDG_DATA_HOME/emacs
 fi
