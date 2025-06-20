@@ -37,7 +37,7 @@ fi
 source "$XDG_DATA_HOME"/antidote/antidote.zsh
 
 BULLETTRAIN_CONTEXT_FG=red
-if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
+if [[ -n "$WAYLAND_DISPLAY" ]]; then
     BULLETTRAIN_CONTEXT_DEFAULT_USER=rx14
 fi
 
