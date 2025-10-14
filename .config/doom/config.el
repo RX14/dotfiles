@@ -13,6 +13,8 @@
  "t F" #'format-all-mode
  )
 
+(map! :m "C-M-o" #'evil-jump-forward)
+
 (use-package! pkgbuild-mode
   :mode "/PKGBUILD$")
 
