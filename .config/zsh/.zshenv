@@ -78,7 +78,7 @@ HISTSIZE=1000
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-if [[ $(hostname) == "uiharu.iscute.moe" ]]; then
+if true; then
     export EDITOR="emacsclient -c"
 else
     export EDITOR="vim"
