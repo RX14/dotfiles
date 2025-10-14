@@ -1,7 +1,7 @@
 [user]
 	name = Stephanie Wilde-Hobbs
 	email = git@stephanie.is
-	signingkey = 665DEBD0
+	signingkey = ~/.ssh/id_ed25519
 [core]
 	autocrlf = false
 	filemode = false
@@ -36,7 +36,7 @@
 [rebase]
 	autoSquash = true
 [commit]
-#	gpgsign = true
+	gpgsign = true
 [mergetool "kdiff3NoAuto"]
 	cmd = kdiff3 --L1 \"$MERGED (Base)\" --L2 \"$MERGED (Local)\" --L3 \"$MERGED (Remote)\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [github]
@@ -67,3 +67,5 @@
 	helper = store
 [credential "https://github.com"]
 	username = RX14
+[gpg]
+	format = ssh
