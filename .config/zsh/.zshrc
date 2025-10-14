@@ -94,6 +94,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 which mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 which direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+which mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
 # Set $? to 0 so the prompt doesn't show a failure on startup
 true
