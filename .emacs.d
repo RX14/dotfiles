@@ -1,1 +1,1 @@
-/home/rx14/.local/share/emacs
+.local/share/emacs
