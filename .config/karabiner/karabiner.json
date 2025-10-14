@@ -1051,10 +1051,7 @@
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
@@ -2009,10 +2006,7 @@
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
@@ -2043,10 +2037,7 @@
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
+                                    "modifiers": { "mandatory": ["control"] }
                                 },
                                 "to": [
                                     {
